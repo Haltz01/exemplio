@@ -1,8 +1,14 @@
 const mysql = require('mysql');
-
 const db = require('../sqlConnection');
+const express = require('express');
 
 module.exports = {
+
+    /**
+     * 
+     * @param {express.Request} req 
+     * @param {express.Response} res 
+     */
     async getFullList(req, res) {
         let sqlCommand1 = 'select * from exemploBasicInfo INNER JOIN exemploTimelineInfo ON exemploBasicInfo.exemploID = exemploTimelineInfo.exemploID_FKEY;';
 
@@ -16,8 +22,13 @@ module.exports = {
         });
     },
 
+    /**
+    * 
+    * @param {express.Request} req 
+    * @param {express.Response} res 
+    */
     async getSpecificExemplo(req, res) {
-        let exemploID = req.params.exemploID;
+        const exemploID = req.params.exemploID;
         let sqlQuery = "select * from exemploBasicInfo INNER JOIN exemploTimelineInfo ON exemploBasicInfo.exemploID = exemploTimelineInfo.exemploID_FKEY AND exemploBasicInfo.exemploID = ?";
         let insertOnQuery = [exemploID];
     
@@ -44,6 +55,12 @@ module.exports = {
             return res.json(queryResult);
         });
     },
+
+    /**
+     * 
+     * @param {express.Request} req 
+     * @param {express.Response} res 
+     */
     async getBasicList(req, res) {
         let sqlQuery = "select exemploID, firstName, lastName, placeOfOrigin, tags, imageLink, insertionDate from exemploBasicInfo;";
     
