@@ -3,7 +3,7 @@ const mysql = require('mysql');
 const db = require('../sqlConnection');
 
 module.exports = {
-    async getAllExemplos(req, res) {
+    async getFullList(req, res) {
         let sqlCommand1 = 'select * from exemploBasicInfo INNER JOIN exemploTimelineInfo ON exemploBasicInfo.exemploID = exemploTimelineInfo.exemploID_FKEY;';
 
         await db.query(sqlCommand1, (error, result) => {
@@ -44,7 +44,7 @@ module.exports = {
             return res.json(queryResult);
         });
     },
-    async getExemplosList(req, res) {
+    async getBasicList(req, res) {
         let sqlQuery = "select exemploID, firstName, lastName, placeOfOrigin, tags, imageLink, insertionDate from exemploBasicInfo;";
     
         await db.query(sqlQuery, (error, queryResult) => {
