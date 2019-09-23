@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+}
+
+html, body, #root {
+  height: 100%; /* as tags, por padrão, não ocupam 100% de altura. As divs ocupam 100% de largura */
+}
+
+body {
+  background: #f5f5f5;
+}
+
+body, input, button { /* Input e button, por padrão, não herdam a fonte do corpo do HTML */
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+}
