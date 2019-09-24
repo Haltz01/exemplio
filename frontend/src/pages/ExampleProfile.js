@@ -22,7 +22,7 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
         console.log(match.params.id);
         getExampleInfo();
 
-    }, [match.params.id]); // [] => executa uma vez
+    }, [match.params.id]); // executa sempre que há alteração em match.params.id
 
     // Verificando alterações que ocorrem no exampleInfo!
     useEffect(() => {
