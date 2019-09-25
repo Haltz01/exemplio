@@ -32,7 +32,9 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
     return (
         <div> 
             <Navbar/>
-            <div> DIV DE TESTE - "ExampleProfile" </div>
+            <div className="container">
+                <div> DIV DE TESTE - "ExampleProfile" </div>
+            </div>
         </div>
     );
 }

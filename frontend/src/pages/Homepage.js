@@ -6,9 +6,11 @@ import Navbar from './Navbar';
 
 export default function Homepage() {
     return (
-        <div> 
+        <div>
             <Navbar/>
-            <div> DIV DE TESTE - "Homepage" </div>
+            <div className="container">
+                <div> DIV DE TESTE - "Homepage" </div>
+            </div>
         </div>
     );
 }

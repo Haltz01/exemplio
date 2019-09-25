@@ -24,22 +24,24 @@ export default function ExamplesList() {
     return (
         <div> 
             <Navbar/>
-            <div> DIV DE TESTE - "ExamplesList" </div>
-            { examplesInfoList.map((exampleInfo) => {
-                return (
-                    <div id={ exampleInfo.exemploID }>
-                        <h1> { exampleInfo.firstName + " " + exampleInfo.lastName } </h1>
-                        <h3> { exampleInfo.placeOfOrigin } </h3>
-                        { exampleInfo.tags.forEach((element) => {
-                            return (<h3> { element } </h3>);
-                        })
+            <div className="container">
+                <div> DIV DE TESTE - "ExamplesList" </div>
+                { examplesInfoList.map((exampleInfo) => {
+                    return (
+                        <div id={ exampleInfo.exemploID }>
+                            <h1> { exampleInfo.firstName + " " + exampleInfo.lastName } </h1>
+                            <h3> { exampleInfo.placeOfOrigin } </h3>
+                            { exampleInfo.tags.forEach((element) => {
+                                return (<h3> { element } </h3>);
+                            })
                         }
-                        <img src={exampleInfo.imageLink} alt={ exampleInfo.firstName + " " + exampleInfo.lastName } />
-                        <h3> --------------------------------------------- </h3><br/>
-                    </div>
-                );
-            })
+                            <img src={exampleInfo.imageLink} alt={ exampleInfo.firstName + " " + exampleInfo.lastName } />
+                            <h3> --------------------------------------------- </h3><br/>
+                        </div>
+                    );
+                })
             }
+            </div>
         </div>
     );
 }
