@@ -10,7 +10,7 @@ export default function Routes() {
         <BrowserRouter>
             <Route path="/" exact component={ Homepage }/> {/* sem o exact, o router não irá diferenciar essas duas Routes, pois o Router compara o começo da rota somente*/ }
             <Route path="/exemplo/:id" component={ ExampleProfile }/>
-            <Route path="/lista_de_exemplos" exact component={ ExamplesList }/>
+            <Route path="/exemplos" exact component={ ExamplesList }/>
         </BrowserRouter>
     );
 }

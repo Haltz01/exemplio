@@ -1,0 +1,67 @@
+.exampleCard {
+    top: 210px;
+    left: 370px;
+    width: 255px;
+    height: 333px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 16px;
+    /* border: 1px solid black; */
+    opacity: 1;
+}
+
+.topCardDetail {
+    top: 210px;
+    left: 998px;
+    width: 138px;
+    height: 8px;
+    background: #4DDD4D 0% 0% no-repeat padding-box;
+    border-radius: 7px;
+    opacity: 1;
+}
+
+.imageDetails {
+    top: 245px;
+    left: 429px;
+    width: 138px;
+    height: 142px;
+    background: transparent 0% 0% no-repeat padding-box;
+    border-radius: 25px;
+    opacity: 1;
+}
+
+.placeOfOriginText {
+    text-align: center;
+    font: Medium 13px/15px Rubik;
+    letter-spacing: 0;
+    color: #9B9B9B;
+    opacity: 1;
+}
+
+.exampleNameText {
+    text-align: center;
+    font: Medium 20px/24px Rubik;
+    letter-spacing: 0;
+    color: #000000;
+    opacity: 1;
+}
+
+.exampleTagsText {
+    max-width: 150px;
+    text-align: center;
+    font: Regular 15px/18px Rubik;
+    letter-spacing: 0;
+    color: #000000;
+    opacity: 1;
+}
+
+.categoriesBox {
+    top: 210px;
+    left: 85px;
+    width: 254px;
+    height: 451px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 16px;
+    opacity: 1;
+}

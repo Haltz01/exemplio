@@ -23,7 +23,7 @@ export default function Navbar() {
                             <a className="nav-link" href="./exemplos">Mais exemplos</a>
                         </li>
                         <li className="nav-item">
-                            <a className="btn btn-custom py-1 px-4" href="./exemplos">Seja membro</a>
+                            <a className="btn btn-custom py-1 px-4" href="./">Seja membro</a>
                         </li>
                     </ul>
                 </div>
