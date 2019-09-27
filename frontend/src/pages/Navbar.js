@@ -17,10 +17,10 @@ export default function Navbar() {
                 <div className="collapse navbar-collapse" id="navbarSite">
                     <ul className="navbar-nav px-4 ml-auto">
                         <li className="nav-item ">
-                            <a className="nav-link" href="./sobre">Sobre</a>
+                            <a className="nav-link" href="/sobre">Sobre</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="./exemplos">Mais exemplos</a>
+                            <a className="nav-link" href="/exemplos">Mais exemplos</a>
                         </li>
                         <li className="nav-item">
                             <a className="btn btn-custom py-1 px-4" href="./">Seja membro</a>

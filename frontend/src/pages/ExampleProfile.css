@@ -1,0 +1,63 @@
+.exampleInfo {
+    background: #FFFFFF padding-box;
+    box-shadow: 0px 3px 8px #00000029;
+    border-radius: 44px;
+    opacity: 1;
+}
+
+.aboutBox {
+    background: #FFFFFF padding-box;
+    box-shadow: 0px 3px 8px #00000029;
+    border-radius: 44px;
+    opacity: 1;
+}
+
+.imageCustom {
+    width: 184px;
+    height: 198px;
+    border-radius: 37px;
+    opacity: 1;
+}
+
+.exampleNameInProfile {
+    font: Bold 30px/36px Rubik;
+    letter-spacing: 0;
+    color: #3A3B3A;
+    opacity: 1;
+}
+
+.placeOfOriginInProfile {
+    font: Medium 20px/24px Rubik;
+    letter-spacing: 0;
+    color: #9B9B9B;
+    opacity: 1;
+}
+
+.TagsInProfile {
+    font: Regular 20px/24px Rubik;
+    letter-spacing: 0;
+    color: #000000;
+    opacity: 1;
+}
+
+.topDetail {
+    width: 138px;
+    height: 8px;
+    background: #4DDD4D 0% 0% no-repeat padding-box;
+    border-radius: 7px;
+    opacity: 1;
+}
+
+.aboutTitle {
+    font: Bold 30px/36px Rubik;
+    letter-spacing: 0;
+    color: #3A3B3A;
+    opacity: 1;
+}
+
+.aboutDescription {
+    font: Regular 20px/24px Rubik;
+    letter-spacing: 0;
+    color: #3A3B3A;
+    opacity: 1;
+}

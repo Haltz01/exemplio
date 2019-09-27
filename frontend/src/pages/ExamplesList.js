@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './ExamplesList.css';
 import Navbar from './Navbar';
 
@@ -40,13 +41,15 @@ export default function ExamplesList() {
                         return (
                             <div id={ exampleInfo.exemploID } className="exampleCard d-flex flex-column m-2 align-items-center text-center">
                                 <div className="topCardDetail justify-content-center"></div>
-                                <img className="imageDetails img-fluid mt-4 mb-2" src={ WALUIGI } alt="WAAALUIGI"/>
-                                <h2 className="exampleNameText"> { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
-                                <h5 className="placeOfOriginText mb-3"> { exampleInfo.placeOfOrigin } </h5> 
-                                { exampleInfo.tags.forEach((element) => { // ARRUMAR FOREACH (não funcionando...)
-                                    return ( <h4 className="exampleTagsText"> { element } </h4> );
-                                }) 
-                                }
+                                <Link to={'/exemplo/' + exampleInfo.exemploID }>
+                                    <img className="imageDetails img-fluid mt-4 mb-2" src={ WALUIGI } alt="WAAALUIGI"/>
+                                    <h2 className="exampleNameText"> { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
+                                    <h5 className="placeOfOriginText mb-3"> { exampleInfo.placeOfOrigin } </h5> 
+                                    { exampleInfo.tags.forEach((element) => { // ARRUMAR FOREACH (não funcionando...)
+                                        return ( <h4 className="exampleTagsText"> { element } </h4> );
+                                    }) 
+                                    }
+                                </Link>
                             </div>
                         );
                         })
