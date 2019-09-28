@@ -1,4 +1,4 @@
-.exampleInfo {
+.customBox {
     background: #FFFFFF padding-box;
     box-shadow: 0px 3px 8px #00000029;
     border-radius: 44px;
@@ -16,13 +16,6 @@
     width: 184px;
     height: 198px;
     border-radius: 37px;
-    opacity: 1;
-}
-
-.exampleNameInProfile {
-    font: Bold 30px/36px Rubik;
-    letter-spacing: 0;
-    color: #3A3B3A;
     opacity: 1;
 }
 
@@ -67,4 +60,11 @@
     box-shadow: 0px 3px 8px #00000029;
     border-radius: 44px;
     opacity: 1;
+}
+
+.errorMessage {
+    font: Regular 30px/36px Rubik;
+    letter-spacing: 0;
+    color: rgb(104, 104, 104);
+    opacity: 0.8;
 }

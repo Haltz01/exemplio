@@ -7,6 +7,8 @@ Links I'm consulting:
 https://getbootstrap.com/docs/4.3/layout/overview/
 https://getbootstrap.com/docs/4.0/layout/grid/
 https://getbootstrap.com/docs/4.3/utilities/spacing/
+
+https://xd.adobe.com/spec/cc1222ea-4331-481b-5719-3dd15471d179-ba23/screen/81b20b49-1400-4a5d-bf83-f66450699859/P-gina-do-exemplo
 */
 
 import api from '../services/api'; // -> Comunicar-se como backend!
@@ -41,11 +43,12 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                     (exampleInfo.message === undefined) ? (
                         <div className="container">
                             <div className="row">
-                                <div id={ exampleInfo.exemploID } className="exampleInfo d-flex flex-column m-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
+                                <div id={ exampleInfo.exemploID } className="customBox d-flex flex-column m-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
                                     <div className="topDetail justify-content-center"></div>
                                     <img className="imageCustom img-fluid mt-4 mb-2" src={ WALUIGI } alt="WAAALUIGI"/>
-                                    <h2 className="exampleNameInProfile"> { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
+                                    <h2 className="titleCustom"> { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
                                     <h5 className="placeOfOriginInProfile mb-3"> { exampleInfo.placeOfOrigin } </h5> 
+                                    <div>
                                     { Array.from(exampleTags).forEach((tag) => { // Não sei porque não está gerando o HTML, mas exibe o LOG
                                         console.log("TAG: ", tag);
                                         return (
@@ -53,6 +56,7 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                         );
                                     })
                                     }
+                                    </div>
                                 </div>
                                 <div className="aboutBox d-flex flex-column m-3 p-3 align-items-left text-left col">
                                     <h1 className="titleCustom"> Sobre </h1> 
@@ -66,15 +70,31 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                     <h1 className="titleCustom"> Entrevista </h1>
                                     <div className="border border-dark rounded p-2">
                                         {/* INSERIR PODCAST AQUI */}
-                                        aaaaaaaaaaaaaaaaaaaaaaa<br/>aaaaaaaa<br/>aaaaaaaaaaaaa
+                                        aaaaaaaaaaaaaaaaaaaaaaa<br/>aaaaaaaaaaaaaaaaaaaaaaa<br/>aaaaaaaaaaaaaaaaaaaaaaa
                                     </div>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="customBox m-3 p-3 col">
+                                   <h2> <b>Linha do tempo </b>de { exampleInfo.firstName + " " + exampleInfo.lastName } </h2> <br/>
+                                    { exampleInfo.eventDescriptionList }
                                 </div>
                             </div>
                         </div>
                     ) 
                     : 
                     (
-                        <div> Deu merda irmão... </div>
+                        <div className="container">
+                            <div className="customBox d-flex flex-column m-3 align-items-center text-center"> 
+                                <br/><br/><br/><br/> 
+                                <h1 className="errorMessage"> 
+                                    Não encontramos o exemplo que você procurava. 
+                                    <br/><br/> 
+                                    Desculpe :(
+                                </h1> 
+                                <br/><br/><br/><br/>
+                            </div>
+                        </div>
                     )
                 }
         </div>
