@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ExampleProfile.css';
-// import Navbar from './Navbar';
+import Navbar from './Navbar';
 
 /*
 Links I'm consulting:
@@ -17,7 +17,6 @@ import WALUIGI from '../assets/WALUIGI.jpg';
 
 export default function ExampleProfile({ match }) { // match contém os parâmetros passados na rota (id)
     const [exampleInfo, setExampleInfo] = useState({});
-    const [exampleTags, setExampleTags] = useState([]);
     
     // Conexão com backend para buscar informações de um exemplo específico
     useEffect(() => {
@@ -29,7 +28,6 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
             });
             console.log(response.data);
             setExampleInfo(response.data);
-            setExampleTags(response.data.tags);
         }
 
         getExampleInfo();
@@ -38,9 +36,9 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
 
     return (
         <div> 
-            {/* <Navbar/> A NAVBAR DEVE SER TROCADA!! ESSA QUEBRA O CSS */} 
+                <Navbar/>
                 {
-                    (exampleInfo.message === undefined) ? (
+                    (Object.keys(exampleInfo).length !== 0 && exampleInfo.tags !== undefined && exampleInfo.tags.length !== 0 && exampleInfo.message === undefined) ? (
                         <div className="container">
                             <div className="row">
                                 <div id={ exampleInfo.exemploID } className="customBox d-flex flex-column m-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
@@ -51,9 +49,9 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                     <div>
                                         <h4 className="TagsInProfile mb-2" >
                                             {   
-                                                (exampleTags.length > 0) ?
+                                                (exampleInfo.tags.length > 0) ?
                                                 //Builds a string from all 'nexTag' (foreach) by concatenating them with ',' as separator
-                                                exampleTags.reduce((currentString, nextTag) => {
+                                                exampleInfo.tags.reduce((currentString, nextTag) => {
                                                     return currentString + ', ' + nextTag;
                                                 })
                                                 : 'Erro, exampleTags.length == 0'
