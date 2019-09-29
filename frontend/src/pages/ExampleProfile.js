@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ExampleProfile.css';
-import Navbar from './Navbar';
+// import Navbar from './Navbar';
 
 /*
 Links I'm consulting:
@@ -49,13 +49,16 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                     <h2 className="titleCustom"> { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
                                     <h5 className="placeOfOriginInProfile mb-3"> { exampleInfo.placeOfOrigin } </h5> 
                                     <div>
-                                    { Array.from(exampleTags).forEach((tag) => { // Não sei porque não está gerando o HTML, mas exibe o LOG
-                                        console.log("TAG: ", tag);
-                                        return (
-                                            <h4 className="TagsInProfile"> { tag } </h4> 
-                                        );
-                                    })
-                                    }
+                                        <h4 className="TagsInProfile" >
+                                            {   
+                                                (exampleTags.length>0)?
+                                                //Builds a string from all 'nexTag' (foreach) by concatenating them with ',' as separator
+                                                exampleTags.reduce((currentString, nextTag) => {
+                                                    return currentString + ', ' + nextTag;
+                                                })
+                                                : 'Erro, exampleTags.length == 0'
+                                            }
+                                        </h4> 
                                     </div>
                                 </div>
                                 <div className="aboutBox d-flex flex-column m-3 p-3 align-items-left text-left col">
