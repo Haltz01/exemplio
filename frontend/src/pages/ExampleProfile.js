@@ -32,7 +32,7 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
             setExampleTags(response.data.tags);
         }
 
-        getExampleInfo();;
+        getExampleInfo();
 
     }, [match.params.id]); // executa sempre que há alteração em match.params.id
 
@@ -71,9 +71,8 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                             <div className="row">
                                 <div className="podcastBox d-flex flex-column m-3 p-4 align-items-left text-left col">
                                     <h1 className="titleCustom"> Entrevista </h1>
-                                    <div className="border border-dark rounded p-2">
-                                        {/* INSERIR PODCAST AQUI */}
-                                        aaaaaaaaaaaaaaaaaaaaaaa<br/>aaaaaaaaaaaaaaaaaaaaaaa<br/>aaaaaaaaaaaaaaaaaaaaaaa
+                                    <div className="border border-dark rounded p-2"> {/* Retirando isto: border border-dark rounded */}
+                                        <iframe src="https://castbox.fm/app/castbox/player/id2209666/id187554028?v=8.10.3&autoplay=0&hide_list=1" frameBorder="0" height="204px" className="castbox-responsive-player"/>                                            
                                     </div>
                                 </div>
                             </div>
