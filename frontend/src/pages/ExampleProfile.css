@@ -68,3 +68,10 @@
     color: rgb(104, 104, 104);
     opacity: 0.8;
 }
+
+.timelineInfo {
+    /* background-image: linear-gradient(#F9F9F9, #4DDD4D); */
+    background: #F9F9F9 0% 0% no-repeat padding-box;
+    box-shadow: 0px 4px 6px #82828229;
+    opacity: 1;
+}

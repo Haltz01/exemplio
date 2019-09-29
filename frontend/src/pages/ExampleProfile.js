@@ -47,11 +47,11 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                     <div className="topDetail justify-content-center"></div>
                                     <img className="imageCustom img-fluid mt-4 mb-2" src={ WALUIGI } alt="WAAALUIGI"/>
                                     <h2 className="titleCustom"> { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
-                                    <h5 className="placeOfOriginInProfile mb-3"> { exampleInfo.placeOfOrigin } </h5> 
+                                    <h5 className="placeOfOriginInProfile mb-2"> { exampleInfo.placeOfOrigin } </h5> 
                                     <div>
-                                        <h4 className="TagsInProfile" >
+                                        <h4 className="TagsInProfile mb-2" >
                                             {   
-                                                (exampleTags.length>0)?
+                                                (exampleTags.length > 0) ?
                                                 //Builds a string from all 'nexTag' (foreach) by concatenating them with ',' as separator
                                                 exampleTags.reduce((currentString, nextTag) => {
                                                     return currentString + ', ' + nextTag;
@@ -79,8 +79,14 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                             </div>
                             <div className="row">
                                 <div className="customBox m-3 p-3 col">
-                                   <h2> <b>Linha do tempo </b>de { exampleInfo.firstName + " " + exampleInfo.lastName } </h2> <br/>
-                                    { exampleInfo.eventDescriptionList }
+                                   <h2 className="titleCustom col"> Linha do tempo de { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
+                                   <div className="d-flex flex-column m-2 align-items-center border border-info">
+                                        <div className="timelineInfo m-3 p-3 col-5">
+                                            <p>Bombeiro Voluntário</p>
+                                            Miguel nasce em Ipumirim, uma pequena cidade no interior do estado de Santa Catarina.
+                                        </div>
+                                    </div>
+                                    {/* { exampleInfo.eventDescriptionList } */}
                                 </div>
                             </div>
                         </div>
