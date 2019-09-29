@@ -16,7 +16,7 @@ import api from '../services/api'; // -> Comunicar-se como backend!
 import WALUIGI from '../assets/WALUIGI.jpg';
 
 export default function ExampleProfile({ match }) { // match contém os parâmetros passados na rota (id)
-    const [exampleInfo, setExampleInfo] = useState([]);
+    const [exampleInfo, setExampleInfo] = useState({});
     const [exampleTags, setExampleTags] = useState([]);
     
     // Conexão com backend para buscar informações de um exemplo específico
@@ -71,19 +71,27 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                             <div className="row">
                                 <div className="podcastBox d-flex flex-column m-3 p-4 align-items-left text-left col">
                                     <h1 className="titleCustom"> Entrevista </h1>
-                                    <div className="border border-dark rounded p-2"> {/* Retirando isto: border border-dark rounded */}
-                                        <iframe src="https://castbox.fm/app/castbox/player/id2209666/id187554028?v=8.10.3&autoplay=0&hide_list=1" frameBorder="0" height="204px" className="castbox-responsive-player"/>                                            
+                                    <div className="p-2">
+                                        <iframe title="podcastIframe" src="https://castbox.fm/app/castbox/player/id2209666/id187554028?v=8.10.3&autoplay=0&hide_list=1" frameBorder="0" height="204px" className="castbox-responsive-player"/>                                            
                                     </div>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="customBox m-3 p-3 col">
                                    <h2 className="titleCustom col"> Linha do tempo de { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
-                                   <div className="d-flex flex-column m-2 align-items-center border border-info">
-                                        <div className="timelineInfo m-3 p-3 col-5">
-                                            <p>Bombeiro Voluntário</p>
-                                            Miguel nasce em Ipumirim, uma pequena cidade no interior do estado de Santa Catarina.
-                                        </div>
+                                   <div className="d-flex flex-column m-2 align-items-center">
+                                    { 
+                                        (exampleInfo.eventDescriptionList !== undefined) ? ( 
+                                            exampleInfo.eventDescriptionList.map((element, index) => {
+                                                return (
+                                                    <div key={"timeline_"+index} className="timelineInfo m-1 mt-4 p-3 col-xs col-sm-10 col-md-8 col-lg-6">
+                                                        <p> TITULO </p>
+                                                        { element }
+                                                    </div>
+                                                )
+                                            })
+                                        )  : (console.log("Just wait a moment... Event Description List is empty")) 
+                                    }
                                     </div>
                                     {/* { exampleInfo.eventDescriptionList } */}
                                 </div>
