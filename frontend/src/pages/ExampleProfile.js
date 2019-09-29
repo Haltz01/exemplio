@@ -52,7 +52,7 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                         <h4 className="TagsInProfile" >
                                             {   
                                                 (exampleTags.length>0)?
-                                                //Builds a string from all 'nexTag' (foreach) by concatenating them with ',' as separator
+                                                //Builds a string from all 'nextTag's (as in foreach) by concatenating them with ',' as separator
                                                 exampleTags.reduce((currentString, nextTag) => {
                                                     return currentString + ', ' + nextTag;
                                                 })
@@ -71,14 +71,13 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                             <div className="row">
                                 <div className="podcastBox d-flex flex-column m-3 p-4 align-items-left text-left col">
                                     <h1 className="titleCustom"> Entrevista </h1>
-                                    <div className="border border-dark rounded p-2">
-                                        {/* INSERIR PODCAST AQUI */}
-                                        aaaaaaaaaaaaaaaaaaaaaaa<br/>aaaaaaaaaaaaaaaaaaaaaaa<br/>aaaaaaaaaaaaaaaaaaaaaaa
+                                    <div className="border border-dark rounded p-2"> {/* Retirando isto: border border-dark rounded */}
+                                        <iframe src="https://castbox.fm/app/castbox/player/id2209666/id187554028?v=8.10.3&autoplay=0&hide_list=1" frameBorder="0" height="204px" className="castbox-responsive-player"/>                                            
                                     </div>
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="customBox m-3 p-3 col">
+                                <div className="customBox m-3 p-3 col-12">
                                    <h2> <b>Linha do tempo </b>de { exampleInfo.firstName + " " + exampleInfo.lastName } </h2> <br/>
                                     { exampleInfo.eventDescriptionList }
                                 </div>
