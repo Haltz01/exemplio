@@ -11,7 +11,7 @@ export default function Navbar() {
                 <div className="navbar-header">
                     {/* <!-- Logo--> */}
                     <a className="navbar-brand" href="/">
-                        <img src={logoExemplio} className="mt-0" width="151"/>
+                        <img src={logoExemplio} className="mt-0" width="151" alt="Logo Exemplio"/>
                     </a>
                 </div>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">

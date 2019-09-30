@@ -31,7 +31,19 @@ export default function ExamplesList() {
                 <div className="container">
                     <h2 className="m-4"> Categorias </h2>
                     <div className="categoriesBox">
-
+                        <nav class="nav flex-column" id="categoriesNav" role="tablist">
+                            <a class="nav-link active" href="#">Novos Exemplos</a>
+                            <a class="nav-link" href="#">Artes</a>
+                            <a class="nav-link" href="#">Causas Sociais</a>
+                            <a class="nav-link" href="#">Ciência</a>
+                            <a class="nav-link" href="#">Educação</a>
+                            <a class="nav-link" href="#">Esporte</a>
+                            <a class="nav-link" href="#">Negócios</a>
+                            <a class="nav-link" href="#">Política</a>
+                            <a class="nav-link" href="#">Sustentabilidade</a>
+                            <a class="nav-link" href="#">Tecnologia</a>
+                            <a class="nav-link" href="#">Voluntariado</a>
+                        </nav>
                     </div>
                 </div>
                 <div className="d-flex flex-column">

@@ -13,8 +13,6 @@ https://xd.adobe.com/spec/cc1222ea-4331-481b-5719-3dd15471d179-ba23/screen/81b20
 
 import api from '../services/api'; // -> Comunicar-se como backend!
 
-import WALUIGI from '../assets/WALUIGI.jpg';
-
 export default function ExampleProfile({ match }) { // match contém os parâmetros passados na rota (id)
     const [exampleInfo, setExampleInfo] = useState({});
     
@@ -44,7 +42,7 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                             <div className="row">
                                 <div id={ exampleInfo.exemploID } className="customBox d-flex flex-column m-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
                                     <div className="topDetail justify-content-center"></div>
-                                    <img className="imageCustom img-fluid mt-4 mb-2" src={ exampleInfo.imageLink } alt="WAAALUIGI"/>
+                                    <img className="imageCustom img-fluid mt-4 mb-2" src={ exampleInfo.imageLink } alt="Profile"/>
                                     <h2 className="titleCustom"> { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
                                     <h5 className="placeOfOriginInProfile mb-2"> { exampleInfo.placeOfOrigin } </h5> 
                                     <div>
