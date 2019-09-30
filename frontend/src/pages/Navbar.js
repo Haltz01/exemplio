@@ -1,11 +1,12 @@
 import React from 'react';
 import './Navbar.css';
 
+
 import logoExemplio from '../assets/logoSVG.svg';
 
 export default function Navbar() {
     return (
-        <nav class="navbar float-top navbar-expand-sm navbar-light shadow bg-white">
+        <nav className="navbar float-top navbar-expand-sm navbar-light shadow bg-white">
             <div className="container">
                 <div className="navbar-header">
                     {/* <!-- Logo--> */}
