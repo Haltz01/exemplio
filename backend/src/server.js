@@ -23,8 +23,8 @@ app.use(cors());
 app.use(express.json());
 app.use(routes);
 
-const httpServer = app.listen(3333, () => {
-    console.log(`Server listening on port ${3333}`);
+const httpServer = app.listen(process.env.PORT, () => {
+    console.log(`Server listening on port ${process.env.PORT}`);
     
     //Attempt to avoid nodemon's SIGTERM leaving zombie processes using port
     process.on('beforeExit', (l) => httpServer.close());
