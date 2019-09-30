@@ -64,13 +64,13 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                     <h1 className="titleCustom"> Sobre </h1> 
                                     <p className="aboutDescription"> 
                                         { exampleInfo.briefing }
-                                        {/* Maecenas tempor pellentesque libero, sit amet sagittis dui tristique vel. Sed nunc mi, porta quis volutpat eget, elementum et quam. Nunc et sem nisl. Nunc vel ex faucibus ligula aliquam condimentum. Nullam consequat euismod ipsum vel ultrices. Fusce tristique commodo ultrices. Maecenas facilisis odio quis nisi ultrices cursus. Fusce id scelerisque arcu, nec feugiat diam.
+                                         Maecenas tempor pellentesque libero, sit amet sagittis dui tristique vel. Sed nunc mi, porta quis volutpat eget, elementum et quam. Nunc et sem nisl. Nunc vel ex faucibus ligula aliquam condimentum. Nullam consequat euismod ipsum vel ultrices. Fusce tristique commodo ultrices. Maecenas facilisis odio quis nisi ultrices cursus. Fusce id scelerisque arcu, nec feugiat diam.
 
 Phasellus venenatis sem quis fringilla lacinia. Fusce vestibulum dapibus ex, sed ornare nibh semper eu. Etiam luctus aliquam nulla. Mauris tempor et est dignissim posuere. Quisque ornare erat nisi, ut accumsan mauris sodales vel. Donec mollis, odio nec commodo posuere, dui neque gravida nunc, nec bibendum mi ex sit amet magna. Ut scelerisque pretium dolor vel sodales.
 
 Praesent tristique nisl sed laoreet posuere. Duis fermentum arcu non nisl vestibulum tincidunt. Proin porta, tortor vel gravida efficitur, ligula dolor aliquam nunc, a hendrerit nisi lacus sit amet tellus. Suspendisse tincidunt accumsan lacinia. Duis venenatis nec mi eu mattis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam pulvinar, erat tristique sollicitudin pretium, enim metus efficitur dolor, vitae tincidunt arcu magna eget metus. Quisque eleifend diam quis enim consectetur posuere. In molestie volutpat metus, at sollicitudin sem consectetur eu.
 
-Vivamus eleifend, nisl a rhoncus fringilla, risus libero vestibulum ligula, id consequat erat massa vel dolor. Nulla ullamcorper, odio vel auctor sollicitudin, nulla augue aliquam ipsum, ac sodales nunc magna et tellus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas dictum libero sit amet mauris viverra, tristique varius sapien tincidunt. Phasellus dolor lorem, porttitor vel luctus in, porta ut turpis. Cras euismod enim eget massa ultrices dapibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer luctus lectus ac ligula pharetra finibus. Etiam laoreet hendrerit metus quis aliquet. Vivamus sed vestibulum ipsum, eu iaculis metus. Integer lorem sem, lacinia ac mattis sed, sagittis at leo. Nunc tincidunt ipsum eget tincidunt gravida. Aenean pretium pulvinar urna, nec dignissim quam imperdiet a. Ut tincidunt elit efficitur elit sodales, et pharetra leo placerat. Cras elit libero, tempor eu interdum vitae, congue at nibh. */}
+Vivamus eleifend, nisl a rhoncus fringilla, risus libero vestibulum ligula, id consequat erat massa vel dolor. Nulla ullamcorper, odio vel auctor sollicitudin, nulla augue aliquam ipsum, ac sodales nunc magna et tellus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas dictum libero sit amet mauris viverra, tristique varius sapien tincidunt. Phasellus dolor lorem, porttitor vel luctus in, porta ut turpis. Cras euismod enim eget massa ultrices dapibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer luctus lectus ac ligula pharetra finibus. Etiam laoreet hendrerit metus quis aliquet. Vivamus sed vestibulum ipsum, eu iaculis metus. Integer lorem sem, lacinia ac mattis sed, sagittis at leo. Nunc tincidunt ipsum eget tincidunt gravida. Aenean pretium pulvinar urna, nec dignissim quam imperdiet a. Ut tincidunt elit efficitur elit sodales, et pharetra leo placerat. Cras elit libero, tempor eu interdum vitae, congue at nibh.
 
 
                                     </p>
@@ -87,12 +87,12 @@ Vivamus eleifend, nisl a rhoncus fringilla, risus libero vestibulum ligula, id c
                             <div className="row">
                                 <div className="customBox m-3 p-3 col">
                                    <h2 className="titleCustom col"> Linha do tempo de { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
-                                   <div className="d-flex flex-column m-2 align-items-center">
+                                   <div className="d-flex comments flex-column m-2 align-items-center">
                                     { 
                                         (exampleInfo.eventDescriptionList !== undefined) ? ( 
                                             exampleInfo.eventDescriptionList.map((element, index) => {
                                                 return (
-                                                    <div key={"timeline_"+index} className="timelineInfo m-1 mt-4 p-3 col-xs col-sm-10 col-md-8 col-lg-6">
+                                                    <div key={"timeline_"+index} className="timelineInfo comment bubble m-1 mt-4 p-3 col-xs col-sm-10 col-md-8 col-lg-6">
                                                         <p> TITULO </p>
                                                         { element }
                                                     </div>

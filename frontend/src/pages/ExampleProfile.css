@@ -9,7 +9,6 @@
 
 
 
-
 .customBox {
     background: #FFFFFF padding-box;
     box-shadow: 0px 3px 8px #00000029;
@@ -86,4 +85,45 @@
     background: #F9F9F9 0% 0% no-repeat padding-box;
     box-shadow: 0px 4px 6px #82828229;
     opacity: 1;
+}
+
+/* Balão de comentário */
+
+.comments{
+    width: 100%;
+  }
+  .comments .comment{
+    width:100%;
+    margin-bottom:20px;
+  }
+  
+  .comments  .comment p{
+    margin: 0 0 10px 0;
+    font-weight: 500;
+    font-size: 15px;
+      flex-direction: row;
+  }
+  
+  .bubble{
+    position: relative;
+    background: #F9F9F9;
+    padding: 20px;
+    color: #222;
+    border-radius: 14px;
+    margin-left: 20px;
+  }
+  
+  .bubble:after{
+    content: "";
+    display: block;
+    position: absolute;
+    
+    right: -26px;
+    top: 15px;
+  
+    width: 0;
+    height: 0;
+    border-top: 26px solid transparent;
+    border-bottom: 26px solid transparent;
+    border-left: 26px solid #F9F9F9;
 }
