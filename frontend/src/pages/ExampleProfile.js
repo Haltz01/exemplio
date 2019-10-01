@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './ExampleProfile.css';
 import Navbar from './Navbar';
 
+import locationIcon from '../assets/locationIcon.svg'
+
 /*
 Links I'm consulting:
 https://getbootstrap.com/docs/4.3/layout/overview/
@@ -41,10 +43,14 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                         <div className="container">
                             <div className="row">
                                 <div id={ exampleInfo.exemploID } className="customBox d-flex flex-column m-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
-                                    <div className="topDetail justify-content-center"></div>
-                                    <img className="imageCustom img-fluid mt-4 mb-2" src={ exampleInfo.imageLink } alt="Profile"/>
-                                    <h2 className="titleCustom"> { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
-                                    <h5 className="placeOfOriginInProfile mb-2"> { exampleInfo.placeOfOrigin } </h5> 
+                                    <div className="topDetail justify-content-center mb-2"></div>
+                                    <h2 className="titleCustom mb-2"> { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
+                                    <h5 className="placeOfOriginInProfile mb-2"> 
+                                        <img className="mr-2" src={locationIcon}/>
+                                        { exampleInfo.placeOfOrigin }
+                                    </h5> 
+                                        
+                                    <img className="imageCustom img-fluid mb-3" src={ exampleInfo.imageLink } alt="Profile"/>
                                     <div>
                                         <h4 className="TagsInProfile mb-2" >
                                             {   
@@ -59,30 +65,30 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                     </div>
                                 </div>
                                 <div className="aboutBox d-flex flex-column m-3 p-3 align-items-left text-left col">
-                                    <h1 className="titleCustom"> Sobre </h1> 
-                                    <p className="aboutDescription"> 
+                                    <h1 className="ml-4 titleCustom"> Sobre </h1> 
+                                    <p className="ml-4 mr-3 aboutDescription"> 
                                         { exampleInfo.briefing }
                                     </p>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="podcastBox d-flex flex-column m-3 p-4 align-items-left text-left col">
-                                    <h1 className="titleCustom"> Entrevista </h1>
-                                    <div className="p-2">
+                                    <h1 className="ml-4 titleCustom"> Entrevista </h1>
+                                    <div className="ml-md-4 p-2">
                                         <iframe title="podcastIframe" src="https://castbox.fm/app/castbox/player/id2209666/id187554028?v=8.10.3&autoplay=0&hide_list=1" frameBorder="0" height="204px" className="castbox-responsive-player"/>                                            
                                     </div>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="customBox m-3 p-3 col">
-                                   <h2 className="titleCustom col"> Linha do tempo de { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
+                                   <h2 className="titleCustom ml-4"> Linha do tempo de { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
                                    <div className="d-flex comments flex-column m-2 align-items-center">
                                     { 
                                         (exampleInfo.eventDescriptionList !== undefined) ? ( 
                                             exampleInfo.eventDescriptionList.map((element, index) => {
                                                 return (
                                                     <div key={"timeline_"+index} className="timelineInfo comment bubble m-1 mt-4 p-3 col-xs col-sm-10 col-md-8 col-lg-6">
-                                                        <p> TITULO </p>
+                                                        <p> <strong> {exampleInfo.eventTitleList[index]} </strong> ({exampleInfo.eventDateList[index]})</p> {/*Separar em 2 cols*/}
                                                         { element }
                                                     </div>
                                                 )

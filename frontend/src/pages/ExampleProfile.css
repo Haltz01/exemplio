@@ -1,7 +1,5 @@
 .castbox-responsive-player {
     width: 100%;
-    margin: 0 0;
-    padding: 0 0;
 }
 
 .customBox {
@@ -33,7 +31,7 @@
 }
 
 .TagsInProfile {
-    font: Regular 20px/24px Rubik;
+    font: 20px/24px Rubik;
     letter-spacing: 0;
     color: #000000;
     opacity: 1;

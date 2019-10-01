@@ -29,7 +29,7 @@ export default function ExamplesList() {
             <Navbar/>
             <div className="container">
                 <div className="row">
-                    <div className="com-xs-1 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div className="col-xs-1 col-sm-6 col-md-4 col-lg-3 col-xl-3">
                         <h2 className="titleCustom m-4 col">Categorias </h2>
                         <div className="categoriesBox p-3">
                             <nav className="nav flex-column" id="categoriesNav" role="tablist">
@@ -47,7 +47,7 @@ export default function ExamplesList() {
                             </nav>
                         </div>
                     </div>
-                    <div className="com-xs col-sm col-md col-lg col-xl">
+                    <div className="col-xs col-sm col-md col-lg col-xl">
                         <div className="row">
                             <h2 className="titleCustom m-4 col"> Exemplos </h2>
                         </div>
