@@ -4,6 +4,7 @@ import './ExamplesList.css';
 import Navbar from './Navbar';
 
 import WALUIGI from '../assets/WALUIGI.jpg';
+import locationIcon from '../assets/locationIcon.svg'
 
 import api from '../services/api'; // -> Comunicar-se como backend!
 
@@ -24,7 +25,7 @@ export default function ExamplesList() {
         getExamplesInfoList();
     }, []); // [] => executa uma vez
 
-    return ( // FALTA RESPONSIVIDADE!
+    return (
         <div> 
             <Navbar/>
             <div className="container">
@@ -51,19 +52,28 @@ export default function ExamplesList() {
                         <div className="row">
                             <h2 className="titleCustom m-4 col"> Exemplos </h2>
                         </div>
-                        <div className="row">
+                        <div className="row custumAlignCssRow">
                             { examplesInfoList.map((exampleInfo) => {
                             return (
                                 <div key={ exampleInfo.exemploID } className="exampleCard d-flex flex-column m-2 align-items-center text-center">
                                     <div className="topCardDetail justify-content-center"></div>
                                     <Link to={'/exemplo/' + exampleInfo.exemploID }>
                                         <img className="imageDetails img-fluid mt-4 mb-2" src={ WALUIGI } alt="WAAALUIGI"/>
-                                        <h2 className="exampleNameText"> { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
-                                        <h5 className="placeOfOriginText mb-3"> { exampleInfo.placeOfOrigin } </h5> 
-                                        { exampleInfo.tags.forEach((element) => { // ARRUMAR FOREACH (não funcionando...)
-                                            return ( <h4 className="exampleTagsText"> { element } </h4> );
-                                        }) 
-                                        }
+                                        <h2 className="exampleNameText mx-1"> { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
+                                        <h5 className="placeOfOriginText mb-2"> 
+                                            <img className="mr-2" src={ locationIcon }/>
+                                            { exampleInfo.placeOfOrigin }
+                                        </h5>
+                                        <h4 className="exampleTagsText m-2 mb-4" >
+                                            {   
+                                                (exampleInfo.tags.length > 0) ?
+                                                //Builds a string from all 'nexTag' (foreach) by concatenating them with ',' as separator
+                                                exampleInfo.tags.reduce((currentString, nextTag) => {
+                                                    return currentString + ', ' + nextTag;
+                                                })
+                                                : 'Erro, exampleTags.length == 0'
+                                            }
+                                        </h4> 
                                     </Link>
                                 </div>
                             );

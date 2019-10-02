@@ -48,7 +48,6 @@
 }
 
 .placeOfOriginText {
-    text-align: center;
     font: Medium 13px/15px Rubik;
     letter-spacing: 0;
     color: #9B9B9B;
@@ -56,7 +55,6 @@
 }
 
 .exampleNameText {
-    text-align: center;
     font: Medium 20px/24px Rubik;
     letter-spacing: 0;
     color: #000000;
@@ -64,8 +62,6 @@
 }
 
 .exampleTagsText {
-    max-width: 150px;
-    text-align: center;
     font: Regular 15px/18px Rubik;
     letter-spacing: 0;
     color: #000000;
@@ -78,3 +74,9 @@
     border-radius: 16px;
     opacity: 1;
 }
+
+@media (max-width: 767px) {
+    .custumAlignCssRow {
+        justify-content: center;
+    }
+  }

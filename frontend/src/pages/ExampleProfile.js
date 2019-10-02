@@ -45,12 +45,11 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                 <div id={ exampleInfo.exemploID } className="customBox d-flex flex-column m-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
                                     <div className="topDetail justify-content-center mb-2"></div>
                                     <h2 className="titleCustom mb-2"> { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
+                                    <img className="imageCustom img-fluid mb-3" src={ exampleInfo.imageLink } alt="Profile"/>
                                     <h5 className="placeOfOriginInProfile mb-2"> 
                                         <img className="mr-2" src={locationIcon}/>
                                         { exampleInfo.placeOfOrigin }
-                                    </h5> 
-                                        
-                                    <img className="imageCustom img-fluid mb-3" src={ exampleInfo.imageLink } alt="Profile"/>
+                                    </h5>  
                                     <div>
                                         <h4 className="TagsInProfile mb-2" >
                                             {   
@@ -88,7 +87,19 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                             exampleInfo.eventDescriptionList.map((element, index) => {
                                                 return (
                                                     <div key={"timeline_"+index} className="timelineInfo comment bubble m-1 mt-4 p-3 col-xs col-sm-10 col-md-8 col-lg-6">
-                                                        <p> <strong> {exampleInfo.eventTitleList[index]} </strong> ({exampleInfo.eventDateList[index]})</p> {/*Separar em 2 cols*/}
+                                                        <div className="row ">
+                                                            <div className="col text-left">
+                                                                <p className="eventTitle"> <strong> {exampleInfo.eventTitleList[index]} </strong> </p>
+                                                            </div>
+                                                            <div className="align-items-right col">
+                                                                <div className="d-flex flex-column align-items-center float-right">
+                                                                    <div className="eventDate">
+                                                                        {exampleInfo.eventDateList[index]}
+                                                                    </div>
+                                                                    <div className="dateDetailLine"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                         { element }
                                                     </div>
                                                 )

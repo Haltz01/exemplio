@@ -80,6 +80,27 @@
     opacity: 1;
 }
 
+.eventTitle {
+    font: Bold 15px/18px Rubik;
+    letter-spacing: 0;
+    color: #3A3B3A;
+    opacity: 1;
+}
+
+.eventDate {
+    font: Bold 15px/18px Rubik;
+    letter-spacing: 0;
+    color: #8B8B8B;
+    opacity: 1;
+}
+
+.dateDetailLine {
+    height: 5px;
+    width: 41px;
+    background: #55DF55 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
 /* Balão de comentário */
 
 .comments{
