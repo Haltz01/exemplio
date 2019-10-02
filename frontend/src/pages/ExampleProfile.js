@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ExampleProfile.css';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 import locationIcon from '../assets/locationIcon.svg'
 
@@ -127,6 +128,7 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                         </div>
                     )
                 }
+                <Footer />
         </div>
     );
 }

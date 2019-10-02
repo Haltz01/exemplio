@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './ExamplesList.css';
+import Footer from './Footer';
 import Navbar from './Navbar';
 
 import WALUIGI from '../assets/WALUIGI.jpg';
@@ -83,6 +84,7 @@ export default function ExamplesList() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

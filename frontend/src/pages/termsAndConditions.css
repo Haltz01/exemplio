@@ -1,0 +1,19 @@
+.containerBox {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 8px #00000029;
+    border-radius: 44px;
+    opacity: 1;
+}
+
+.titleText {
+    font: Bold 20px/24px Rubik;
+    letter-spacing: 0;
+    color: #3A3B3A;
+}
+
+.pageTitle {
+    font: Bold 30px/36px Rubik;
+    letter-spacing: 0;
+    color: #3A3B3A;
+    opacity: 1;
+}
