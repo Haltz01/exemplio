@@ -1,9 +1,9 @@
+
 .exampleCard {
-    width: 220px;
+    width: 255px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     border-radius: 16px;
-    /* border: 1px solid black; */
     opacity: 1;
 }
 
@@ -28,8 +28,6 @@
 }
 
 .topCardDetail {
-    top: 210px;
-    left: 998px;
     width: 138px;
     height: 8px;
     background: #4DDD4D 0% 0% no-repeat padding-box;
@@ -38,27 +36,22 @@
 }
 
 .imageDetails {
-    top: 245px;
-    left: 429px;
-    width: 138px;
     height: 142px;
-    background: transparent 0% 0% no-repeat padding-box;
     border-radius: 25px;
-    opacity: 1;
 }
 
 .placeOfOriginText {
     font: Medium 13px/15px Rubik;
+    /* border: 1px solid black; */
     letter-spacing: 0;
     color: #9B9B9B;
     opacity: 1;
 }
 
 .exampleNameText {
-    font: Medium 20px/24px Rubik;
-    letter-spacing: 0;
+    font-family: Medium Rubik;
     color: #000000;
-    opacity: 1;
+    letter-spacing: 0;
 }
 
 .exampleTagsText {

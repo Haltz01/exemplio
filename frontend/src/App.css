@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+
 * {
   /* margin: 0;
   padding: 0;
   outline: 0;
   box-sizing: border-box; */
-  font-family: 'Montserrat', sans-serif;
   color: black;
 }
 /*
@@ -16,6 +17,5 @@ body {
 }
 
 body, input, button { /* Input e button, por padrão, não herdam a fonte do corpo do HTML */
-  font-family: 'Montserrat', sans-serif;
   color: black;
 }

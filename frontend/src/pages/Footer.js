@@ -17,7 +17,9 @@ export default function Footer() {
             </div>
             <div className="footerText row justify-content-center text-center mb-1">
                 <div className="col-12">
-                    Termos de uso e política de privacidade
+                    <a href="/termos-e-condicoes">
+                        Termos de uso e política de privacidade
+                    </a>
                 </div>
             </div>
             <div className="row justify-content-center mt-3"> { /* ARRUMAR TAMANHO DOS ICONES */ }

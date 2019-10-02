@@ -1,6 +1,7 @@
 import React from 'react';
 import './Homepage.css';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 // import api from '../services/api';  -> Comunicar-se como backend!
 
@@ -52,6 +53,7 @@ Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculu
 Nam leo nisl, aliquet nec congue at, ullamcorper quis mi. Integer ex mauris, luctus ac urna et, ornare molestie arcu. Praesent congue quam viverra, mattis mi quis, venenatis nulla. Nulla venenatis, ligula vel semper pulvinar, ligula turpis semper lorem, sit amet lobortis nibh mauris eget ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed magna nec arcu ornare pellentesque ut eget lectus. Etiam quis mauris fringilla, euismod libero id, blandit est. Donec laoreet id massa ut sodales. Nulla et scelerisque nibh, id pharetra augue.
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

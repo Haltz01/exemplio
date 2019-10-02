@@ -46,11 +46,11 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                 <div id={ exampleInfo.exemploID } className="customBox d-flex flex-column m-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
                                     <div className="topDetail justify-content-center mb-2"></div>
                                     <h2 className="titleCustom mb-2"> { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
-                                    <img className="imageCustom img-fluid mb-3" src={ exampleInfo.imageLink } alt="Profile"/>
                                     <h5 className="placeOfOriginInProfile mb-2"> 
                                         <img className="mr-2" alt="location" src={locationIcon}/>
                                         { exampleInfo.placeOfOrigin }
                                     </h5>  
+                                    <img className="imageCustom img-fluid mb-3" src={ exampleInfo.imageLink } alt="Profile"/>
                                     <div>
                                         <h4 className="TagsInProfile mb-2" >
                                             {   
