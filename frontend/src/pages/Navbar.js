@@ -6,7 +6,7 @@ import logoExemplio from '../assets/logoSVG.svg';
 
 export default function Navbar() {
     return (
-        <nav className="navbar float-top navbar-expand-sm navbar-light shadow bg-white">
+        <nav className="navbar sticky-top navbar-expand-sm navbar-light shadow bg-white">
             <div className="container">
                 <div className="navbar-header">
                     {/* <!-- Logo--> */}

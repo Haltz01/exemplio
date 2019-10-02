@@ -50,19 +50,22 @@ export default function ExamplesList() {
                         </div>
                     </div>
                     <div className="col-xs col-sm col-md col-lg col-xl">
+
                         <div className="row">
-                            <h2 className="titleCustom m-4 col"> Exemplos </h2>
+                            <h2 className="titleCustom m-4 col"> Novos Exemplos </h2>
                         </div>
-                        <div className="row custumAlignCssRow">
+
+                        <div className="row customAlignCssRow">
+
                             { examplesInfoList.map((exampleInfo) => {
                             return (
-                                <div key={ exampleInfo.exemploID } className="exampleCard d-flex flex-column m-2 align-items-center text-center">
+                                <div key={ exampleInfo.exemploID } className="exampleCard d-flex flex-column m-2 align-items-center text-center px-5">
                                     <div className="topCardDetail justify-content-center"></div>
                                     <Link to={'/exemplo/' + exampleInfo.exemploID }>
                                         <img className="imageDetails img-fluid mt-4 mb-2" src={ WALUIGI } alt="WAAALUIGI"/>
                                         <h2 className="exampleNameText mx-1"> { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
                                         <h5 className="placeOfOriginText mb-2"> 
-                                            <img className="mr-2" src={ locationIcon }/>
+                                            <img className="mr-2" alt="location" src={ locationIcon }/>
                                             { exampleInfo.placeOfOrigin }
                                         </h5>
                                         <h4 className="exampleTagsText m-2 mb-4" >

@@ -48,7 +48,7 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                     <h2 className="titleCustom mb-2"> { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
                                     <img className="imageCustom img-fluid mb-3" src={ exampleInfo.imageLink } alt="Profile"/>
                                     <h5 className="placeOfOriginInProfile mb-2"> 
-                                        <img className="mr-2" src={locationIcon}/>
+                                        <img className="mr-2" alt="location" src={locationIcon}/>
                                         { exampleInfo.placeOfOrigin }
                                     </h5>  
                                     <div>

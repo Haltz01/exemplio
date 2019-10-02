@@ -76,7 +76,7 @@
 }
 
 @media (max-width: 767px) {
-    .custumAlignCssRow {
+    .customAlignCssRow {
         justify-content: center;
     }
   }
