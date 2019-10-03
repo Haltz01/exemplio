@@ -42,8 +42,10 @@ export default function ExamplesList() {
             for (let tagIndex in examplesInfoList[i].tags) {
                 let divToShow = document.getElementById(examplesInfoList[i].firstName + "_" + examplesInfoList[i].exemploID);
 
-                if (examplesInfoList[i].tags[tagIndex] == tag)
+                if (examplesInfoList[i].tags[tagIndex] == tag) {
                     divToShow.style.display = "block";
+                    break;
+                }
                 else
                     divToShow.style.display = "none";
             }
@@ -62,7 +64,7 @@ export default function ExamplesList() {
                                 <a id="Novos Exemplos" className="categoryText nav-link active" href="#" onClick={ () => selectExamplesByTag("Novos Exemplos") }>Novos Exemplos</a>
                                 <a id="Artes" className="categoryText nav-link" href="#" onClick={ () => selectExamplesByTag("Artes") }>Artes</a>
                                 <a id="Causas Sociais" className="categoryText nav-link" href="#" onClick={ () => selectExamplesByTag("Causas Sociais") }>Causas Sociais</a>
-                                <a id="Ciência" className="categoryText nav-link" href="#" onClick={ () => selectExamplesByTag("Ciência") }>Ciência</a>
+                                <a id="Ciências" className="categoryText nav-link" href="#" onClick={ () => selectExamplesByTag("Ciências") }>Ciências</a>
                                 <a id="Educação" className="categoryText nav-link" href="#" onClick={ () => selectExamplesByTag("Educação") }>Educação</a>
                                 <a id="Esporte" className="categoryText nav-link" href="#" onClick={ () => selectExamplesByTag("Esporte") }>Esporte</a>
                                 <a id="Negócios" className="categoryText nav-link" href="#" onClick={ () => selectExamplesByTag("Negócios") }>Negócios</a>
