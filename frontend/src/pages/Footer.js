@@ -9,7 +9,7 @@ import TwitterIcon from '../assets/twitter-logo.svg';
 
 export default function Footer() {
     return (
-        <div className="container align-items-center my-4 py-3"> 
+        <div className="container-fluid align-items-center mt-5 py-3"> 
             <div className="footerText row justify-content-center text-center mt-1">
                 <div className="col-12">
                     Todos os direitos reservados - exemplio 2019.
@@ -22,8 +22,7 @@ export default function Footer() {
                     </a>
                 </div>
             </div>
-            <div className="row justify-content-center mt-3"> { /* ARRUMAR TAMANHO DOS ICONES */ }
-{/* Col? como colocar sem descentralizar */}
+            <div className="row justify-content-center mt-3"> {/* Col? como colocar sem descentralizar */}
                     <img className="img-fluid mx-2 footer-social-icon" src={ InstagramIcon } alt="Instagram Icon" />
                     <img className="img-fluid mx-2 footer-social-icon" src={ FacebookIcon } alt="Facebook Icon" />
                     <img className="img-fluid mx-2 footer-social-icon" src={ TwitterIcon } alt="Twitter Icon" />
