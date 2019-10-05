@@ -27,22 +27,40 @@ export default function ExamplesList() {
 
     function selectExamplesByTag(tag) {
         let aTagSELECTED = document.getElementById(tag);
-        let exampleCards = document.getElementsByClassName("exampleCard");
 
         if (aTagSELECTED === null) return;
 
-        console.log("TAG:" + tag + "AND <A> ELEMENT:", aTagSELECTED); 
+        // console.log("TAG:" + tag + "AND <A> ELEMENT:", aTagSELECTED); 
 
         let currentActive = document.getElementsByClassName("active");
         currentActive[0].className = currentActive[0].className.replace(" active", "");
 
         aTagSELECTED.className += " active";
             
-        for (let i = 0; i < exampleCards.length; i++) {
+        for (let i = 0; i < examplesInfoList.length; i++) {
             for (let tagIndex in examplesInfoList[i].tags) {
                 let divToShow = document.getElementById(examplesInfoList[i].firstName + "_" + examplesInfoList[i].exemploID);
 
-                if (examplesInfoList[i].tags[tagIndex] == tag) {
+                if (examplesInfoList[i].tags[tagIndex] === tag) {
+                    divToShow.style.display = "block";
+                    break;
+                }
+                else
+                    divToShow.style.display = "none";
+            }
+        }
+    };
+
+    function selectNewExamples() {
+        let currDate = new Date();
+        let timestampOneMonthAgo = currDate.getTime() - 2595384863;
+
+        for (let i = 0; i < examplesInfoList.length; i++) {
+            for (let tagIndex in examplesInfoList[i].tags) {
+                let exampleInsertitionDate = new Date(examplesInfoList[i].insertionDate);
+                let divToShow = document.getElementById(examplesInfoList[i].firstName + "_" + examplesInfoList[i].exemploID);
+
+                if (exampleInsertitionDate.getTime() > timestampOneMonthAgo) {
                     divToShow.style.display = "block";
                     break;
                 }
@@ -61,7 +79,7 @@ export default function ExamplesList() {
                         <h2 className="titleCustom m-4 col">Categorias </h2>
                         <div className="categoriesBox p-3">
                             <nav className="nav flex-column" id="categoriesNav" role="tablist">
-                                <a id="Novos Exemplos" className="categoryText nav-link active" href="#" onClick={ () => selectExamplesByTag("Novos Exemplos") }>Novos Exemplos</a>
+                                <a id="Novos Exemplos" className="categoryText nav-link active" href="#" onClick={ () => selectNewExamples() }>Novos Exemplos</a>
                                 <a id="Artes" className="categoryText nav-link" href="#" onClick={ () => selectExamplesByTag("Artes") }>Artes</a>
                                 <a id="Causas Sociais" className="categoryText nav-link" href="#" onClick={ () => selectExamplesByTag("Causas Sociais") }>Causas Sociais</a>
                                 <a id="Ciências" className="categoryText nav-link" href="#" onClick={ () => selectExamplesByTag("Ciências") }>Ciências</a>
