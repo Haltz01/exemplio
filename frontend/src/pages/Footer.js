@@ -22,7 +22,7 @@ export default function Footer() {
                     </a>
                 </div>
             </div>
-            <div className="row justify-content-center mt-3"> {/* Col? como colocar sem descentralizar */}
+            <div className="row justify-content-center mt-3">
                     <img className="img-fluid mx-2 footer-social-icon" src={ InstagramIcon } alt="Instagram Icon" />
                     <img className="img-fluid mx-2 footer-social-icon" src={ FacebookIcon } alt="Facebook Icon" />
                     <img className="img-fluid mx-2 footer-social-icon" src={ TwitterIcon } alt="Twitter Icon" />

@@ -75,7 +75,7 @@ export default function ExamplesList() {
             <Navbar/>
             <div className="container">
                 <div className="row">
-                    <div className="col-xs-1 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div className="col-xs-1 col-sm-6 col-md-5 col-lg-4 col-xl-3">
                         <h2 className="titleCustom m-4 col">Categorias </h2>
                         <div className="categoriesBox p-3">
                             <nav className="nav flex-column" id="categoriesNav" role="tablist">
@@ -94,17 +94,15 @@ export default function ExamplesList() {
                         </div>
                     </div>
                     <div className="col-xs col-sm col-md col-lg col-xl">
-
                         <div className="row">
                             <h2 className="titleCustom m-4 col"> Novos Exemplos </h2>
                         </div>
 
                         <div className="row customAlignCssRow">
-
                             { examplesInfoList.map((exampleInfo) => {
                             return (
-                                <div id={ exampleInfo.firstName + "_" + exampleInfo.exemploID } key={ exampleInfo.firstName + "_" + exampleInfo.exemploID }>
-                                    <div className="exampleCard d-flex flex-column mx-2 my-1 align-items-center text-center">
+                                <div className="" id={ exampleInfo.firstName + "_" + exampleInfo.exemploID } key={ exampleInfo.firstName + "_" + exampleInfo.exemploID }>
+                                    <div className="exampleCard d-flex flex-column m-2 align-items-center text-center">
                                         <div className="topCardDetail justify-content-center"></div>
                                         <Link to={'/exemplo/' + exampleInfo.exemploID }>
                                             <img className="img-fluid imageDetails mt-4 mb-4" src={ exampleInfo.imageLink } alt={ exampleInfo.firstName + " " + exampleInfo.lastName }/>

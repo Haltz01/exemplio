@@ -1,12 +1,12 @@
 
 .exampleCard {
-    width: 255px;
+    width: 265px;
+    height: 360px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     border-radius: 16px;
     opacity: 1;
-    
-} /* display: none; */
+}
 
 .titleCustom {
     font: Bold 30px/36px Rubik;
@@ -75,7 +75,7 @@
     opacity: 1;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1199px) {
     .customAlignCssRow {
         justify-content: center;
     }
