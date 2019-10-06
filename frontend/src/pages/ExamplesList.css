@@ -8,6 +8,16 @@
     opacity: 1;
 }
 
+.exampleCard:hover {
+    transition-duration: 0.2s;
+    border: #3DDD3D solid 1.5px;
+    background-color: rgba(15, 95, 223, 0.031);
+}
+
+.exampleCard a {
+    text-decoration: none;
+}
+
 .titleCustom {
     font: Bold 30px/36px Rubik;
     letter-spacing: 0;

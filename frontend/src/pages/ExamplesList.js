@@ -10,6 +10,7 @@ import api from '../services/api'; // -> Comunicar-se como backend!
 
 export default function ExamplesList() {
     const [examplesInfoList, setExamplesInfoList] = useState([]);
+    const [currentCategory, setCurrentCategory] = useState('Novos Exemplos');
 
     useEffect(() => {
         async function getExamplesInfoList() {
@@ -36,8 +37,13 @@ export default function ExamplesList() {
         currentActive[0].className = currentActive[0].className.replace(" active", "");
 
         aTagSELECTED.className += " active";
-            
-        for (let i = 0; i < examplesInfoList.length; i++) {
+
+        setCurrentCategory(tag);
+
+        if (tag === 'Novos Exemplos')
+            selectNewExamples();
+
+        else for (let i = 0; i < examplesInfoList.length; i++) {
             for (let tagIndex in examplesInfoList[i].tags) {
                 let divToShow = document.getElementById(examplesInfoList[i].firstName + "_" + examplesInfoList[i].exemploID);
 
@@ -79,7 +85,7 @@ export default function ExamplesList() {
                         <h2 className="titleCustom m-4 col">Categorias </h2>
                         <div className="categoriesBox p-3">
                             <nav className="nav flex-column" id="categoriesNav" role="tablist">
-                                <a id="Novos Exemplos" className="categoryText nav-link active" href="#" onClick={ () => selectNewExamples() }>Novos Exemplos</a>
+                                <a id="Novos Exemplos" className="categoryText nav-link active" href="#" onClick={ () => selectExamplesByTag("Novos Exemplos") }>Novos Exemplos</a>
                                 <a id="Artes" className="categoryText nav-link" href="#" onClick={ () => selectExamplesByTag("Artes") }>Artes</a>
                                 <a id="Causas Sociais" className="categoryText nav-link" href="#" onClick={ () => selectExamplesByTag("Causas Sociais") }>Causas Sociais</a>
                                 <a id="Ciências" className="categoryText nav-link" href="#" onClick={ () => selectExamplesByTag("Ciências") }>Ciências</a>
@@ -95,7 +101,7 @@ export default function ExamplesList() {
                     </div>
                     <div className="col-xs col-sm col-md col-lg col-xl">
                         <div className="row">
-                            <h2 className="titleCustom m-4 col"> Novos Exemplos </h2>
+                            <h2 className="titleCustom m-4 col"> {currentCategory} </h2>
                         </div>
 
                         <div className="row customAlignCssRow">

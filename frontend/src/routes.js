@@ -5,6 +5,7 @@ import Homepage from './pages/Homepage';
 import ExampleProfile from './pages/ExampleProfile';
 import ExamplesList from './pages/ExamplesList';
 import termsAndConditions from './pages/termsAndConditions';
+import Sobre from './pages/Sobre';
 
 export default function Routes() {
     return (
@@ -13,6 +14,7 @@ export default function Routes() {
             <Route path="/exemplo/:id" component={ ExampleProfile }/>
             <Route path="/exemplos" exact component={ ExamplesList }/>
             <Route path="/termos-e-condicoes" exact component={ termsAndConditions }/>
+            <Route path="/sobre" exact component={ Sobre }/>
         </BrowserRouter>
     );
 }
