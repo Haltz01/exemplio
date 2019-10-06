@@ -6,6 +6,9 @@ import Footer from './Footer';
 import locationIcon from '../assets/locationIcon.svg'
 
 /*
+-> Align "justified" text inside everything (don't align to the left)
+
+
 Links I'm consulting:
 https://getbootstrap.com/docs/4.3/layout/overview/
 https://getbootstrap.com/docs/4.0/layout/grid/

@@ -40,8 +40,10 @@ export default function ExamplesList() {
 
         setCurrentCategory(tag);
 
-        if (tag === 'Novos Exemplos')
+        if (tag === 'Novos Exemplos') {
             selectNewExamples();
+            return;
+        }
 
         else for (let i = 0; i < examplesInfoList.length; i++) {
             for (let tagIndex in examplesInfoList[i].tags) {
@@ -55,6 +57,8 @@ export default function ExamplesList() {
                     divToShow.style.display = "none";
             }
         }
+
+        return;
     };
 
     function selectNewExamples() {
@@ -81,7 +85,7 @@ export default function ExamplesList() {
             <Navbar/>
             <div className="container">
                 <div className="row">
-                    <div className="col-xs-1 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+                    <div className="col-xs-1 col-sm-5 col-md-5 col-lg-4 col-xl-3">
                         <h2 className="titleCustom m-4 col">Categorias </h2>
                         <div className="categoriesBox p-3">
                             <nav className="nav flex-column" id="categoriesNav" role="tablist">
