@@ -75,7 +75,7 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                 <div className="podcastBox d-flex flex-column m-3 p-4 align-items-left text-left col">
                                     <h1 className="ml-4 titleCustom"> Entrevista </h1>
                                     <div className="ml-md-4 p-2">
-                                        <iframe title="podcastIframe" src="https://castbox.fm/app/castbox/player/id2209666/id187554028?v=8.10.3&autoplay=0&hide_list=1" frameBorder="0" height="204px" className="castbox-responsive-player"/>                                            
+                                        <iframe title="podcastIframe" src={exampleInfo.podcastLink} frameBorder="0" height="204px" className="castbox-responsive-player"/>                                            
                                     </div>
                                 </div>
                             </div>
