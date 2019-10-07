@@ -46,7 +46,7 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                     (Object.keys(exampleInfo).length !== 0 && exampleInfo.tags !== undefined && exampleInfo.tags.length !== 0 && exampleInfo.message === undefined) ? (
                         <div className="container">
                             <div className="row">
-                                <div id={ exampleInfo.exemploID } className="customBox d-flex flex-column m-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
+                                <div id={ exampleInfo.exemploID } className="customBox d-flex flex-column m-3 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
                                     <div className="topDetail justify-content-center mb-2"></div>
                                     <h2 className="titleCustom mb-2"> { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
                                     <h5 className="placeOfOriginInProfile mb-2"> 
@@ -78,7 +78,13 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                 <div className="podcastBox d-flex flex-column m-3 p-4 align-items-left text-left col">
                                     <h1 className="ml-4 titleCustom"> Entrevista </h1>
                                     <div className="ml-md-4 p-2">
-                                        <iframe title="podcastIframe" src={exampleInfo.podcastLink} frameBorder="0" height="204px" className="castbox-responsive-player"/>                                            
+                                        <iframe title="podcastIframe" src={exampleInfo.podcastLink} frameBorder="0" height="204px" className="castbox-responsive-player"/> 
+                                        {
+                                            /* //A cookie associated with a cross-site resource at http://castbox.fm/ was set without the `SameSite` attribute. A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032
+                                                https://www.w3schools.com/js/js_ajax_http_send.asp
+                                                https://stackoverflow.com/questions/17694807/how-to-set-custom-http-headers-when-changing-iframe-src/40623473
+                                            */
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -111,7 +117,6 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                         )  : (console.log("Just wait a moment... Event Description List is empty")) 
                                     }
                                     </div>
-                                    {/* { exampleInfo.eventDescriptionList } */}
                                 </div>
                             </div>
                         </div>
