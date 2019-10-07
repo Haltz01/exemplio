@@ -41,8 +41,9 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
     return (
         <div> 
                 <Navbar/>
+                <div className="container bg-light">
                 {
-                    // Pesquisar um jeito mais fácil de verificar estas condições:
+                    /* // Pesquisar um jeito mais fácil de verificar estas condições: */
                     (Object.keys(exampleInfo).length !== 0 && exampleInfo.tags !== undefined && exampleInfo.tags.length !== 0 && exampleInfo.message === undefined) ? (
                         <div className="container">
                             <div className="row">
@@ -120,7 +121,7 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                 </div>
                             </div>
                         </div>
-                    ) 
+                    )
                     : 
                     (
                         <div className="container">
@@ -137,6 +138,7 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                     )
                 }
                 <Footer />
+                </div>
         </div>
     );
 }
