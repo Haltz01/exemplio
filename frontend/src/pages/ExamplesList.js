@@ -19,52 +19,68 @@ export default function ExamplesList() {
                     'Content-Type': 'application/json'
                 }
             });
-            console.log(response.data);
             setExamplesInfoList(response.data);
+            selectExamplesByTag('Novos Exemplos');
         }
 
         getExamplesInfoList();
     }, []); // [] => executa uma vez
 
-    function selectExamplesByTag(tag) {
-        let aTagSELECTED = document.getElementById(tag);
+    //Função que filtra os exemplos de acordo com a categoria (tag) selecionada pelo usuário
+    function selectExamplesByTag(tag) { 
+        let selectedCategory_a_ = document.getElementById(tag);
+        if (selectedCategory_a_ === null) return;
 
-        if (aTagSELECTED === null) return;
-
-        // console.log("TAG:" + tag + "AND <A> ELEMENT:", aTagSELECTED); 
-
-        let currentActive = document.getElementsByClassName("active");
+        let currentActive = document.getElementsByClassName("categoryText active");
         currentActive[0].className = currentActive[0].className.replace(" active", "");
-
-        aTagSELECTED.className += " active";
+        selectedCategory_a_.className += " active";
 
         setCurrentCategory(tag);
 
+        let atLeastOneExampleFound = false;
+
         if (tag === 'Novos Exemplos') {
             selectNewExamples();
-            return;
+            // TODO: fazer função de mensagem de erro funcionar para esse caso (Novos Exemplos)
+            atLeastOneExampleFound = true;
         }
-
         else for (let i = 0; i < examplesInfoList.length; i++) {
-            for (let tagIndex in examplesInfoList[i].tags) {
-                let divToShow = document.getElementById(examplesInfoList[i].firstName + "_" + examplesInfoList[i].exemploID);
+            let divToShow = document.getElementById(examplesInfoList[i].firstName + "_" + examplesInfoList[i].exemploID);
+            divToShow.style.display = "none";
 
+            for (let tagIndex in examplesInfoList[i].tags) {
                 if (examplesInfoList[i].tags[tagIndex] === tag) {
+                    console.log('To fazendo merda!');
                     divToShow.style.display = "block";
+                    atLeastOneExampleFound = true;
                     break;
                 }
-                else
-                    divToShow.style.display = "none";
             }
+        }
+
+        let notFoundDiv = document.getElementById('exemplos-not-found');
+        if (!notFoundDiv) console.error('"Not found" div not found!!!');
+        
+        if (atLeastOneExampleFound) {
+            notFoundDiv.style.display = 'none';
+        } else {
+            notFoundDiv.style.display = 'block';
         }
 
         return;
     };
 
+    /**
+     * Function responsible for selecting newest examples
+     * Returns true or false (Found at least one example)
+     */
     function selectNewExamples() {
         let currDate = new Date();
         let timestampOneMonthAgo = currDate.getTime() - 2595384863;
 
+        let atLeastOneExampleFound = false;
+
+        // Change functionment to select recent ones even if older than 1 month
         for (let i = 0; i < examplesInfoList.length; i++) {
             for (let tagIndex in examplesInfoList[i].tags) {
                 let exampleInsertitionDate = new Date(examplesInfoList[i].insertionDate);
@@ -72,12 +88,15 @@ export default function ExamplesList() {
 
                 if (exampleInsertitionDate.getTime() > timestampOneMonthAgo) {
                     divToShow.style.display = "block";
+                    atLeastOneExampleFound = true;
                     break;
                 }
                 else
                     divToShow.style.display = "none";
             }
         }
+
+        return atLeastOneExampleFound;
     };
 
     return (
@@ -108,7 +127,12 @@ export default function ExamplesList() {
                             <h2 className="titleCustom m-4 col"> {currentCategory} </h2>
                         </div>
 
-                        <div className="row customAlignCssRow">
+                        <div className="row" id="exemplos-not-found">
+                            <p className="ml-3">
+                                Por enquanto não há exemplos novos<br/>nessa categoria. Deseja ver outros?
+                            </p>
+                        </div>
+                        <div className="customAlignCssRow row">
                             { examplesInfoList.map((exampleInfo) => {
                             return (
                                 <div className="" id={ exampleInfo.firstName + "_" + exampleInfo.exemploID } key={ exampleInfo.firstName + "_" + exampleInfo.exemploID }>
@@ -128,7 +152,7 @@ export default function ExamplesList() {
                                                     exampleInfo.tags.reduce((currentString, nextTag) => {
                                                         return currentString + ', ' + nextTag;
                                                     })
-                                                    : 'Erro, exampleTags.length == 0'
+                                                    : 'Sem categorias'
                                                 }
                                             </h4> 
                                         </Link>
