@@ -1,9 +1,9 @@
 import React from 'react';
 import "./Footer.css";
 
-import FacebookIcon from '../assets/facebook-app-logo.svg';
-import InstagramIcon from '../assets/instagram-logo.svg';
-import TwitterIcon from '../assets/twitter-logo.svg';
+import FacebookIcon from '../assets/facebook-app-logo.png';
+import InstagramIcon from '../assets/instagram-logo.png';
+import TwitterIcon from '../assets/twitter-logo.png';
 
 
 
@@ -23,6 +23,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="row justify-content-center mt-3">
+            <i class="fas fa-camera-retro"></i>
                     <img className="img-fluid mx-2 footer-social-icon" src={ InstagramIcon } alt="Instagram Icon" />
                     <img className="img-fluid mx-2 footer-social-icon" src={ FacebookIcon } alt="Facebook Icon" />
                     <img className="img-fluid mx-2 footer-social-icon" src={ TwitterIcon } alt="Twitter Icon" />
