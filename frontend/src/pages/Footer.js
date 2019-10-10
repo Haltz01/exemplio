@@ -34,6 +34,9 @@ export default function Footer() {
                     <img className="img-fluid mx-2 footer-social-icon" src={ TwitterIcon } alt="Twitter Icon" />
                 </a>
             </div>
+            <div className="row justify-content-center mt-3">
+                <p className="small"> Icons made by Freepik from [ww.flaticon.com] </p>
+            </div>
         </div>
     );
 }
