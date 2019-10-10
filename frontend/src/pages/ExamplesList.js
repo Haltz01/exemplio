@@ -135,7 +135,7 @@ export default function ExamplesList() {
                         <div className="customAlignCssRow row">
                             { examplesInfoList.map((exampleInfo) => {
                             return (
-                                <div className="" id={ exampleInfo.firstName + "_" + exampleInfo.exemploID } key={ exampleInfo.firstName + "_" + exampleInfo.exemploID }>
+                                <div id={ exampleInfo.firstName + "_" + exampleInfo.exemploID } key={ exampleInfo.firstName + "_" + exampleInfo.exemploID }>
                                     <div className="exampleCard d-flex flex-column m-2 align-items-center text-center">
                                         <div className="topCardDetail justify-content-center"></div>
                                         <Link to={'/exemplo/' + exampleInfo.exemploID }>
