@@ -23,7 +23,6 @@ export default function Footer() {
                 </div>
             </div>
             <div className="row justify-content-center mt-3">
-            <i class="fas fa-camera-retro"></i>
                     <img className="img-fluid mx-2 footer-social-icon" src={ InstagramIcon } alt="Instagram Icon" />
                     <img className="img-fluid mx-2 footer-social-icon" src={ FacebookIcon } alt="Facebook Icon" />
                     <img className="img-fluid mx-2 footer-social-icon" src={ TwitterIcon } alt="Twitter Icon" />

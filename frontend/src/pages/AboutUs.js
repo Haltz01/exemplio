@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-import './Sobre.css'
+import './AboutUs.css'
 
 import locationIcon from '../assets/locationIcon.svg'
 

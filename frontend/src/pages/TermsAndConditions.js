@@ -1,5 +1,5 @@
 import React from 'react';
-import './termsAndConditions.css';
+import './TermsAndConditions.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
