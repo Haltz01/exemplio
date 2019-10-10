@@ -1,4 +1,5 @@
 import React from 'react';
+
 import "./Footer.css";
 
 import FacebookIcon from '../assets/facebook-app-logo.png';
@@ -23,12 +24,15 @@ export default function Footer() {
                 </div>
             </div>
             <div className="row justify-content-center mt-3">
-                    <img className="img-fluid mx-2 footer-social-icon" src={ InstagramIcon } alt="Instagram Icon" />
+                <a href="https://www.facebook.com/exemplioBR">
                     <img className="img-fluid mx-2 footer-social-icon" src={ FacebookIcon } alt="Facebook Icon" />
+                </a>
+                <a href="https://www.instagram.com/exemplio/">
+                    <img className="img-fluid mx-2 footer-social-icon" src={ InstagramIcon } alt="Instagram Icon" />
+                </a>
+                <a href="https://twitter.com/exemplioBR">
                     <img className="img-fluid mx-2 footer-social-icon" src={ TwitterIcon } alt="Twitter Icon" />
-            </div>
-            <div className="row justify-content-center mt-3">
-                <p className="small"> Icons made by Freepik from [ww.flaticon.com] </p>
+                </a>
             </div>
         </div>
     );
