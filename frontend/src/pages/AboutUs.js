@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-import './Sobre.css'
+import './AboutUs.css'
 
 import locationIcon from '../assets/locationIcon.svg'
 
@@ -15,7 +15,7 @@ import DaniloPereira from '../assets/exemplio-team-images/DaniloPereira.jpg';
 import VitorHugo from '../assets/exemplio-team-images/VitorHugo.jpg';
 
 
-export default function Sobre() {
+export default function AboutUs() {
     return (
         <div>
             <Navbar/>
