@@ -63,7 +63,7 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                     (Object.keys(exampleInfo).length !== 0 && exampleInfo.tags !== undefined && exampleInfo.tags.length !== 0 && exampleInfo.message === undefined) ? (
                         <div className="container">
                             <div className="row">
-                                <div id={ exampleInfo.exemploID } className="customBox d-flex flex-column m-3 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
+                                <div id={ exampleInfo.exemploID } className="customBox d-flex flex-column m-3 align-items-center text-center h-100 col-xs col-sm-11 col-md-11 col-lg-3">
                                     <div className="topDetail justify-content-center mb-2"></div>
                                     <h2 className="titleCustom mb-2"> { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
                                     <h5 className="placeOfOriginInProfile mb-2"> 
@@ -83,58 +83,65 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                             }
                                         </h4> 
                                     </div>
-                                </div>
-                                <div className="aboutBox d-flex flex-column m-3 p-3 align-items-left text-left col">
-                                    <h1 className="ml-4 titleCustom"> Sobre </h1> 
-                                    <p className="ml-4 mr-3 aboutDescription"> 
-                                        { exampleInfo.briefing }
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="podcastBox d-flex flex-column m-3 p-4 align-items-left text-left col">
-                                    <h1 className="ml-4 titleCustom"> Entrevista </h1>
-                                    <div className="ml-md-4 p-2">
-                                        <iframe title="podcastIframe" src={exampleInfo.podcastLink} frameBorder="0" height="204px" className="castbox-responsive-player"/> 
-                                        {
-                                            /* //A cookie associated with a cross-site resource at http://castbox.fm/ was set without the `SameSite` attribute. A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032
-                                                https://www.w3schools.com/js/js_ajax_http_send.asp
-                                                https://stackoverflow.com/questions/17694807/how-to-set-custom-http-headers-when-changing-iframe-src/40623473
-                                            */
-                                        }
+                                    <div className="d-flex flex-column m-3 align-items-left text-justify col">
+                                        <h1 className="titleCustom text-center"> Sobre </h1> 
+                                        <p className="aboutDescription"> 
+                                            { exampleInfo.briefing }
+                                        </p>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="row">
-                                <div className="customBox m-3 p-3 col">
-                                   <h2 className="titleCustom ml-4"> Linha do tempo de { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
-                                   <div className="d-flex comments flex-column m-2 align-items-center">
-                                    { 
-                                        (exampleInfo.eventDescriptionList !== undefined) ? ( 
-                                            exampleInfo.eventDescriptionList.map((element, index) => {
-                                                return (
-                                                    <div key={"timeline_"+index} className="timelineInfo comment bubble m-1 mt-4 p-3 col-xs col-sm-10 col-md-8 col-lg-6">
-                                                        <div className="row ">
-                                                            <div className="col text-left">
-                                                                <p className="eventTitle"> <strong> {exampleInfo.eventTitleList[index]} </strong> </p>
-                                                            </div>
-                                                            <div className="align-items-right col">
-                                                                <div className="d-flex flex-column align-items-center float-right">
-                                                                    <div className="eventDate">
-                                                                        {exampleInfo.eventDateList[index]}
+                                <div className="col">
+                                    <div className="podcastBox d-flex flex-column mt-3 p-4 align-items-left text-left col">
+                                        <h1 className="m-1 titleCustom"> Entrevista </h1>
+                                        <div className="m-1 p-2">
+                                            <iframe title="podcastIframe" src={exampleInfo.podcastLink} frameBorder="0" className="castbox-responsive-player"/> 
+                                            {
+                                                /* //A cookie associated with a cross-site resource at http://castbox.fm/ was set without the `SameSite` attribute. 
+                                                    A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and 
+                                                    `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at 
+                                                    https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032
+                                                    https://www.w3schools.com/js/js_ajax_http_send.asp
+                                                    https://stackoverflow.com/questions/17694807/how-to-set-custom-http-headers-when-changing-iframe-src/40623473
+                                                */
+                                            }
+                                        </div>
+                                    </div>
+                                    <div className="customBox mt-3 p-3 col">
+                                        <h2 className="titleCustom ml-4"> Linha do tempo de { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
+                                        <div className="d-flex comments flex-column m-2 align-items-center">
+                                        { 
+                                            (exampleInfo.eventDescriptionList !== undefined) ? ( 
+                                                exampleInfo.eventDescriptionList.map((element, index) => {
+                                                    return (
+                                                        <div key={"timeline_"+index} className="timelineInfo comment bubble m-1 mt-4 p-3 col-xs col-sm-10 col-md-8 col-lg-8">
+                                                            <div className="row ">
+                                                                <div className="col text-left">
+                                                                    <p className="eventTitle"> <strong> {exampleInfo.eventTitleList[index]} </strong> </p>
+                                                                </div>
+                                                                <div className="align-items-right col">
+                                                                    <div className="d-flex flex-column align-items-center float-right">
+                                                                        <div className="eventDate">
+                                                                            {exampleInfo.eventDateList[index]}
+                                                                        </div>
+                                                                        <div className="dateDetailLine"></div>
                                                                     </div>
-                                                                    <div className="dateDetailLine"></div>
                                                                 </div>
                                                             </div>
+                                                            { element }
                                                         </div>
-                                                        { element }
-                                                    </div>
-                                                )
-                                            })
-                                        )  : (console.log("Just wait a moment... Event Description List is empty")) 
-                                    }
+                                                    )
+                                                })
+                                            )  : (console.log("Just wait a moment... Event Description List is empty")) 
+                                        }
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div className="row">
+                               
+                            </div>
+                            <div className="row">
+                                
                             </div>
                         </div>
                     )
