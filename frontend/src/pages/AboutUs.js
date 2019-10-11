@@ -13,6 +13,7 @@ import GuilhermeCoube from '../assets/exemplio-team-images/GuilhermeCoube.jpg';
 import VictorReis from '../assets/exemplio-team-images/VictorReis.jpg';
 import DaniloPereira from '../assets/exemplio-team-images/DaniloPereira.jpg';
 import VitorHugo from '../assets/exemplio-team-images/VitorHugo.jpg';
+import MarcusVinicius from '../assets/exemplio-team-images/MarcusVinicius.jpg';
 
 
 export default function AboutUs() {
@@ -186,6 +187,24 @@ export default function AboutUs() {
                             Cubatão - SP
                         </h5>
                         <h4> Desenvolvedor Web </h4>
+                    </div>
+                    <div className="sobre-div d-flex flex-column m-2 p-4 col">
+                        <p className="sobre-titulo"> Sobre </p>
+                        -- Inserir descrição aqui --
+                    </div>
+                </div>
+
+                { /* ------------------ MARCUS VINICIUS ------------------ */}
+                <div className="row d-flex justify-content-center">
+                    <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
+                        <div className="topDetail justify-content-center mb-2"></div>
+                        <h2 className="titleCustom my-2"> Marcus Vinícius </h2> 
+                        <img className="imageCustom img-fluid mb-3" src={ MarcusVinicius } alt="Profile"/>
+                        <h5 className="placeOfOriginInProfile mb-2"> 
+                            <img className="mr-2" alt="location" src={locationIcon}/>
+                            Santos - SP
+                        </h5>
+                        <h4> Desenvolvedor Web Full Stack </h4>
                     </div>
                     <div className="sobre-div d-flex flex-column m-2 p-4 col">
                         <p className="sobre-titulo"> Sobre </p>
