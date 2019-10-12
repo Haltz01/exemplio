@@ -86,7 +86,7 @@
     height: 470px;
 }
 
-.exemplos-not-found {
+#searching-examples-timeout {
     display: none;
 }
 

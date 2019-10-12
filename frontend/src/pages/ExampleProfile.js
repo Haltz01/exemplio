@@ -7,13 +7,10 @@ import locationIcon from '../assets/locationIcon.svg'
 
 /*
 -> Align "justified" text inside everything (don't align to the left)
-
-
 Links I'm consulting:
 https://getbootstrap.com/docs/4.3/layout/overview/
 https://getbootstrap.com/docs/4.0/layout/grid/
 https://getbootstrap.com/docs/4.3/utilities/spacing/
-
 https://xd.adobe.com/spec/cc1222ea-4331-481b-5719-3dd15471d179-ba23/screen/81b20b49-1400-4a5d-bf83-f66450699859/P-gina-do-exemplo
 */
 
