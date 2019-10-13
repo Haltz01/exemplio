@@ -5,6 +5,7 @@ import Footer from './Footer';
 import Navbar from './Navbar';
 
 import locationIcon from '../assets/locationIcon.svg'
+import exemplioLogo from '../assets/LogoVertical.svg';
 
 import api from '../services/api'; // -> Comunicar-se como backend!
 
@@ -45,7 +46,10 @@ export default function ExamplesList() {
     //Handles notFoundDiv appearence
     useEffect(() => {
         let notFoundDiv = document.getElementById('examples-not-found');
-        if (!notFoundDiv) console.error('"Not found" div not found!!!');
+
+        if (!notFoundDiv) 
+            console.error('"Not found" div not found!!!');
+
         if (noExamplesFound) {
             if (searchingProgress) //Only show "No Examples" if DB has communicated
                 notFoundDiv.style.display = 'block';
@@ -57,11 +61,15 @@ export default function ExamplesList() {
     //Exibe mensagem de "Buscando exemplos" até o banco de dados retorná-los
     useEffect(() => {
         let searchingDiv = document.getElementById('searching-examples');
+        let categoryTitleDiv = document.getElementById('category-title');
+
         if (searchingProgress) {
             searchingDiv.style.display = 'none';
+            categoryTitleDiv.style.display = 'block';
         }
         else {
             searchingDiv.style.display = 'block';
+            categoryTitleDiv.style.display = 'none';
         }
     }, [searchingProgress]);
     //Atualiza o timeout da div de search timeout
@@ -154,25 +162,73 @@ export default function ExamplesList() {
                         </div>
                     </div>
                     <div className="col-xs col-sm col-md col-lg col-xl">
-                        <div className="row">
+                        <div className="row" id="category-title">
                             <h2 className="titleCustom m-4 col"> {currentCategory} </h2>
                         </div>
 
                         <div className="row" id="searching-examples">
-                            <p className="ml-3 text-center">
-                                Buscando exemplos... Por favor aguarde.<br/>
-                                <span className="text-center" id="searching-examples-timeout">
-                                    Parece que há um problema de conexão com o servidor! <br/>   
-                                    <button type="button" className="btn btn-link" onClick={()=>window.location.reload()}>Recarregar a página</button>
-                                </span>
-                            </p>
+                            <div className="row d-flex flex-column col">
+                                <h2 className="titleCustom m-4"> Buscando exemplos... </h2>
+                                <div className="p-3">
+                                    Por favor, aguarde. A conexão parece estar um pouco lenta. <br/>
+                                    <span id="searching-examples-timeout">
+                                        Parece que há um problema de conexão com o servidor. 
+                                        <button type="button" className="btn btn-link" onClick={()=>window.location.reload()}> Tente recarregar a página! </button>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div className="customAlignCssRow row">
+                                <div className="exampleCardInvalid d-flex flex-column m-2 align-items-center text-center">
+                                    <div className="topCardDetail justify-content-center"></div>
+                                    <img className="img-fluid imageDetails mt-4 mb-4" src={ exemplioLogo } alt="Carregando imagem"/>
+                                    <h2 className="exampleNameText mx-1"> Carregando nome... </h2>
+                                    <h5 className="placeOfOriginText mb-2"> 
+                                        <img className="mr-2" alt="location" src={ locationIcon }/>
+                                        Carregando localização...
+                                    </h5>
+                                    <h4 className="exampleTagsText m-2 mb-4" >
+                                        Carregando tags...
+                                    </h4> 
+                                </div>
+                                <div className="exampleCardInvalid d-flex flex-column m-2 align-items-center text-center">
+                                    <div className="topCardDetail justify-content-center"></div>
+                                    <img className="img-fluid imageDetails mt-4 mb-4" src={ exemplioLogo } alt="Carregando imagem"/>
+                                    <h2 className="exampleNameText mx-1"> Carregando nome... </h2>
+                                    <h5 className="placeOfOriginText mb-2"> 
+                                        <img className="mr-2" alt="location" src={ locationIcon }/>
+                                        Carregando localização...
+                                    </h5>
+                                    <h4 className="exampleTagsText m-2 mb-4" >
+                                        Carregando tags...
+                                    </h4> 
+                                </div>
+                                <div className="exampleCardInvalid d-flex flex-column m-2 align-items-center text-center">
+                                    <div className="topCardDetail justify-content-center"></div>
+                                    <img className="img-fluid imageDetails mt-4 mb-4" src={ exemplioLogo } alt="Carregando imagem"/>
+                                    <h2 className="exampleNameText mx-1"> Carregando nome... </h2>
+                                    <h5 className="placeOfOriginText mb-2"> 
+                                        <img className="mr-2" alt="location" src={ locationIcon }/>
+                                        Carregando localização...
+                                    </h5>
+                                    <h4 className="exampleTagsText m-2 mb-4" >
+                                        Carregando tags...
+                                    </h4> 
+                                </div>
+                            </div>
                         </div>
 
                         <div className="row" id="examples-not-found">
-                            <p className="ml-3">
-                                Por enquanto não há exemplos novos<br/>nessa categoria. Deseja ver outros?
-                            </p>
+                            <div className="categoriesBox d-flex text-center ml-3 p-3">
+                                <div className="align-itens-center m-auto text-center">
+                                    <h3 className="noExamplesMessage"> Por enquanto não há exemplos nessa categoria. <br/> Desculpe :( <br/><br/>
+                                    Enquanto não adicionamos exemplos aqui, <br />
+                                    aproveite para olhar outras categorias!
+                                    </h3>
+                                </div>
+                            </div>
                         </div>
+
                         <div className="customAlignCssRow row">
                             { examplesInfoList.map((exampleInfo) => {
                             return (
