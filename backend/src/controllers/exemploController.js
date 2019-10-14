@@ -62,7 +62,7 @@ module.exports = {
      * @param {express.Response} res 
      */
     async getBasicList(req, res) {
-        let sqlQuery = "select exemploID, firstName, lastName, placeOfOrigin, tags, imageLink, insertionDate from exemploBasicInfo;";
+        let sqlQuery = "select exemploID, firstName, lastName, placeOfOrigin, tags, imageLink, insertionDate from exemploBasicInfo order by insertionDate desc  ;";
     
         await db.query(sqlQuery, (error, queryResult) => {
             if (error) {
