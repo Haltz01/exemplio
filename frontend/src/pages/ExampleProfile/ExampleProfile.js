@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './ExampleProfile.css';
-import Navbar from './Navbar';
-import Footer from './Footer';
+import Navbar from '../../Components/Navbar.js';
+import Footer from '../../Components/Footer.js';
+import { normalizePodcastUrl } from './utils';
 
-import locationIcon from '../assets/locationIcon.svg'
+import locationIcon from '../../assets/locationIcon.svg'
 
 /*
 -> Align "justified" text inside everything (don't align to the left)
@@ -14,7 +15,7 @@ https://getbootstrap.com/docs/4.3/utilities/spacing/
 https://xd.adobe.com/spec/cc1222ea-4331-481b-5719-3dd15471d179-ba23/screen/81b20b49-1400-4a5d-bf83-f66450699859/P-gina-do-exemplo
 */
 
-import api from '../services/api'; // -> Comunicar-se como backend!
+import api from '../../services/api'; // -> Comunicar-se como backend!
 
 /**
 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -38,7 +39,7 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
     // Conexão com backend para buscar informações de um exemplo específico
     useEffect(() => {
         async function getExampleInfo() {
-            const response = await api.get(`/exemplos/${match.params.id}`, {
+            const response = await api.get(`/exemplos/${match.params.exampleID}`, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -49,7 +50,7 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
 
         getExampleInfo();
 
-    }, [match.params.id]); // executa sempre que há alteração em match.params.id
+    }, [match.params.exampleID]); // executa sempre que há alteração em match.params.exampleID
 
     return (
         <div> 
@@ -91,7 +92,7 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                     <div className="podcastBox d-flex flex-column mt-3 p-4 align-items-left text-left col">
                                         <h1 className="m-1 titleCustom"> Entrevista </h1>
                                         <div className="m-1 p-2">
-                                            <iframe title="podcastIframe" src={exampleInfo.podcastLink} frameBorder="0" className="castbox-responsive-player"/> 
+                                            <iframe title="podcastIframe" src={ normalizePodcastUrl(exampleInfo.podcastLink) } frameBorder="0" className="castbox-responsive-player"/> 
                                             {
                                                 /* //A cookie associated with a cross-site resource at http://castbox.fm/ was set without the `SameSite` attribute. 
                                                     A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and 

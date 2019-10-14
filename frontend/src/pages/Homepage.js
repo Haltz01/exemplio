@@ -1,7 +1,7 @@
 import React from 'react';
 import './Homepage.css';
-import Navbar from './Navbar';
-import Footer from './Footer';
+import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 // import api from '../services/api';  -> Comunicar-se como backend!
 

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './ExamplesList.css';
-import Footer from './Footer';
-import Navbar from './Navbar';
+import Footer from '../Components/Footer.js';
+import Navbar from '../Components/Navbar.js';
 
 import locationIcon from '../assets/locationIcon.svg'
 import exemplioLogo from '../assets/LogoVertical.svg';
@@ -56,7 +56,7 @@ export default function ExamplesList() {
         } else {
             notFoundDiv.style.display = 'none';
         }
-    }, [noExamplesFound]);
+    }, [noExamplesFound, searchingProgress]);
 
     //Exibe mensagem de "Buscando exemplos" até o banco de dados retorná-los
     useEffect(() => {
