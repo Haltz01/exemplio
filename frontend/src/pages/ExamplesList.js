@@ -147,17 +147,17 @@ export default function ExamplesList() {
                         <h2 className="titleCustom m-4 col">Categorias </h2>
                         <div className="categoriesBox p-3">
                             <nav className="nav flex-column" id="categoriesNav" role="tablist">
-                                <a id="Novos Exemplos" className="categoryText nav-link" href="#" onClick={ () => setCurrentCategory("Novos Exemplos") }>Novos Exemplos</a>
-                                <a id="Artes" className="categoryText nav-link" href="#" onClick={ () => setCurrentCategory("Artes") }>Artes</a>
-                                <a id="Causas Sociais" className="categoryText nav-link" href="#" onClick={ () => setCurrentCategory("Causas Sociais") }>Causas Sociais</a>
-                                <a id="Ciências" className="categoryText nav-link" href="#" onClick={ () => setCurrentCategory("Ciências") }>Ciências</a>
-                                <a id="Educação" className="categoryText nav-link" href="#" onClick={ () => setCurrentCategory("Educação") }>Educação</a>
-                                <a id="Esporte" className="categoryText nav-link" href="#" onClick={ () => setCurrentCategory("Esporte") }>Esporte</a>
-                                <a id="Negócios" className="categoryText nav-link" href="#" onClick={ () => setCurrentCategory("Negócios") }>Negócios</a>
-                                <a id="Política" className="categoryText nav-link" href="#" onClick={ () => setCurrentCategory("Política") }>Política</a>
-                                <a id="Sustentabilidade" className="categoryText nav-link" href="#" onClick={ () => setCurrentCategory("Sustentabilidade") }>Sustentabilidade</a>
-                                <a id="Tecnologia" className="categoryText nav-link" href="#" onClick={ () => setCurrentCategory("Tecnologia") }>Tecnologia</a>
-                                <a id="Voluntariado" className="categoryText nav-link active" href="#" onClick={ () => setCurrentCategory("Voluntariado") }>Voluntariado</a>
+                                <Link id="Novos Exemplos" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Novos Exemplos") }>Novos Exemplos</Link>
+                                <Link id="Artes" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Artes") }>Artes</Link>
+                                <Link id="Causas Sociais" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Causas Sociais") }>Causas Sociais</Link>
+                                <Link id="Ciências" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Ciências") }>Ciências</Link>
+                                <Link id="Educação" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Educação") }>Educação</Link>
+                                <Link id="Esporte" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Esporte") }>Esporte</Link>
+                                <Link id="Negócios" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Negócios") }>Negócios</Link>
+                                <Link id="Política" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Política") }>Política</Link>
+                                <Link id="Sustentabilidade" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Sustentabilidade") }>Sustentabilidade</Link>
+                                <Link id="Tecnologia" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Tecnologia") }>Tecnologia</Link>
+                                <Link id="Voluntariado" className="categoryText nav-link active" to="#" onClick={ () => setCurrentCategory("Voluntariado") }>Voluntariado</Link>
                             </nav>
                         </div>
                     </div>
