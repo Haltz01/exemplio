@@ -1,0 +1,82 @@
+.firstBlockTitle {
+    font: Medium 50px/60px Rubik;
+    font-weight: bold;
+    letter-spacing: 0;
+    color: rgb(255, 255, 255);
+    opacity: 1;
+}
+
+.firstBlockSubtitle {
+    font: Regular 30px/36px Rubik;
+    letter-spacing: 0;
+    color: rgb(255, 255, 255);
+    opacity: 1;
+}
+
+.firstBlockBackground {
+    /* background: #4DDD4D 0% 0% no-repeat padding-box; */
+    opacity: 1;
+    background: linear-gradient(134deg, #4ddd4d, #007bff);
+    background-size: 300% 300%;
+    -webkit-animation: backgroundGradient 30s ease infinite;
+    -moz-animation: backgroundGradient 30s ease infinite;
+    animation: backgroundGradient 30s ease infinite;
+}
+
+@-webkit-keyframes backgroundGradient {
+    0%{background-position:0% 56%}
+    50%{background-position:100% 45%}
+    100%{background-position:0% 56%}
+}
+@-moz-keyframes backgroundGradient {
+    0%{background-position:0% 56%}
+    50%{background-position:100% 45%}
+    100%{background-position:0% 56%}
+}
+@keyframes backgroundGradient {
+    0%{background-position:0% 56%}
+    50%{background-position:100% 45%}
+    100%{background-position:0% 56%}
+}
+
+@-webkit-keyframes buttonGradient {
+    0%{background-position:0% 23%}
+    50%{background-position:100% 78%}
+    100%{background-position:0% 23%}
+}
+@-moz-keyframes buttonGradient {
+    0%{background-position:0% 23%}
+    50%{background-position:100% 78%}
+    100%{background-position:0% 23%}
+}
+@keyframes buttonGradient {
+    0%{background-position:0% 23%}
+    50%{background-position:100% 78%}
+    100%{background-position:0% 23%}
+}
+
+.accessExamplesButton {
+    font: Medium 20px/24px Rubik;
+    border: 5px solid rgb(255, 255, 255);
+    border-radius: 27px;
+    background: linear-gradient(92deg, #4ddd4d, #007bff);
+    background-size: 300% 300%;
+    -webkit-animation: buttonGradient 30s ease infinite;
+    -moz-animation: buttonGradient 30s ease infinite;
+    animation: buttonGradient 30s ease infinite;
+}
+
+.accessExamplesButton:hover {
+    background: linear-gradient(92deg, #4ddd4d, #fbff00 );
+}
+
+.firstBlockButtonText {
+    letter-spacing: 0;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.separeteBlock {
+    background: rgba(255, 255, 255, 0.548);
+    height: 14px;
+}

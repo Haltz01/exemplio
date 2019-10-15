@@ -1,57 +1,79 @@
 import React from 'react';
+
 import './Homepage.css';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
+
+import exemplioLogo from '../assets/LogoVertical.svg';
 
 // import api from '../services/api';  -> Comunicar-se como backend!
 
 export default function Homepage() {
     return (
         <div>
-            <Navbar/>
-            <div className="container">
-                <div> DIV DE TESTE - "Homepage" </div>
-                <div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut orci fringilla, condimentum est nec, mollis orci. Cras porttitor dui quis velit ultrices pellentesque. Donec finibus nibh at faucibus elementum. Vivamus vel ipsum aliquet, convallis velit sed, feugiat turpis. Donec porttitor sapien non elit dignissim imperdiet. Donec sed scelerisque dolor. Ut a hendrerit mauris. Sed mollis lobortis neque, a vestibulum magna. Donec vulputate, ipsum sed iaculis rhoncus, ipsum diam varius ex, eu condimentum justo arcu non metus. Donec eget sem ligula. Nullam id iaculis massa, ut lacinia odio. Duis porttitor leo ut tortor efficitur, vitae malesuada enim auctor. Cras leo nibh, lacinia et vehicula et, congue nec mauris. Donec a dolor mauris. Suspendisse hendrerit, lorem eget fringilla tristique, dolor justo pellentesque nisi, in sollicitudin orci dolor vitae ipsum. In nec rutrum nisi, fermentum hendrerit dolor.
-
-Pellentesque eu dui cursus, sagittis turpis imperdiet, sodales tellus. Nulla sodales massa in iaculis efficitur. Duis mi nunc, euismod vel tempus sit amet, ultrices non odio. Sed non risus eleifend neque sollicitudin venenatis eget a est. In ullamcorper laoreet diam, feugiat auctor risus egestas eu. Duis consectetur eleifend eros, at fringilla felis consectetur vitae. Suspendisse sagittis eu enim vitae dictum. Proin ut facilisis turpis. Sed porttitor lacinia mi et sodales. Aliquam erat volutpat. Suspendisse porta diam eu felis tristique, non viverra ante facilisis. Nullam eleifend mattis felis. In ultrices eleifend ex eu cursus. Praesent volutpat sollicitudin quam, at lacinia nibh. Duis et neque at mauris dignissim consequat.
-
-Vestibulum tincidunt diam vel diam pulvinar scelerisque. Nulla congue pulvinar finibus. Donec semper ligula at nulla maximus pharetra. Nullam accumsan pellentesque mi, id iaculis eros vehicula eu. Fusce vulputate augue vehicula, tincidunt urna vitae, luctus massa. Donec vitae nulla sed odio tristique pulvinar. Mauris sit amet mauris quis metus pharetra fringilla vel sed nibh. Phasellus cursus varius sem, in tempor felis imperdiet nec. Aliquam at lacus semper, eleifend ligula id, elementum nibh. Pellentesque eget nunc quis ex sagittis porttitor vitae eget diam. Vestibulum ex mi, convallis nec leo id, semper tincidunt diam. Suspendisse eleifend nunc vel mollis molestie. Etiam consectetur mattis maximus. In vitae ultrices velit. Duis rhoncus, mauris quis rutrum laoreet, nunc ligula ornare erat, vitae aliquam nibh diam in arcu.
-
-Vestibulum a pharetra mi, quis ornare risus. Ut sit amet vestibulum nibh, non malesuada elit. Nam sem neque, iaculis vitae ligula at, rutrum tincidunt leo. Phasellus fermentum vulputate nisl sit amet finibus. Pellentesque condimentum vulputate pulvinar. Quisque lobortis ullamcorper mattis. Phasellus vitae lectus vestibulum, imperdiet elit at, molestie erat. Ut pulvinar vestibulum enim, at egestas sem cursus ac. Duis non leo blandit ex tempus ultrices a vel dui.
-
-Fusce lorem mauris, dignissim in quam eget, egestas condimentum urna. Donec nisl arcu, sodales id lacinia non, ultricies eu lacus. Suspendisse venenatis mauris ut velit dignissim, vitae rhoncus felis feugiat. Nam blandit lectus quis sem gravida, vitae pretium ex consectetur. Nam id egestas libero. Mauris diam velit, volutpat vitae orci et, ultrices lobortis erat. Maecenas iaculis diam sed arcu efficitur malesuada. Morbi fermentum vel erat ac accumsan. Pellentesque tristique odio feugiat vehicula iaculis. Nam id diam dolor. Aenean dapibus sollicitudin mauris, a viverra nibh feugiat et. Etiam finibus porttitor scelerisque. Fusce rhoncus sodales risus, ut molestie lacus maximus eget. In urna dui, pulvinar sit amet purus vel, convallis accumsan arcu. Sed sed velit vitae metus consectetur commodo.
-
-Ut eget mollis mi. Suspendisse tempus nunc vel augue mollis, ut consequat nulla convallis. Maecenas ac maximus neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus sollicitudin metus semper mauris scelerisque scelerisque. Quisque fermentum libero vitae finibus imperdiet. Nam libero elit, tempus in finibus id, rhoncus at lacus. Duis sed tempus nisl. In tortor tortor, blandit vitae semper vitae, euismod vitae lectus. Vivamus vel semper dolor. Curabitur placerat erat vitae tempus auctor. Nulla facilisi. In laoreet semper venenatis.
-
-Sed facilisis nulla sed iaculis vulputate. Aliquam finibus est quis ullamcorper aliquam. Pellentesque cursus sem lacinia aliquam convallis. Pellentesque vel tellus nec turpis convallis euismod et eu leo. Etiam eu purus urna. Ut consequat libero et felis hendrerit, in ultricies sem convallis. Pellentesque volutpat nibh in nisi convallis, et posuere lacus fringilla. Vestibulum rhoncus tincidunt ornare. Aenean id sagittis massa.
-
-Suspendisse sagittis tempor enim, et aliquet ipsum posuere vitae. Quisque ultricies ac eros a tempor. In eros leo, rutrum a accumsan eu, porttitor sed mauris. Pellentesque justo ex, pellentesque vel elit id, rhoncus finibus felis. Aenean vehicula turpis a sapien vulputate condimentum. Fusce hendrerit felis vitae luctus faucibus. Mauris non sapien nisi. Cras feugiat tempus dui eu auctor. Proin tempor mattis ante id tincidunt. Aenean id blandit quam, sit amet ultrices massa. Sed in mollis sem, a sollicitudin ante. In leo velit, pharetra et lacus in, bibendum pellentesque quam. Duis non risus egestas tellus varius cursus. Sed luctus egestas eros, dictum volutpat turpis aliquet in. Mauris congue, ante in hendrerit molestie, elit ipsum egestas mauris, vitae accumsan sem massa in tortor. Etiam mi augue, accumsan vitae consectetur non, consequat id urna.
-
-Proin ut felis iaculis, vehicula nunc nec, laoreet justo. Etiam justo elit, sodales in nisi congue, mattis sagittis ante. Mauris non ornare libero. Cras accumsan ligula nisl, blandit ultricies justo tincidunt at. In hac habitasse platea dictumst. Sed quis iaculis lacus, eget euismod magna. Nullam dignissim ligula sed massa interdum, id ultricies dolor sollicitudin. Maecenas sem lectus, condimentum ut massa et, varius tincidunt quam. Nunc vulputate efficitur finibus. Cras nec faucibus massa. Nullam posuere nisi odio, et tincidunt tortor suscipit at. Nullam malesuada metus sed augue consequat, sed maximus dui mollis. Duis a felis sit amet velit mollis porttitor.
-
-Ut id vulputate enim. Etiam porta interdum lectus vel ornare. Cras ultricies, libero vitae auctor auctor, erat sem varius lectus, et pellentesque libero sapien in nulla. Phasellus at convallis lacus. Praesent volutpat suscipit sapien ut eleifend. Praesent pellentesque urna diam, non pellentesque lorem interdum et. Proin et diam augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus euismod tellus eget faucibus commodo. Nulla facilisi. Vestibulum mollis tincidunt ante. Nunc ac orci diam. Vivamus eleifend nunc sit amet ligula dictum facilisis. Phasellus eu neque consectetur, aliquet mauris sit amet, ornare nibh. Morbi interdum tincidunt suscipit. Etiam semper tincidunt ex et finibus.
-
-Aliquam eget pharetra neque, eu molestie metus. Praesent in massa augue. Curabitur elementum, leo at ullamcorper faucibus, purus turpis iaculis justo, fermentum feugiat est diam non velit. Aenean bibendum efficitur quam. Donec tellus enim, viverra vitae sagittis nec, fermentum ac dolor. Sed vel dui velit. Donec sed diam finibus, interdum tellus nec, mollis quam. Phasellus a tincidunt est, non cursus sapien. Sed blandit purus vel cursus imperdiet. Duis quis placerat arcu. Aliquam sollicitudin euismod odio. Cras id porta lorem, ut ullamcorper magna.
-
-Donec placerat enim id lacus cursus vestibulum. Quisque lobortis at quam quis convallis. Suspendisse auctor sed erat dignissim cursus. Fusce dignissim mattis fermentum. Pellentesque consequat velit id metus euismod imperdiet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget nulla nisl. Aenean vel nunc vitae diam vulputate mattis. Morbi viverra ex diam, id consequat risus fermentum ac. Praesent vitae vulputate justo.
-
-Cras mattis semper sodales. Donec ut ultrices est. Nullam nisi lorem, malesuada eu lorem vitae, fermentum ultricies nunc. Phasellus eget fermentum mauris. In nec sapien justo. Sed eget diam ac metus cursus commodo at eu tortor. Nam commodo viverra vulputate. Nunc et mi ex. Pellentesque dignissim porta massa, nec tempus turpis varius ut. Vivamus blandit consequat metus, eu pretium metus ullamcorper vel. Donec tincidunt cursus libero. In hac habitasse platea dictumst. Fusce quis sapien vel justo faucibus volutpat ac a sem.
-
-Maecenas tempor pellentesque libero, sit amet sagittis dui tristique vel. Sed nunc mi, porta quis volutpat eget, elementum et quam. Nunc et sem nisl. Nunc vel ex faucibus ligula aliquam condimentum. Nullam consequat euismod ipsum vel ultrices. Fusce tristique commodo ultrices. Maecenas facilisis odio quis nisi ultrices cursus. Fusce id scelerisque arcu, nec feugiat diam.
-
-Phasellus venenatis sem quis fringilla lacinia. Fusce vestibulum dapibus ex, sed ornare nibh semper eu. Etiam luctus aliquam nulla. Mauris tempor et est dignissim posuere. Quisque ornare erat nisi, ut accumsan mauris sodales vel. Donec mollis, odio nec commodo posuere, dui neque gravida nunc, nec bibendum mi ex sit amet magna. Ut scelerisque pretium dolor vel sodales.
-
-Praesent tristique nisl sed laoreet posuere. Duis fermentum arcu non nisl vestibulum tincidunt. Proin porta, tortor vel gravida efficitur, ligula dolor aliquam nunc, a hendrerit nisi lacus sit amet tellus. Suspendisse tincidunt accumsan lacinia. Duis venenatis nec mi eu mattis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam pulvinar, erat tristique sollicitudin pretium, enim metus efficitur dolor, vitae tincidunt arcu magna eget metus. Quisque eleifend diam quis enim consectetur posuere. In molestie volutpat metus, at sollicitudin sem consectetur eu.
-
-Vivamus eleifend, nisl a rhoncus fringilla, risus libero vestibulum ligula, id consequat erat massa vel dolor. Nulla ullamcorper, odio vel auctor sollicitudin, nulla augue aliquam ipsum, ac sodales nunc magna et tellus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas dictum libero sit amet mauris viverra, tristique varius sapien tincidunt. Phasellus dolor lorem, porttitor vel luctus in, porta ut turpis. Cras euismod enim eget massa ultrices dapibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer luctus lectus ac ligula pharetra finibus. Etiam laoreet hendrerit metus quis aliquet. Vivamus sed vestibulum ipsum, eu iaculis metus. Integer lorem sem, lacinia ac mattis sed, sagittis at leo. Nunc tincidunt ipsum eget tincidunt gravida. Aenean pretium pulvinar urna, nec dignissim quam imperdiet a. Ut tincidunt elit efficitur elit sodales, et pharetra leo placerat. Cras elit libero, tempor eu interdum vitae, congue at nibh.
-
-Sed convallis neque sed lectus placerat, et iaculis felis consequat. Suspendisse vel sapien varius, fermentum augue vel, viverra metus. Cras gravida massa finibus enim volutpat vehicula. Aliquam aliquet consequat elit, sed facilisis urna dictum in. Sed vehicula ornare augue ac iaculis. Etiam semper diam dolor, in blandit nibh ullamcorper ac. Nullam nisi turpis, malesuada et condimentum pulvinar, accumsan ullamcorper metus. In ornare tellus vel ipsum finibus posuere malesuada a ante. Ut ac ex non justo dictum eleifend sit amet vel eros. Phasellus condimentum mauris vitae tortor rutrum, eu convallis sem ultricies. Vestibulum a lacinia sem. Vivamus malesuada semper metus, non rhoncus urna malesuada et.
-
-Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin ligula lectus, tristique at erat non, condimentum efficitur nunc. Cras id sagittis justo. Phasellus eget elit mi. Curabitur eu hendrerit quam. Integer nec tortor luctus nulla iaculis fringilla a eget odio. Pellentesque a tincidunt magna, sed sollicitudin dui. Phasellus semper elementum nunc, non aliquam purus. Maecenas nec sollicitudin diam, in volutpat nisi. Mauris ac sollicitudin leo. Sed elementum sed velit sit amet suscipit. Nunc quis blandit sem. In erat ante, imperdiet at feugiat vitae, ultrices id mi.
-
-Nam leo nisl, aliquet nec congue at, ullamcorper quis mi. Integer ex mauris, luctus ac urna et, ornare molestie arcu. Praesent congue quam viverra, mattis mi quis, venenatis nulla. Nulla venenatis, ligula vel semper pulvinar, ligula turpis semper lorem, sit amet lobortis nibh mauris eget ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed magna nec arcu ornare pellentesque ut eget lectus. Etiam quis mauris fringilla, euismod libero id, blandit est. Donec laoreet id massa ut sodales. Nulla et scelerisque nibh, id pharetra augue.
+            <Navbar />
+            <div className="firstBlockBackground"> {/* incluir ROW como classe da problema na margem direita */}
+                <div className="container">
+                    <div className="row">
+                        <div className="col d-flex flex-column">
+                            <div className="my-5">
+                                <h1 className="firstBlockTitle mt-4"> Conheça exemplos de jovens que te inspirem. </h1>
+                            </div>
+                            <div className="my-4">
+                                <h3 className="firstBlockSubtitle"> 
+                                    Imagina que legal poder conhecer o passo-a-passo de pessoas que tiveram sucesso 
+                                    naquilo em que você é apaixonado. A exemplio tornou isso uma realidade.
+                                </h3>
+                            </div>
+                            <button className="accessExamplesButton mt-5" type="button">
+                                <h3 className="firstBlockButtonText"> Acessar exemplos </h3>
+                            </button>
+                        </div>
+                        <div className="col-7">
+                            <div className="row justify-content-center">
+                                <div className="exampleCard d-flex flex-column m-2 align-items-center text-center">
+                                    <img className="img-fluid imageDetails mt-4 mb-4" src={ exemplioLogo } alt="Carregando imagem"/>
+                                    <h2 className="exampleNameText mx-1"> Carregando nome... </h2>
+                                    <h4 className="exampleTagsText m-2 mb-4" >
+                                        Carregando tags...
+                                    </h4> 
+                                </div>
+                                <div className="exampleCard d-flex flex-column m-2 align-items-center text-center">
+                                    <img className="img-fluid imageDetails mt-4 mb-4" src={ exemplioLogo } alt="Carregando imagem"/>
+                                    <h2 className="exampleNameText mx-1"> Carregando nome... </h2>
+                                    <h4 className="exampleTagsText m-2 mb-4" >
+                                        Carregando tags...
+                                    </h4> 
+                                </div>
+                            </div>
+                            <div className="row justify-content-center">
+                                <div className="exampleCard d-flex flex-column m-2 align-items-center text-center">
+                                    <img className="img-fluid imageDetails mt-4 mb-4" src={ exemplioLogo } alt="Carregando imagem"/>
+                                    <h2 className="exampleNameText mx-1"> Carregando nome... </h2>
+                                    <h4 className="exampleTagsText m-2 mb-4" >
+                                        Carregando tags...
+                                    </h4> 
+                                </div>
+                                <div className="exampleCard d-flex flex-column m-2 align-items-center text-center">
+                                    <img className="img-fluid imageDetails mt-4 mb-4" src={ exemplioLogo } alt="Carregando imagem"/>
+                                    <h2 className="exampleNameText mx-1"> Carregando nome... </h2>
+                                    <h4 className="exampleTagsText m-2 mb-4" >
+                                        Carregando tags...
+                                    </h4> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div className="separeteBlock shadow w-100">
+                </div>
+            </div>
+            <div className="container bg-light">
+                <br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br /><br /><br /><br />
             </div>
             <Footer />
         </div>

@@ -1,3 +1,8 @@
+/*
+-------- ALERTA DE BUG --------
+Analisar possível problema com CSS que está atrapalhando a disposição dos elementos "row" nas outras páginas!!
+*/
+
 @import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 *{
   font-family: 'Rubik', sans-serif;
@@ -20,7 +25,7 @@
 }
 
 /* Items da Navbar (sobre, mais exemplos) */ 
- .navbar-light .navbar-nav .nav-link{
+.navbar-light .navbar-nav .nav-link{
 color: #8B8B8B;
 font-weight: 500;
 margin-left: 2rem;
