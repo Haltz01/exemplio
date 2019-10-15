@@ -1,5 +1,5 @@
 .firstBlockTitle {
-    font: Medium 50px/60px Rubik;
+    font: 50px/60px Rubik;
     font-weight: bold;
     letter-spacing: 0;
     color: rgb(255, 255, 255);
@@ -7,7 +7,7 @@
 }
 
 .firstBlockSubtitle {
-    font: Regular 30px/36px Rubik;
+    font: 30px/36px Rubik;
     letter-spacing: 0;
     color: rgb(255, 255, 255);
     opacity: 1;
@@ -16,11 +16,11 @@
 .firstBlockBackground {
     /* background: #4DDD4D 0% 0% no-repeat padding-box; */
     opacity: 1;
-    background: linear-gradient(134deg, #4ddd4d, #007bff);
+    background: linear-gradient(134deg, #4ddd4d, #00ffb3);
     background-size: 300% 300%;
-    -webkit-animation: backgroundGradient 30s ease infinite;
-    -moz-animation: backgroundGradient 30s ease infinite;
-    animation: backgroundGradient 30s ease infinite;
+    -webkit-animation: backgroundGradient 25s ease infinite;
+    -moz-animation: backgroundGradient 25s ease infinite;
+    animation: backgroundGradient 25s ease infinite;
 }
 
 @-webkit-keyframes backgroundGradient {
@@ -59,15 +59,15 @@
     font: Medium 20px/24px Rubik;
     border: 5px solid rgb(255, 255, 255);
     border-radius: 27px;
-    background: linear-gradient(92deg, #4ddd4d, #007bff);
+    background: linear-gradient(92deg, #4ddd4d, #00ffb3);
     background-size: 300% 300%;
-    -webkit-animation: buttonGradient 30s ease infinite;
-    -moz-animation: buttonGradient 30s ease infinite;
-    animation: buttonGradient 30s ease infinite;
+    -webkit-animation: buttonGradient 25s ease infinite;
+    -moz-animation: buttonGradient 25s ease infinite;
+    animation: buttonGradient 25s ease infinite;
 }
 
 .accessExamplesButton:hover {
-    background: linear-gradient(92deg, #4ddd4d, #fbff00 );
+    background: linear-gradient(92deg, #4ddd84, #fbff00 );
 }
 
 .firstBlockButtonText {
@@ -79,4 +79,39 @@
 .separeteBlock {
     background: rgba(255, 255, 255, 0.548);
     height: 14px;
+}
+
+.missionVisionDescriptionBox {
+    background: #F9F9F9 0% 0% no-repeat padding-box;
+    box-shadow: 0px 4px 6px #82828229;
+    border-radius: 14px;
+    opacity: 1;
+}
+
+.secondBlockTitle {
+    font: 50px/60px Rubik;
+    font-weight: bold;
+    letter-spacing: 0;
+    color: #747171;
+    opacity: 1;
+}
+
+.secondBlockDescription {
+    font: 30px/36px Rubik;
+    font-weight: bold;
+    letter-spacing: 0;
+    color: #000000;
+    opacity: 1;
+}
+
+.thirdBlockTitle {
+    font: 50px/60px Rubik;
+    font-weight: bold;
+    letter-spacing: 0;
+    color: #000000;
+    opacity: 1;
+}
+
+.thirdBlockLogo {
+    max-width: 321px;
 }
