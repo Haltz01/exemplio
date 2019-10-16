@@ -15,7 +15,7 @@ https://getbootstrap.com/docs/4.3/utilities/spacing/
 https://xd.adobe.com/spec/cc1222ea-4331-481b-5719-3dd15471d179-ba23/screen/81b20b49-1400-4a5d-bf83-f66450699859/P-gina-do-exemplo
 */
 
-import api from '../../services/api'; // -> Comunicar-se como backend!
+import api from '../../services/api'; // -> Comunicar-se com o backend!
 
 /**
 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -26,7 +26,7 @@ this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL va
 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 */
-(function() { // DON'T EDIT BELOW THIS LINE
+(function() {
 var d = document, s = d.createElement('script');
 s.src = 'https://exemplio.disqus.com/embed.js';
 s.setAttribute('data-timestamp', +new Date());
@@ -35,6 +35,7 @@ s.setAttribute('data-timestamp', +new Date());
 
 export default function ExampleProfile({ match }) { // match contém os parâmetros passados na rota (id)
     const [exampleInfo, setExampleInfo] = useState({});
+    const [podcastURL, setPodcastURL] = useState('https://exempl.io/lfnwpvurnvpr9uvdvhdvudnvuidnvnruon'); //Forçar 404 caso o player dê problema
     
     // Conexão com backend para buscar informações de um exemplo específico
     useEffect(() => {
@@ -46,11 +47,22 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
             });
             console.log(response.data);
             setExampleInfo(response.data);
+            setPodcastURL(response.data.podcastLink);
         }
 
         getExampleInfo();
 
     }, [match.params.exampleID]); // executa sempre que há alteração em match.params.exampleID
+
+    useEffect(() => {
+        setPodcastURL(normalizePodcastUrl(exampleInfo.podcastLink));
+        const removeImageDiv = () => {
+            // const podcastIframe = frames['podcastIframe'];
+            // console.log(podcastIframe);
+
+        }
+        setTimeout(removeImageDiv, 6000);
+    }, [exampleInfo.podcastLink]);
 
     return (
         <div> 
@@ -92,7 +104,7 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                     <div className="podcastBox d-flex flex-column mt-3 p-4 align-items-left text-left col">
                                         <h1 className="m-1 titleCustom"> Entrevista </h1>
                                         <div className="m-1 p-2">
-                                            <iframe title="podcastIframe" src={ normalizePodcastUrl(exampleInfo.podcastLink) } frameBorder="0" className="castbox-responsive-player"/> 
+                                            <iframe name="podcastIframe" title="podcastIframe" src={ podcastURL } frameBorder="0" className="castbox-responsive-player"/> 
                                             {
                                                 /* //A cookie associated with a cross-site resource at http://castbox.fm/ was set without the `SameSite` attribute. 
                                                     A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and 
