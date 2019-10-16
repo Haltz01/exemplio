@@ -14,7 +14,6 @@
 }
 
 .firstBlockBackground {
-    /* background: #4DDD4D 0% 0% no-repeat padding-box; */
     opacity: 1;
     background: linear-gradient(134deg, #4ddd4d, #00ffb3);
     background-size: 300% 300%;
@@ -39,6 +38,25 @@
     100%{background-position:0% 56%}
 }
 
+.accessExamplesButton {
+    font: 32px Rubik;
+    font-weight: bold;
+    color: #4ddd89;
+    background: white;
+    border: 5px solid rgb(255, 255, 255);
+    border-radius: 27px;
+    background-size: 300% 300%;
+    -webkit-animation: buttonGradient 25s ease infinite;
+    -moz-animation: buttonGradient 25s ease infinite;
+    animation: buttonGradient 25s ease infinite;
+}
+
+.accessExamplesButton:hover {
+    color: #ffffff;
+    background: linear-gradient(92deg, #4ddd4d, #00ffb3);
+    transition-duration: 0.7s;   
+}
+
 @-webkit-keyframes buttonGradient {
     0%{background-position:0% 23%}
     50%{background-position:100% 78%}
@@ -53,27 +71,6 @@
     0%{background-position:0% 23%}
     50%{background-position:100% 78%}
     100%{background-position:0% 23%}
-}
-
-.accessExamplesButton {
-    font: Medium 20px/24px Rubik;
-    border: 5px solid rgb(255, 255, 255);
-    border-radius: 27px;
-    background: linear-gradient(92deg, #4ddd4d, #00ffb3);
-    background-size: 300% 300%;
-    -webkit-animation: buttonGradient 25s ease infinite;
-    -moz-animation: buttonGradient 25s ease infinite;
-    animation: buttonGradient 25s ease infinite;
-}
-
-.accessExamplesButton:hover {
-    background: linear-gradient(92deg, #4ddd84, #fbff00 );
-}
-
-.firstBlockButtonText {
-    letter-spacing: 0;
-    color: #FFFFFF;
-    opacity: 1;
 }
 
 .separeteBlock {
@@ -112,6 +109,28 @@
     opacity: 1;
 }
 
-.thirdBlockLogo {
-    max-width: 321px;
+.teamBlock {
+    background: linear-gradient(120deg, #68fd3b, #d0fd95 90%);
+}
+
+.teamProfileImage {
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 250px;
+}
+
+.teamName {
+    font: 32px Rubik;
+    font-weight: bold;
+    letter-spacing: 0;
+    color: #000;
+    opacity: 1;
+}
+
+.teamRoll {
+    font: 28px Rubik;
+    font-weight: bold;
+    letter-spacing: 0;
+    color: rgb(42, 42, 42);
+    opacity: 1;
 }

@@ -13,8 +13,8 @@ html, body, #root {
 } */
 
 body {
-  /* background: #00f867 no-repeat center center fixed; */
-  background: url("./assets/Background.jpg") no-repeat center center fixed;
+  background-color: #00ff6a !important;
+  /* background: url("./assets/Background.jpg") no-repeat center center fixed; */
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
