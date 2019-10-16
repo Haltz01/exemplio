@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import './Homepage.css';
 import Navbar from '../Components/Navbar';
@@ -6,9 +6,32 @@ import Footer from '../Components/Footer';
 
 import exemplioLogo from '../assets/LogoVertical.svg';
 
+import api from '../services/api.js';
+import ExampleCard from './Homepage/components/ExampleCard';
+
+
+//Options
+
+const NUM_EXAMPLE_CARDS = 4;
+
 // import api from '../services/api';  -> Comunicar-se como backend!
 
 export default function Homepage() {
+    let [ examplesList, setExamplesList ] = useState([...Array(NUM_EXAMPLE_CARDS)].fill({}));
+
+    async function fetchExamples() {
+        const response = await api.get(`/exemplos/basicList`, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        setExamplesList(response.data);
+    } //Quando a lista de exemplos carragar
+
+    useEffect(() => {
+        fetchExamples(NUM_EXAMPLE_CARDS);
+    }, []); //Executa uma vez apenas.
+
     return (
         <div>
             <Navbar />
@@ -31,36 +54,12 @@ export default function Homepage() {
                         </div>
                         <div className="col-7">
                             <div className="row justify-content-center">
-                                <div className="exampleCard d-flex flex-column m-2 align-items-center text-center">
-                                    <img className="img-fluid imageDetails mt-4 mb-4" src={ exemplioLogo } alt="Carregando imagem"/>
-                                    <h2 className="exampleNameText mx-1"> Carregando nome... </h2>
-                                    <h4 className="exampleTagsText m-2 mb-4" >
-                                        Carregando tags...
-                                    </h4> 
-                                </div>
-                                <div className="exampleCard d-flex flex-column m-2 align-items-center text-center">
-                                    <img className="img-fluid imageDetails mt-4 mb-4" src={ exemplioLogo } alt="Carregando imagem"/>
-                                    <h2 className="exampleNameText mx-1"> Carregando nome... </h2>
-                                    <h4 className="exampleTagsText m-2 mb-4" >
-                                        Carregando tags...
-                                    </h4> 
-                                </div>
+                                <ExampleCard exampleInfo={examplesList[0]}/>
+                                <ExampleCard exampleInfo={examplesList[1]}/>
                             </div>
                             <div className="row justify-content-center">
-                                <div className="exampleCard d-flex flex-column m-2 align-items-center text-center">
-                                    <img className="img-fluid imageDetails mt-4 mb-4" src={ exemplioLogo } alt="Carregando imagem"/>
-                                    <h2 className="exampleNameText mx-1"> Carregando nome... </h2>
-                                    <h4 className="exampleTagsText m-2 mb-4" >
-                                        Carregando tags...
-                                    </h4> 
-                                </div>
-                                <div className="exampleCard d-flex flex-column m-2 align-items-center text-center">
-                                    <img className="img-fluid imageDetails mt-4 mb-4" src={ exemplioLogo } alt="Carregando imagem"/>
-                                    <h2 className="exampleNameText mx-1"> Carregando nome... </h2>
-                                    <h4 className="exampleTagsText m-2 mb-4" >
-                                        Carregando tags...
-                                    </h4> 
-                                </div>
+                                <ExampleCard exampleInfo={examplesList[2]}/>
+                                <ExampleCard exampleInfo={examplesList[3]}/>                                
                             </div>
                         </div>
                     </div>
