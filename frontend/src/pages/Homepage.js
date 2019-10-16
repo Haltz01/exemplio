@@ -55,12 +55,12 @@ export default function Homepage() {
                         </div>
                         <div className="col-7">
                             <div className="row justify-content-center">
-                                <ExampleCard exampleInfo={examplesList[0]}/>
-                                <ExampleCard exampleInfo={examplesList[1]}/>
+                                <ExampleCard minRes="xs" exampleInfo={examplesList[0]}/>
+                                <ExampleCard minRes="xs" exampleInfo={examplesList[1]}/>
                             </div>
                             <div className="row justify-content-center">
-                                <ExampleCard exampleInfo={examplesList[2]}/>
-                                <ExampleCard exampleInfo={examplesList[3]}/>                                
+                                <ExampleCard minRes="xl" exampleInfo={examplesList[2]}/>
+                                <ExampleCard minRes="xl" exampleInfo={examplesList[3]}/>                                
                             </div>
                         </div>
                     </div>
@@ -71,13 +71,13 @@ export default function Homepage() {
             <div className="bg-light py-5">
                 <div className="container">
                     <div className="row">
-                        <div className="missionVisionDescriptionBox p-4 m-2 col-xs col-sm col-md col-lg">
+                        <div className="missionVisionDescriptionBox p-4 m-2 col-12 col-lg">
                             <h2 className="secondBlockTitle my-3"> Nossa Missão </h2>
                             <p className="secondBlockDescription mt-5">
                                 Democratizar o acesso a exemplos de jovens de destaque de todo o Brasil.
                             </p>
                         </div>
-                        <div className="missionVisionDescriptionBox p-4 m-2 col">
+                        <div className="missionVisionDescriptionBox p-4 m-2 col-12 col-lg">
                         <h2 className="secondBlockTitle my-3"> Nossa Proposta </h2>
                             <p className="secondBlockDescription mt-5">
                                 Entrevistar jovens a partir de um podcast e criar uma timeline a partir de cada um deles

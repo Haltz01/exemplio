@@ -121,7 +121,8 @@
     margin-left: 20px;
   }
   
-  .bubble:after{
+/* TODO: validar sem bubble */
+/* .bubble::after{
     content: "";
     display: block;
     position: absolute;
@@ -134,4 +135,4 @@
     border-top: 26px solid transparent;
     border-bottom: 26px solid transparent;
     border-left: 26px solid #F9F9F9;
-}
+} */

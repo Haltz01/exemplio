@@ -123,6 +123,7 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                             (exampleInfo.eventDescriptionList !== undefined) ? ( 
                                                 exampleInfo.eventDescriptionList.map((element, index) => {
                                                     return (
+                                                        // TODO validar remover bubble
                                                         <div key={"timeline_"+index} className="timelineInfo comment bubble m-1 mt-4 p-3 col-xs col-sm-10 col-md-8 col-lg-8">
                                                             <div className="row ">
                                                                 <div className="col text-left">
@@ -171,6 +172,7 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                     )
                 }
 
+                {/* Disqus DIV */}
                 <div id="disqus_thread"></div>
                 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                                             
