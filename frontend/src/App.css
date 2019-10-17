@@ -13,7 +13,7 @@ html, body, #root {
 } */
 
 body {
-  background-color: #00ff6a !important;
+  background-color: #ffffff !important;
   /* background: url("./assets/Background.jpg") no-repeat center center fixed; */
   background-size: cover;
   -webkit-background-size: cover;

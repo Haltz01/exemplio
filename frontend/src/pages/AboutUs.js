@@ -10,9 +10,7 @@ import PedroGuerra from '../assets/exemplio-team-images/PedroGuerra.jpg';
 import GuilhermeDavid from '../assets/exemplio-team-images/GuilhermeDavid.jpg';
 import BrendaMajor from '../assets/exemplio-team-images/BrendaMajor.jpg';
 import GuilhermeCoube from '../assets/exemplio-team-images/GuilhermeCoube.jpg';
-import VictorReis from '../assets/exemplio-team-images/VictorReis.jpg';
 import DaniloPereira from '../assets/exemplio-team-images/DaniloPereira.jpg';
-import VitorHugo from '../assets/exemplio-team-images/VitorHugo.jpg';
 import MarcusVinicius from '../assets/exemplio-team-images/MarcusVinicius.jpg';
 
 
@@ -127,46 +125,6 @@ export default function AboutUs() {
                             São Paulo - SP
                         </h5>
                         <h4> Chefe de Crescimento </h4>
-                    </div>
-                    <div className="sobre-div d-flex flex-column m-2 p-4 col">
-                        <p className="sobre-titulo"> Sobre </p>
-                        -- Inserir descrição aqui --
-                    </div>
-                </div>
-
-                <div><br/></div>
-
-                { /* ------------------ VICTOR REIS ------------------ */}
-                <div className="row d-flex justify-content-center">
-                    <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
-                        <div className="topDetail justify-content-center mb-2"></div>
-                        <h2 className="titleCustom my-2"> Victor Reis </h2> 
-                        <img className="imageCustom img-fluid mb-3" src={ VictorReis } alt="Profile"/>
-                        <h5 className="placeOfOriginInProfile mb-2"> 
-                            <img className="mr-2" alt="location" src={locationIcon}/>
-                            Cubatão - SP
-                        </h5>
-                        <h4> Desenvolvedor Web </h4>
-                    </div>
-                    <div className="sobre-div d-flex flex-column m-2 p-4 col">
-                        <p className="sobre-titulo"> Sobre </p>
-                        -- Inserir descrição aqui --
-                    </div>
-                </div>
-
-                <div><br/></div>
-
-                { /* ------------------ VITOR HUGO ------------------ */}
-                <div className="row d-flex justify-content-center">
-                    <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
-                        <div className="topDetail justify-content-center mb-2"></div>
-                        <h2 className="titleCustom my-2"> Vitor Hugo </h2> 
-                        <img className="imageCustom img-fluid mb-3" src={ VitorHugo } alt="Profile"/>
-                        <h5 className="placeOfOriginInProfile mb-2"> 
-                            <img className="mr-2" alt="location" src={locationIcon}/>
-                            Santos - SP
-                        </h5>
-                        <h4> Desenvolvedor Web </h4>
                     </div>
                     <div className="sobre-div d-flex flex-column m-2 p-4 col">
                         <p className="sobre-titulo"> Sobre </p>
