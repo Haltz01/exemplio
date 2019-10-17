@@ -28,7 +28,7 @@ Analisar possível problema com CSS que está atrapalhando a disposição dos el
 .navbar-light .navbar-nav .nav-link{
 color: #8B8B8B;
 font-weight: 500;
-margin-left: 2rem;
+/* margin-left: 2rem; */
 } 
 
 /*# sourceMappingURL=custom.css.map */

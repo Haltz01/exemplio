@@ -233,7 +233,7 @@ export default function ExamplesList() {
                             { examplesInfoList.map((exampleInfo) => {
                             return (
                                 <div id={ exampleInfo.firstName + "_" + exampleInfo.exemploID } key={ exampleInfo.firstName + "_" + exampleInfo.exemploID }>
-                                    <div className="exampleCard d-flex flex-column m-2 align-items-center text-center">
+                                    <div className="exampleListCard d-flex flex-column m-2 align-items-center text-center">
                                         <div className="topCardDetail justify-content-center"></div>
                                         <Link to={'/exemplo/' + exampleInfo.exemploID }>
                                             <img className="img-fluid imageDetails mt-4 mb-4" src={ exampleInfo.imageLink } alt={ exampleInfo.firstName + " " + exampleInfo.lastName }/>
