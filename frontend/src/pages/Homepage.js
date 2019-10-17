@@ -38,7 +38,7 @@ export default function Homepage() {
             <Navbar />
             <div className="container-fluid">
 
-                <div className="firstBlockBackground row py-5"> {/* incluir ROW como classe da problema na margem direita */}
+                <div id="firstBlock" className="firstBlockBackground row py-5">
                     <div className="container">
                         <div className="row">
                             <div className="col-12 col-lg d-flex flex-column">
@@ -53,7 +53,6 @@ export default function Homepage() {
                                     
                                     <div className="col-12 my-3">
                                         <h3 className="firstBlockSubtitle">
-                                            {/* Removendo hífen de passo-a-passo por causa da quebra de linha */}
                                             Imagina que legal poder conhecer o passo a passo de pessoas que tiveram sucesso 
                                             naquilo em que você é apaixonado. A exemplio tornou isso uma realidade.
                                         </h3>
@@ -107,8 +106,7 @@ export default function Homepage() {
                     </div>
                     {/* <div className="separeteBlock shadow w-100"></div> */}  
                 </div>
-                { /* ajustar responsividade!! */}
-                <div className="row bg-light py-5">
+                <div id="secondBlock" className="row bg-light py-5">
                     <div className="container">
                         <div className="row">
                             <div className="missionVisionDescriptionBox p-4 mx-auto col-11 col-lg">
@@ -126,7 +124,7 @@ export default function Homepage() {
                         </div>
                     </div>
                 </div>
-                <div className="teamBlock row pt-4">
+                <div id="thirdBlock" className="teamBlock row pt-4">
                     <div className="col-12">
                         <div className="row">
                             <div className="col-12">
@@ -164,7 +162,7 @@ export default function Homepage() {
                         </div>
                     </div>
                 </div>
-                <div className="row bg-light pt-5">
+                <div id="fourthBlock" className="row bg-light pt-5">
                     <div className="container d-flex flex-column text-center align-itens-center justify-content-center">
                         <div>
                             <h1 className="thirdBlockTitle"> Saia da sua bolha </h1>
@@ -179,6 +177,7 @@ export default function Homepage() {
                         </div>
                     </div>
                 </div>
+
             </div>  
             <Footer />
         </div>
