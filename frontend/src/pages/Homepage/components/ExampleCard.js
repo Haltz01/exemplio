@@ -1,9 +1,12 @@
 import React, {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 import exemplioLogo from '../../../assets/LogoVertical.svg';
 
 import '../../Homepage.css';
 
+const EXAMPLE_BASE_LINK = '/exemplo/';
 export default function ExampleCard(props) {
+    const [ exampleLink, setExampleLink ] = useState('#');
     const [ imageLink, setImageLink ] = useState(exemplioLogo);
     const [ name, setName ] = useState('Carregando nome...');
     const [ tags, setTags ] = useState('Carregando tags...');
@@ -25,6 +28,13 @@ export default function ExampleCard(props) {
         if (props.exampleInfo.tags) 
             setTags(props.exampleInfo.tags.reduce((a,b) => `${a}, ${b}`));
     }, [props.exampleInfo.tags]);
+
+    useEffect(() => {
+        if (props.exampleInfo.exemploID)
+            setExampleLink(`${EXAMPLE_BASE_LINK}${props.exampleInfo.exemploID}`);
+    }, [props.exampleInfo.exemploID]);
+
+    console.log(props);
 
     /**
      * 
@@ -49,13 +59,15 @@ export default function ExampleCard(props) {
 
     return (
         <div className={`exampleCard ${''/*d-none ${buildResponsiveClassName('d-flex', props.minRes)}*/} flex-column m-2 align-items-center text-center`}>
-            <img className="img-fluid imageDetails mt-4 mb-4" src={ imageLink } alt="Carregando imagem"/>
-            <h2 className="exampleNameText mx-1"> 
-                { name } 
-            </h2>
-            <h4 className="exampleTagsText m-2 mb-4" >
-                { tags }
-            </h4> 
+            <Link to={ exampleLink }>
+                <img className="exampleLinkimg-fluid imageDetails mt-4 mb-4" src={ imageLink } alt="Carregando imagem"/>
+                <h2 className="exampleNameText mx-1"> 
+                    { name } 
+                </h2>
+                <h4 className="exampleTagsText m-2 mb-4" >
+                    { tags }
+                </h4> 
+            </Link>
         </div>
     );
 }
