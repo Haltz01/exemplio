@@ -20,7 +20,7 @@ export default function ExamplesList() {
     
     setTimeout(() => setSearchTimeout(true), 5000);
 
-    //Use effect inicial (não sei por que tem que estar em um useEffect, mas blz)
+    //Use effect inicial (não sei por que tem que estar em um useEffect, talvez seja bom mudar)
     useEffect(() => {
         async function getExamplesInfoList() {
             try {
@@ -72,6 +72,7 @@ export default function ExamplesList() {
             categoryTitleDiv.style.display = 'none';
         }
     }, [searchingProgress]);
+
     //Atualiza o timeout da div de search timeout
     useEffect(() => {
         let timeoutDiv = document.getElementById('searching-examples-timeout');
@@ -145,19 +146,21 @@ export default function ExamplesList() {
                 <div className="row">
                     <div className="col-xs-1 col-sm-5 col-md-5 col-lg-4 col-xl-3">
                         <h2 className="titleCustom m-4 col">Categorias </h2>
-                        <div className="categoriesBox p-3">
-                            <nav className="nav flex-column" id="categoriesNav" role="tablist">
-                                <Link id="Novos Exemplos" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Novos Exemplos") }>Novos Exemplos</Link>
-                                <Link id="Artes" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Artes") }>Artes</Link>
-                                <Link id="Causas Sociais" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Causas Sociais") }>Causas Sociais</Link>
-                                <Link id="Ciências" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Ciências") }>Ciências</Link>
-                                <Link id="Educação" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Educação") }>Educação</Link>
-                                <Link id="Esporte" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Esporte") }>Esporte</Link>
-                                <Link id="Negócios" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Negócios") }>Negócios</Link>
-                                <Link id="Política" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Política") }>Política</Link>
-                                <Link id="Sustentabilidade" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Sustentabilidade") }>Sustentabilidade</Link>
-                                <Link id="Tecnologia" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Tecnologia") }>Tecnologia</Link>
-                                <Link id="Voluntariado" className="categoryText nav-link active" to="#" onClick={ () => setCurrentCategory("Voluntariado") }>Voluntariado</Link>
+                        <div className="categoriesBox d-flex p-3">
+                            <nav className="nav d-flex flex-column align-itens-center justify-content-center" id="categoriesNav" role="tablist">
+                                <div> 
+                                    <Link id="Novos Exemplos" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Novos Exemplos") }>Novos Exemplos</Link>
+                                    <Link id="Artes" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Artes") }>Artes</Link>
+                                    <Link id="Causas Sociais" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Causas Sociais") }>Causas Sociais</Link>
+                                    <Link id="Ciências" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Ciências") }>Ciências</Link>
+                                    <Link id="Educação" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Educação") }>Educação</Link>
+                                    <Link id="Esporte" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Esporte") }>Esporte</Link>
+                                    <Link id="Negócios" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Negócios") }>Negócios</Link>
+                                    <Link id="Política" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Política") }>Política</Link>
+                                    <Link id="Sustentabilidade" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Sustentabilidade") }>Sustentabilidade</Link>
+                                    <Link id="Tecnologia" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Tecnologia") }>Tecnologia</Link>
+                                    <Link id="Voluntariado" className="categoryText nav-link active" to="#" onClick={ () => setCurrentCategory("Voluntariado") }>Voluntariado</Link>
+                                </div>
                             </nav>
                         </div>
                     </div>
@@ -179,7 +182,7 @@ export default function ExamplesList() {
                             </div>
 
                             <div className="customAlignCssRow row">
-                                <div className="exampleCardInvalid d-flex flex-column m-2 align-items-center text-center">
+                                <div className="exampleListCardInvalid d-flex flex-column m-2 align-items-center text-center">
                                     <div className="topCardDetail justify-content-center"></div>
                                     <img className="img-fluid imageDetails mt-4 mb-4" src={ exemplioLogo } alt="Carregando imagem"/>
                                     <h2 className="exampleNameText mx-1"> Carregando nome... </h2>
@@ -191,7 +194,7 @@ export default function ExamplesList() {
                                         Carregando tags...
                                     </h4> 
                                 </div>
-                                <div className="exampleCardInvalid d-flex flex-column m-2 align-items-center text-center">
+                                <div className="exampleListCardInvalid d-flex flex-column m-2 align-items-center text-center">
                                     <div className="topCardDetail justify-content-center"></div>
                                     <img className="img-fluid imageDetails mt-4 mb-4" src={ exemplioLogo } alt="Carregando imagem"/>
                                     <h2 className="exampleNameText mx-1"> Carregando nome... </h2>
@@ -203,7 +206,7 @@ export default function ExamplesList() {
                                         Carregando tags...
                                     </h4> 
                                 </div>
-                                <div className="exampleCardInvalid d-flex flex-column m-2 align-items-center text-center">
+                                <div className="exampleListCardInvalid d-flex flex-column m-2 align-items-center text-center">
                                     <div className="topCardDetail justify-content-center"></div>
                                     <img className="img-fluid imageDetails mt-4 mb-4" src={ exemplioLogo } alt="Carregando imagem"/>
                                     <h2 className="exampleNameText mx-1"> Carregando nome... </h2>
@@ -228,7 +231,7 @@ export default function ExamplesList() {
                                 </div>
                             </div>
                         </div>
-
+                        { /* LISTA QUEBRANDO MARGEM ESQUERDA EM PEQUENAS RESOLUÇÕES*/}
                         <div className="customAlignCssRow row">
                             { examplesInfoList.map((exampleInfo) => {
                             return (

@@ -60,7 +60,7 @@ export default function ExampleCard(props) {
     return (
         <div className={`exampleHomepageCard ${''/*d-none ${buildResponsiveClassName('d-flex', props.minRes)}*/} flex-column m-2 align-items-center text-center`}>
             <Link to={ exampleLink }>
-                <img className="exampleLinkimg-fluid imageDetails mt-4 mb-4" src={ imageLink } alt="Carregando imagem"/>
+                <img className="exampleLink img-fluid imageDetails mt-4 mb-4" src={ imageLink } alt="Carregando imagem"/>
                 <h2 className="exampleNameText mx-1"> 
                     { name } 
                 </h2>
