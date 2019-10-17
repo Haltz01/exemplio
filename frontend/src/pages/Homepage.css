@@ -91,9 +91,20 @@
 
 .accessExamplesButton:hover {
     color: #ffffff;
-    background: linear-gradient(92deg, #4ddd4d, #00ffb3);
+    background: linear-gradient(22deg, #4ddd4d, #00ffb3);
     transition-duration: 0.7s;   
 }
+
+.accessExamplesButton a{
+    text-decoration: none !important;
+    color: #4ddd89;
+}
+
+.accessExamplesButton a:hover{
+    text-decoration: none !important;
+    color: #FFFF;
+}
+
 
 @-webkit-keyframes buttonGradient {
     0%{background-position:0% 23%}

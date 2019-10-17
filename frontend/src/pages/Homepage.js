@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 
 import './Homepage.css';
 import Navbar from '../Components/Navbar';
@@ -86,7 +87,9 @@ export default function Homepage() {
 
                                     <div className="col-11 mx-auto mx-lg-0 mt-4">
                                         <button className="accessExamplesButton w-100 p-3">
-                                            Acessar exemplos
+                                            <Link to="/exemplos"> 
+                                                Acessar exemplos
+                                            </Link>
                                         </button>
                                     </div>
                                 </div>
@@ -169,7 +172,9 @@ export default function Homepage() {
                         </div>
                         <div>
                             <button className="accessExamplesButton shadow mt-5 mb-4 p-3">
-                                Acessar exemplos
+                                <Link to="/exemplos">
+                                    Acessar exemplos
+                                </Link>
                             </button>
                         </div>
                         <div className="w-50 mx-auto mb-5">
