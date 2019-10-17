@@ -40,25 +40,34 @@ export default function Homepage() {
                 <div className="container">
                     <div className="row">
                         <div className="col-12 col-lg d-flex flex-column">
-                            <div className="my-5">
-                                <h1 className="firstBlockTitle mt-n5 mt-lg-4 text-center text-lg-left"> Conheça exemplos de jovens que te inspirem. </h1>
-                            </div>
+                            <div className="row">
+                                <div className="my-5">
+                                    <h1 className="firstBlockTitle mt-n5 mt-lg-4 text-center text-lg-left"> Conheça exemplos de jovens que te inspirem. </h1>
+                                </div>
+                                
+                                <div className="my-3">
+                                    <h3 className="firstBlockSubtitle">
+                                        {/* Removendo hífen de passo-a-passo por causa da quebra de linha */}
+                                        Imagina que legal poder conhecer o passo a passo de pessoas que tiveram sucesso 
+                                        naquilo em que você é apaixonado. A exemplio tornou isso uma realidade.
+                                    </h3>
+                                </div>
 
-                            <div className="d-flex d-lg-none justify-content-around">
-                                <ExampleCard exampleInfo={examplesList[0]}/>
-                                <ExampleCard exampleInfo={examplesList[1]}/>
-                            </div>
+                                <div className="d-lg-none col-12 col-lg-8 col-xl-7">
+                                    <div className="row d-none d-flex justify-content-center">
+                                        <ExampleCard exampleInfo={examplesList[0]}/>
+                                        <ExampleCard exampleInfo={examplesList[1]}/>
+                                    </div>
+                                    <div className="row justify-content-center">
+                                        <ExampleCard exampleInfo={examplesList[2]}/>
+                                        <ExampleCard exampleInfo={examplesList[3]}/>                                
+                                    </div>
+                                </div>
 
-                            <div className="my-3">
-                                <h3 className="firstBlockSubtitle">
-                                    {/* Removendo hífen de passo-a-passo por causa da quebra de linha */}
-                                    Imagina que legal poder conhecer o passo a passo de pessoas que tiveram sucesso 
-                                    naquilo em que você é apaixonado. A exemplio tornou isso uma realidade.
-                                </h3>
+                                <button className="accessExamplesButton mx-sm-auto mx-lg-0 mt-4 p-3">
+                                    Acessar exemplos
+                                </button>
                             </div>
-                            <button className="accessExamplesButton mt-4 p-3">
-                                Acessar exemplos
-                            </button>
                         </div>
                         <div className="col-12 d-none d-lg-block col-lg-8 col-xl-7">
                             <div className="row d-none d-flex justify-content-center">
