@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import exemplioLogo from '../../../assets/LogoVertical.svg';
 
-import '../../Homepage.css';
+import '../Homepage.css';
 
 const EXAMPLE_BASE_LINK = '/exemplo/';
 export default function ExampleCard(props) {
@@ -35,31 +35,6 @@ export default function ExampleCard(props) {
     }, [props.exampleInfo.exemploID]);
 
     console.log(props);
-
-    // /**
-    //  * 
-    //  * @param {String} className 
-    //  */
-    //TODO: put function in global utils
-    // function buildResponsiveClassName(className, resolution) {
-    //     if (!resolution || resolution === 'xs') return className;
-
-    //     let i = className.indexOf('-');
-    //     if (i < 0) return className;
-
-    //     if (['sm','md','lg','xl'].indexOf(resolution) < 0) 
-    //         throw new Error("Invalid resolution for ExampleHomepageCard");
-
-    //     let leftSide = className.substr(0, i);
-    //     let rightSide = className.substr(i+1);
-    //     let newString = `${leftSide}-${resolution}-${rightSide}`;
-    //     console.log(newString);
-    //     return newString;
-    // }
-
-
-    
-    // ${d-none ${buildResponsiveClassName('d-flex', props.minRes)}} 
     return (
         <div className={`exampleHomepageCard flex-column m-2 align-items-center text-center`}>
             <Link to={ exampleLink } >  

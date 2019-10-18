@@ -1,0 +1,38 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+import locationIcon from '../../../assets/locationIcon.svg';
+
+
+export default function ExamplesListCard(props) {
+    return (
+        <div id={ props.exampleInfo.firstName + "_" + props.exampleInfo.exemploID } key={ props.exampleInfo.firstName + "_" + props.exampleInfo.exemploID }>
+            <div className="newExampleListCard d-flex flex-column m-2 align-items-center text-center">
+
+                <div className="newTopCardDetail justify-content-center">&nbsp;</div>
+
+                <Link to={'/exemplo/' + props.exampleInfo.exemploID }>
+                    <img className="img-fluid imageDetails mt-4 mb-4" src={ props.exampleInfo.imageLink } alt={ props.exampleInfo.firstName + " " + props.exampleInfo.lastName }/>
+                    <h2 className="exampleNameText mx-1"> { props.exampleInfo.firstName + " " + props.exampleInfo.lastName } </h2>
+                    <h5 className="placeOfOriginText mb-2"> 
+                        <img className="mr-2" alt="location" src={ locationIcon }/>
+                        { props.exampleInfo.placeOfOrigin }
+                    </h5>
+                    <h4 className="exampleTagsText m-2 mb-4" >
+                        {   
+                            (props.exampleInfo.tags.length > 0) ?
+                            //Builds a string from all 'nextTag' (foreach) by concatenating them with ',' as separator
+                            props.exampleInfo.tags.reduce((currentString, nextTag) => {
+                                return currentString + ', ' + nextTag;
+                            })
+                            : 'Sem categorias'
+                        }
+                    </h4> 
+                </Link>
+
+                <div className="newBottomCardDetail">Novo Exemplo</div>
+                
+            </div>
+        </div>
+    );
+}

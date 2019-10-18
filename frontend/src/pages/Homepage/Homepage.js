@@ -2,16 +2,16 @@ import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
 import './Homepage.css';
-import Navbar from '../Components/Navbar';
-import Footer from '../Components/Footer';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
-import exemplioLogo from '../assets/LogoVertical.svg';
-import PerfilGuilhermeDavid from '../assets/exemplio-team-images/GuilhermeDavid.jpg';
-import PerfilBrendaMajor from '../assets/exemplio-team-images/BrendaMajor.jpg';
-import PerfilGuilhermeCoube from '../assets/exemplio-team-images/GuilhermeCoube.jpg';
+import exemplioLogo from '../../assets/LogoVertical.svg';
+import PerfilGuilhermeDavid from '../../assets/exemplio-team-images/GuilhermeDavid.jpg';
+import PerfilBrendaMajor from '../../assets/exemplio-team-images/BrendaMajor.jpg';
+import PerfilGuilhermeCoube from '../../assets/exemplio-team-images/GuilhermeCoube.jpg';
 
-import api from '../services/api.js';
-import ExampleCard from './Homepage/components/ExampleCard';
+import api from '../../services/api.js';
+import ExampleCard from './components/ExampleHomepageCard';
 
 
 //Options

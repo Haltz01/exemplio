@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './ExamplesList.css';
-import Footer from '../Components/Footer.js';
-import Navbar from '../Components/Navbar.js';
+import Footer from '../../components/Footer.js';
+import Navbar from '../../components/Navbar.js';
 
-import locationIcon from '../assets/locationIcon.svg'
-import exemplioLogo from '../assets/LogoVertical.svg';
+import locationIcon from '../../assets/locationIcon.svg'
+import exemplioLogo from '../../assets/LogoVertical.svg';
 
-import api from '../services/api'; // -> Comunicar-se como backend!
+import api from '../../services/api'; // -> Comunicar-se como backend!
+import ExamplesListCardInvalid from './components/ExamplesListCardInvalid';
+import ExamplesListCard from './components/ExamplesListCard';
 
 export default function ExamplesList() {
     const [examplesInfoList, setExamplesInfoList] = useState([]);
@@ -182,42 +184,9 @@ export default function ExamplesList() {
                             </div>
 
                             <div className="customAlignCssRow row">
-                                <div className="exampleListCardInvalid d-flex flex-column m-2 align-items-center text-center">
-                                    <div className="topCardDetail justify-content-center"></div>
-                                    <img className="img-fluid imageDetails mt-4 mb-4" src={ exemplioLogo } alt="Carregando imagem"/>
-                                    <h2 className="exampleNameText mx-1"> Carregando nome... </h2>
-                                    <h5 className="placeOfOriginText mb-2"> 
-                                        <img className="mr-2" alt="location" src={ locationIcon }/>
-                                        Carregando localização...
-                                    </h5>
-                                    <h4 className="exampleTagsText m-2 mb-4" >
-                                        Carregando tags...
-                                    </h4> 
-                                </div>
-                                <div className="exampleListCardInvalid d-flex flex-column m-2 align-items-center text-center">
-                                    <div className="topCardDetail justify-content-center"></div>
-                                    <img className="img-fluid imageDetails mt-4 mb-4" src={ exemplioLogo } alt="Carregando imagem"/>
-                                    <h2 className="exampleNameText mx-1"> Carregando nome... </h2>
-                                    <h5 className="placeOfOriginText mb-2"> 
-                                        <img className="mr-2" alt="location" src={ locationIcon }/>
-                                        Carregando localização...
-                                    </h5>
-                                    <h4 className="exampleTagsText m-2 mb-4" >
-                                        Carregando tags...
-                                    </h4> 
-                                </div>
-                                <div className="exampleListCardInvalid d-flex flex-column m-2 align-items-center text-center">
-                                    <div className="topCardDetail justify-content-center"></div>
-                                    <img className="img-fluid imageDetails mt-4 mb-4" src={ exemplioLogo } alt="Carregando imagem"/>
-                                    <h2 className="exampleNameText mx-1"> Carregando nome... </h2>
-                                    <h5 className="placeOfOriginText mb-2"> 
-                                        <img className="mr-2" alt="location" src={ locationIcon }/>
-                                        Carregando localização...
-                                    </h5>
-                                    <h4 className="exampleTagsText m-2 mb-4" >
-                                        Carregando tags...
-                                    </h4> 
-                                </div>
+                                <ExamplesListCardInvalid/>
+                                <ExamplesListCardInvalid/>
+                                <ExamplesListCardInvalid/>
                             </div>
                         </div>
 
@@ -233,33 +202,8 @@ export default function ExamplesList() {
                         </div>
                         { /* LISTA QUEBRANDO MARGEM ESQUERDA EM PEQUENAS RESOLUÇÕES*/}
                         <div className="customAlignCssRow row">
-                            { examplesInfoList.map((exampleInfo) => {
-                            return (
-                                <div id={ exampleInfo.firstName + "_" + exampleInfo.exemploID } key={ exampleInfo.firstName + "_" + exampleInfo.exemploID }>
-                                    <div className="exampleListCard d-flex flex-column m-2 align-items-center text-center">
-                                        <div className="topCardDetail justify-content-center"></div>
-                                        <Link to={'/exemplo/' + exampleInfo.exemploID }>
-                                            <img className="img-fluid imageDetails mt-4 mb-4" src={ exampleInfo.imageLink } alt={ exampleInfo.firstName + " " + exampleInfo.lastName }/>
-                                            <h2 className="exampleNameText mx-1"> { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
-                                            <h5 className="placeOfOriginText mb-2"> 
-                                                <img className="mr-2" alt="location" src={ locationIcon }/>
-                                                { exampleInfo.placeOfOrigin }
-                                            </h5>
-                                            <h4 className="exampleTagsText m-2 mb-4" >
-                                                {   
-                                                    (exampleInfo.tags.length > 0) ?
-                                                    //Builds a string from all 'nextTag' (foreach) by concatenating them with ',' as separator
-                                                    exampleInfo.tags.reduce((currentString, nextTag) => {
-                                                        return currentString + ', ' + nextTag;
-                                                    })
-                                                    : 'Sem categorias'
-                                                }
-                                            </h4> 
-                                        </Link>
-                                    </div>
-                                </div>
-                            );
-                            })
+                            { 
+                                examplesInfoList.map((exampleInfo) => <ExamplesListCard exampleInfo={exampleInfo}/>)
                             }
                         </div>
                     </div>

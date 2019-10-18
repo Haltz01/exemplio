@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from '../Components/Navbar';
-import Footer from '../Components/Footer';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import './AboutUs.css';
 
@@ -12,7 +12,6 @@ import BrendaMajor from '../assets/exemplio-team-images/BrendaMajor.jpg';
 import GuilhermeCoube from '../assets/exemplio-team-images/GuilhermeCoube.jpg';
 import DaniloPereira from '../assets/exemplio-team-images/DaniloPereira.jpg';
 import MarcusVinicius from '../assets/exemplio-team-images/MarcusVinicius.jpg';
-
 
 export default function AboutUs() {
     return (
