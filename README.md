@@ -3,7 +3,7 @@
 </h1>
 
 <h4 align="center">
-  An open source web-based comic book reader.
+  Meet examples of young people who excelled in high school.
 </h4>
 
 <br/>
