@@ -8,6 +8,8 @@ import api from '../../services/api'; // -> Comunicar-se como backend!
 import ExamplesListCardInvalid from './components/ExamplesListCardInvalid';
 import ExamplesListCard from './components/ExamplesListCard';
 
+const caregoriesList = ['Novos Exemplos', 'Artes', 'Causas', 'Ciências', 'Educação', 'Esporte', 'Negócios', 'Política', 'Sustentabilidade', 'Tecnologia', 'Voluntariado', 'AAAA', 'AAAA', 'AAAA' ];
+
 export default function ExamplesList() {
     const [examplesInfoList, setExamplesInfoList] = useState([]);
     const [currentCategory, setCurrentCategory] = useState('');
@@ -95,8 +97,12 @@ export default function ExamplesList() {
         let selectedCategory_a_ = document.getElementById(currentCategory);
         if (selectedCategory_a_ === null) return;
 
-        let currentActiveCategory_a_ = document.getElementsByClassName("categoryText active");
-        currentActiveCategory_a_[0].className = currentActiveCategory_a_[0].className.replace(" active", "");
+        let LST_currentActiveCategory_a_ = document.getElementsByClassName("categoryText active");
+        if (LST_currentActiveCategory_a_ && LST_currentActiveCategory_a_.length > 0) {
+            let currentActiveCategory_a_ = LST_currentActiveCategory_a_[0];
+            if (currentActiveCategory_a_) //In the beginning, there will be no active category
+                currentActiveCategory_a_.className = currentActiveCategory_a_.className.replace(" active", "");
+        }
         selectedCategory_a_.className += " active";
 
         //Controls the exibition of "No examples" message
@@ -148,17 +154,9 @@ export default function ExamplesList() {
                         <div className="categoriesBox d-flex p-3">
                             <nav className="nav d-flex flex-column align-itens-center justify-content-center" id="categoriesNav" role="tablist">
                                 <div> 
-                                    <Link id="Novos Exemplos" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Novos Exemplos") }>Novos Exemplos</Link>
-                                    <Link id="Artes" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Artes") }>Artes</Link>
-                                    <Link id="Causas Sociais" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Causas Sociais") }>Causas Sociais</Link>
-                                    <Link id="Ciências" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Ciências") }>Ciências</Link>
-                                    <Link id="Educação" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Educação") }>Educação</Link>
-                                    <Link id="Esporte" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Esporte") }>Esporte</Link>
-                                    <Link id="Negócios" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Negócios") }>Negócios</Link>
-                                    <Link id="Política" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Política") }>Política</Link>
-                                    <Link id="Sustentabilidade" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Sustentabilidade") }>Sustentabilidade</Link>
-                                    <Link id="Tecnologia" className="categoryText nav-link" to="#" onClick={ () => setCurrentCategory("Tecnologia") }>Tecnologia</Link>
-                                    <Link id="Voluntariado" className="categoryText nav-link active" to="#" onClick={ () => setCurrentCategory("Voluntariado") }>Voluntariado</Link>
+                                    {
+                                        caregoriesList.map((category, i) => <Link id={`${category}_${i}`} className="categoryText nav-link" key={`${category}_${i}`} to="#" onClick={ () => setCurrentCategory({category})}>{category}</Link>)
+                                    }
                                 </div>
                             </nav>
                         </div>
@@ -200,7 +198,7 @@ export default function ExamplesList() {
                         { /* LISTA QUEBRANDO MARGEM ESQUERDA EM PEQUENAS RESOLUÇÕES*/}
                         <div className="customAlignCssRow row">
                             { 
-                                examplesInfoList.map((exampleInfo) => <ExamplesListCard exampleInfo={exampleInfo}/>)
+                                examplesInfoList.map((exampleInfo) => <ExamplesListCard key={`exampleCard_${exampleInfo.exemploID}`} exampleInfo={exampleInfo}/>)
                             }
                         </div>
                     </div>
