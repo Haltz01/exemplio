@@ -16,6 +16,11 @@
   background: #FFF;
 }
 
+.navbarHomepage {
+  transition-duration: 0.2s;
+  background: linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,0));
+}
+
 /* Items da Navbar (sobre, mais exemplos) */ 
 .navbar-light,
 .navbar-nav,
@@ -39,8 +44,13 @@
 }
 
 .customNavBarUL {
-  background: #FFFFFF 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 6px #00000029;
+  background: transparent 0% 0% no-repeat padding-box;
+  /* box-shadow: 0px 3px 6px #00000029; */
   border-radius: 16px;
   opacity: 1;
+}
+
+.customNavBarUL li .nav-link{
+  color: #ffffff !important;
+  font-weight: bold;  
 }

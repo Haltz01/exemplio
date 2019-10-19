@@ -8,7 +8,7 @@ export default function Navbar() {
     // Função para mudar design da navbar de acordo com o scroll da página
     $(document).ready(function() {
         $(document).scroll(function() {
-            if($(window).scrollTop() > 80) {
+            if($(window).scrollTop() > 70) {
                 $('nav').addClass("navAfterScroll");
                 $('nav').addClass("shadow");
                 $('ul').removeClass("customNavBarUL");
@@ -22,7 +22,7 @@ export default function Navbar() {
     });
 
     return (
-        <nav className="navbar sticky-top navbar-expand-sm navbar-light">
+        <nav className="navbarHomepage navbar sticky-top navbar-expand-sm navbar-light">
             <div className="container">
                 <div className="navbar-header">
                     {/* <!-- Logo--> */}

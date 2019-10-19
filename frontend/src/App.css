@@ -13,8 +13,8 @@ html, body, #root {
 } */
 
 body {
-  background-color: #4DDD4D !important;
-  /* background: url("./assets/Background.jpg") no-repeat center center fixed; */
+  /* background-color: #4DDD4D !important; */
+  background: url("https://png.clipart.me/previews/749/green-abstract-background-vector-illustration-3770.jpg") no-repeat center center fixed;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;

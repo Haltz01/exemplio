@@ -100,7 +100,7 @@
     color: #4ddd89;
 }
 
-.accessExamplesButton a:hover{
+.accessExamplesButton:hover a{
     text-decoration: none !important;
     color: #FFFF;
 }
@@ -154,6 +154,7 @@
 }
 
 .teamBlock {
+    /* background: transparent; */
     background: linear-gradient(120deg, #68fd3b, #d0fd95 90%);
 }
 
