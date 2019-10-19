@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import locationIcon from '../../../assets/locationIcon.svg';
 
-
 export default function ExamplesListCard(props) {
     return (
         <div id={ props.exampleInfo.firstName + "_" + props.exampleInfo.exemploID } key={ props.exampleInfo.firstName + "_" + props.exampleInfo.exemploID }>

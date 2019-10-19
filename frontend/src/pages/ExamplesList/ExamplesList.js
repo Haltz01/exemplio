@@ -4,9 +4,6 @@ import './ExamplesList.css';
 import Footer from '../../components/Footer.js';
 import Navbar from '../../components/Navbar.js';
 
-import locationIcon from '../../assets/locationIcon.svg'
-import exemplioLogo from '../../assets/LogoVertical.svg';
-
 import api from '../../services/api'; // -> Comunicar-se como backend!
 import ExamplesListCardInvalid from './components/ExamplesListCardInvalid';
 import ExamplesListCard from './components/ExamplesListCard';

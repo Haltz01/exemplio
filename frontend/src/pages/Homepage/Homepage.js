@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
 import './Homepage.css';
-import Navbar from '../../components/Navbar';
+import NavbarHomepage from '../../components/NavbarHomepage';
 import Footer from '../../components/Footer';
 
 import exemplioLogo from '../../assets/LogoVertical.svg';
@@ -36,9 +36,8 @@ export default function Homepage() {
 
     return (
         <div>
-            <Navbar />
+            <NavbarHomepage />
             <div className="container-fluid">
-
                 <div id="firstBlock" className="firstBlockBackground row py-5">
                     <div className="container">
                         <div className="row">

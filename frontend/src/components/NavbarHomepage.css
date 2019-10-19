@@ -3,16 +3,13 @@
   font-family: 'Rubik', sans-serif;
 }
 /* Botão "Seja membro" */ 
-.btn-custom {
-  padding: 0;
+.btn-customHome {
   font-family: 'Rubik', sans-serif;
-  font-weight: 500;
+  font-weight: bold;
   width: auto;
   height: auto;
   border-radius: 47.5px;
-  text-align: center;
   border: 2pt solid #4DDD4D;
-  margin-left: 2rem;
   color:#4DDD4D;
   position: relative;
   overflow: hidden;
@@ -20,14 +17,30 @@
 }
 
 /* Items da Navbar (sobre, mais exemplos) */ 
-.navbar-light, 
-.navbar-nav, 
+.navbar-light,
+.navbar-nav,
 .nav-link {
-color: #8B8B8B;
-font-weight: 500;
-/* margin-left: 2rem; */
+  color: #8B8B8B;
+  font-weight: 500;
 } 
 
 .nav-link {
   font-size: 20px;
+}
+
+.imageLogoNavbar {
+  width: 151px;
+}
+
+.navAfterScroll {
+  background: #FFF;
+  transition-duration: 0.2s;
+  height: 100% !important; 
+}
+
+.customNavBarUL {
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 16px;
+  opacity: 1;
 }

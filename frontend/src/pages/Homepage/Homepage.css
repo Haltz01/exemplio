@@ -15,14 +15,14 @@
 
 .firstBlockBackground {
     opacity: 1;
-    background: linear-gradient(134deg, #4ddd4d, #00ffb3);
+    /* background: linear-gradient(134deg, #4ddd4d, #00ffb3); */
     background-size: 300% 300%;
-    -webkit-animation: backgroundGradient 25s ease infinite;
+    /* -webkit-animation: backgroundGradient 25s ease infinite;
     -moz-animation: backgroundGradient 25s ease infinite;
-    animation: backgroundGradient 25s ease infinite;
+    animation: backgroundGradient 25s ease infinite; */
 }
 
-@-webkit-keyframes backgroundGradient {
+/* @-webkit-keyframes backgroundGradient {
     0%{background-position:0% 56%}
     50%{background-position:100% 45%}
     100%{background-position:0% 56%}
@@ -36,7 +36,7 @@
     0%{background-position:0% 56%}
     50%{background-position:100% 45%}
     100%{background-position:0% 56%}
-}
+} */
 
 @media (max-width:436px) {
     .exampleHomepageCard {
