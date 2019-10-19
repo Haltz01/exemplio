@@ -8,7 +8,7 @@ import api from '../../services/api'; // -> Comunicar-se como backend!
 import ExamplesListCardInvalid from './components/ExamplesListCardInvalid';
 import ExamplesListCard from './components/ExamplesListCard';
 
-const caregoriesList = ['Novos Exemplos', 'Artes', 'Causas', 'Ciências', 'Educação', 'Esporte', 'Negócios', 'Política', 'Sustentabilidade', 'Tecnologia', 'Voluntariado', 'AAAA', 'AAAA', 'AAAA' ];
+const caregoriesList = ['Novos Exemplos', 'Artes', 'Causas', 'Ciências', 'Educação', 'Esporte', 'Negócios', 'Política', 'Sustentabilidade', 'Tecnologia', 'Voluntariado' ];
 
 export default function ExamplesList() {
     const [examplesInfoList, setExamplesInfoList] = useState([]);
@@ -94,7 +94,9 @@ export default function ExamplesList() {
         let showDiv = (div) => div.style.display = "block";
         let hideDiv = (div) => div.style.display = "none";
 
+        console.log(currentCategory);
         let selectedCategory_a_ = document.getElementById(currentCategory);
+        console.log(selectedCategory_a_);
         if (selectedCategory_a_ === null) return;
 
         let LST_currentActiveCategory_a_ = document.getElementsByClassName("categoryText active");
@@ -149,21 +151,32 @@ export default function ExamplesList() {
             <Navbar/>
             <div className="container">
                 <div className="row">
-                    <div className="col-xs-1 col-sm-5 col-md-5 col-lg-4 col-xl-3">
-                        <h2 className="titleCustom m-4 col">Categorias </h2>
-                        <div className="categoriesBox d-flex p-3">
-                            <nav className="nav d-flex flex-column align-itens-center justify-content-center" id="categoriesNav" role="tablist">
-                                <div> 
-                                    {
-                                        caregoriesList.map((category, i) => <Link id={`${category}_${i}`} className="categoryText nav-link" key={`${category}_${i}`} to="#" onClick={ () => setCurrentCategory({category})}>{category}</Link>)
-                                    }
+                    <div className="col col-sm-5 col-md-5 col-lg-4 col-xl-3">
+                        <div className="row">
+                            <div className="col">
+                                <h2 className="titleCustom m-4">Categorias</h2>
+                            </div>
+                        </div>
+
+                        <div className="row">
+                            <div className="col">
+                                <div className="categoriesBox d-flex p-3">
+                                    <nav className="nav d-flex flex-column align-itens-center justify-content-center" id="categoriesNav" role="tablist">
+                                        <div> 
+                                            {
+                                                caregoriesList.map((category) => <Link id={category} className="categoryText nav-link" key={category} to="#" onClick={ () => setCurrentCategory(category)}>{category}</Link>)
+                                            }
+                                        </div>
+                                    </nav>
                                 </div>
-                            </nav>
+                            </div>
                         </div>
                     </div>
                     <div className="col-xs col-sm col-md col-lg col-xl">
                         <div className="row" id="category-title">
-                            <h2 className="titleCustom m-4 col"> {currentCategory} </h2>
+                            <div className="col">
+                                <h2 className="titleCustom m-4"> {currentCategory} </h2>
+                            </div>
                         </div>
 
                         <div className="row" id="searching-examples">
