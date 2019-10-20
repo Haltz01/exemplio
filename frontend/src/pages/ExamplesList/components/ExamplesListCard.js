@@ -6,9 +6,14 @@ import locationIcon from '../../../assets/locationIcon.svg';
 export default function ExamplesListCard(props) {
     return (
         <div id={ props.exampleInfo.firstName + "_" + props.exampleInfo.exemploID } key={ props.exampleInfo.firstName + "_" + props.exampleInfo.exemploID }>
-            <div className="newExampleListCard d-flex flex-column m-2 align-items-center text-center">
+            <div className=
+            {
+                ((props.isNew) ? "newExampleListCard " : "exampleListCard ") + "d-flex flex-column m-2 align-items-center text-center" 
+            } >
 
-                <div className="newTopCardDetail justify-content-center">&nbsp;</div>
+                { 
+                    (props.isNew === true) ? (<div className="newTopCardDetail justify-content-center">&nbsp;</div>) : (<div className="topCardDetail justify-content-center">&nbsp;</div>)
+                }
 
                 <Link to={'/exemplo/' + props.exampleInfo.exemploID }>
                     <img className="img-fluid imageDetails mt-4 mb-4" src={ props.exampleInfo.imageLink } alt={ props.exampleInfo.firstName + " " + props.exampleInfo.lastName }/>
@@ -28,8 +33,10 @@ export default function ExamplesListCard(props) {
                         }
                     </h4> 
                 </Link>
-
-                <div className="newBottomCardDetail">Novo Exemplo</div>
+                
+                { 
+                    (props.isNew === true) ? (<div className="newBottomCardDetail px-3">Novo Exemplo</div>) : null
+                }
                 
             </div>
         </div>

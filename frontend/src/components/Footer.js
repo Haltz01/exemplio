@@ -10,7 +10,7 @@ import TwitterIcon from '../assets/twitter-logo.png';
 
 export default function Footer() {
     return (
-        <div className="container-fluid align-items-center mt-5 py-3"> 
+        <div className="container-fluid align-items-center pt-5 py-3 bg-light"> 
             <div className="footerText row justify-content-center text-center mt-1">
                 <div className="col-12">
                     Todos os direitos reservados - exemplio 2019.

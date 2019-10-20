@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import $ from 'jquery';
 import './ExamplesList.css';
 import Footer from '../../components/Footer.js';
 import Navbar from '../../components/Navbar.js';
@@ -146,10 +147,22 @@ export default function ExamplesList() {
         return;
     };
 
+    // altera a posição e o estilo da aba de categorias após scroll
+    $(document).ready(function() {
+        $(document).scroll(function() {
+            if($(window).scrollTop() > 70) {
+                $('.categoriesBox').addClass(" afterScrollReposition");
+            }
+            else {
+                $('.categoriesBox').removeClass(" afterScrollReposition");
+            }
+        });
+    });
+
     return (
         <div> 
             <Navbar/>
-            <div className="container">
+            <div className="container bg-light">
                 <div className="row">
                     <div className="col col-sm-5 col-md-5 col-lg-4 col-xl-3">
                         <div className="row">
@@ -160,7 +173,7 @@ export default function ExamplesList() {
 
                         <div className="row">
                             <div className="col">
-                                <div className="categoriesBox d-flex p-3">
+                                <div className="categoriesBox d-flex px-1 py-3 justify-content-center text-center">
                                     <nav className="nav d-flex flex-column align-itens-center justify-content-center" id="categoriesNav" role="tablist">
                                         <div> 
                                             {
@@ -199,7 +212,7 @@ export default function ExamplesList() {
                         </div>
 
                         <div className="row" id="examples-not-found">
-                            <div className="categoriesBox d-flex text-center ml-3 p-3">
+                            <div className="categoriesBox d-flex text-center mx-3 p-3">
                                 <div className="align-itens-center m-auto text-center">
                                     <h3 className="noExamplesMessage"> Por enquanto não há exemplos nessa categoria. <br/> Desculpe :( <br/><br/>
                                     Enquanto não adicionamos exemplos aqui, <br />
@@ -211,13 +224,13 @@ export default function ExamplesList() {
                         { /* LISTA QUEBRANDO MARGEM ESQUERDA EM PEQUENAS RESOLUÇÕES*/}
                         <div className="customAlignCssRow row">
                             { 
-                                examplesInfoList.map((exampleInfo) => <ExamplesListCard key={`exampleCard_${exampleInfo.exemploID}`} exampleInfo={exampleInfo}/>)
+                                examplesInfoList.map((exampleInfo) => <ExamplesListCard key = { `exampleCard_${exampleInfo.exemploID}` } exampleInfo = { exampleInfo } isNew = { true }/>)
                             }
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
-            <Footer />
         </div>
     );
 }

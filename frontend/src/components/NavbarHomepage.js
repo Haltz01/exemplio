@@ -4,19 +4,19 @@ import './NavbarHomepage.css';
 
 import logoExemplio from '../assets/logoSVG.svg';
 
-export default function Navbar() {
+export default function NavbarHomepage() {
     // Função para mudar design da navbar de acordo com o scroll da página
     $(document).ready(function() {
         $(document).scroll(function() {
             if($(window).scrollTop() > 70) {
-                $('nav').addClass("navAfterScroll");
-                $('nav').addClass("shadow");
-                $('ul').removeClass("customNavBarUL");
+                $('.navbarHomepage').addClass("navAfterScroll");
+                $('.navbarHomepage').addClass("shadow");
+                $('.navbarHomepage ul').removeClass("customNavBarUL");
             }
             else {
-                $('nav').removeClass("navAfterScroll");
-                $('nav').removeClass("shadow");
-                $('ul').addClass("customNavBarUL");
+                $('.navbarHomepage').removeClass("navAfterScroll");
+                $('.navbarHomepage').removeClass("shadow");
+                $('.navbarHomepage ul').addClass("customNavBarUL");
             }
         });
     });
