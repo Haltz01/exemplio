@@ -9,11 +9,36 @@
   width: auto;
   height: auto;
   border-radius: 47.5px;
-  border: 2pt solid #4DDD4D;
-  color:#4DDD4D;
+  border: 3px solid rgb(255, 255, 255);
+  color:#ffffff;
   position: relative;
   overflow: hidden;
-  background: #FFF;
+  transition-duration: 0.3s;
+}
+
+.btn-customHome:hover {
+  transition-duration: 0.3s;
+  color: #4DDD4D;
+  background: white;
+}
+
+.btn-customHomeAfterScroll {
+  color: #4DDD4D;
+  border: 3px solid #4DDD4D;
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+  width: auto;
+  height: auto;
+  border-radius: 47.5px;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+}
+
+.btn-customHomeAfterScroll:hover {
+  transition-duration: 0.3s;
+  color: rgb(255, 255, 255);
+  background: #4DDD4D;
 }
 
 .navbarHomepage {
@@ -33,7 +58,7 @@
   font-size: 20px;
 }
 
-.imageLogoNavbar {
+.imageLogoNavbarHomepage {
   width: 200px;
 }
 

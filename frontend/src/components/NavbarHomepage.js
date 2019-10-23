@@ -2,7 +2,8 @@ import React from 'react';
 import $ from 'jquery';
 import './NavbarHomepage.css';
 
-import logoExemplio from '../assets/logoSVG.svg';
+import logoExemplioWhite from '../assets/logoSVGWhite.svg';
+import logoExemplioColored from '../assets/logoSVG.svg';
 
 export default function NavbarHomepage() {
     // Função para mudar design da navbar de acordo com o scroll da página
@@ -12,11 +13,15 @@ export default function NavbarHomepage() {
                 $('.navbarHomepage').addClass("navAfterScroll");
                 $('.navbarHomepage').addClass("shadow");
                 $('.navbarHomepage ul').removeClass("customNavBarUL");
+                $('.imageLogoNavbarHomepage').attr("src", logoExemplioColored);
+                $('#becomeMemberButton').addClass(" btn-customHomeAfterScroll");
             }
             else {
                 $('.navbarHomepage').removeClass("navAfterScroll");
                 $('.navbarHomepage').removeClass("shadow");
                 $('.navbarHomepage ul').addClass("customNavBarUL");
+                $('.imageLogoNavbarHomepage').attr("src", logoExemplioWhite);
+                $('#becomeMemberButton').removeClass(" btn-customHomeAfterScroll");
             }
         });
     });
@@ -27,7 +32,7 @@ export default function NavbarHomepage() {
                 <div className="navbar-header">
                     {/* <!-- Logo--> */}
                     <a className="navbar-brand" href="/">
-                        <img src={logoExemplio} className="imageLogoNavbar mt-0" alt="Logo Exemplio"/>
+                        <img src={ logoExemplioWhite } className="imageLogoNavbarHomepage mt-0" alt="Logo Exemplio"/>
                     </a>
                 </div>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
@@ -42,7 +47,7 @@ export default function NavbarHomepage() {
                             <a className="nav-link mx-2" href="/exemplos">Mais exemplos</a>
                         </li>
                         <li className="nav-item d-flex align-itens-center justify-content-center">
-                            <a className="btn-customHome btn text-center py-2 px-4  mx-2" href="/exemplos">Seja membro</a>
+                            <a id="becomeMemberButton" className="btn-customHome btn text-center py-2 px-4  mx-2" href="/exemplos">Seja membro</a>
                         </li>
                     </ul>
                 </div>
