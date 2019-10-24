@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
+
 import { Link } from 'react-router-dom';
+import { linkPrefix } from '../../options.json';
 
 import './Homepage.css';
 import NavbarHomepage from '../../components/NavbarHomepage';
@@ -85,11 +87,11 @@ export default function Homepage() {
                                     </div>
 
                                     <div className="col-11 mx-auto mx-lg-0 mt-4">
-                                        <button className="accessExamplesButton w-100 p-3">
-                                            <Link to="/exemplos"> 
-                                                Acessar exemplos
-                                            </Link>
-                                        </button>
+                                        <Link to={`/${linkPrefix}/exemplos`}> 
+                                            <button className="accessExamplesButton w-100 p-3">
+                                                    Acessar exemplos
+                                            </button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -171,7 +173,7 @@ export default function Homepage() {
                         </div>
                         <div>
                             <button className="accessExamplesButton shadow mt-5 mb-4 p-3">
-                                <Link to="/exemplos">
+                                <Link to={`/${linkPrefix}/exemplos`}> 
                                     Acessar exemplos
                                 </Link>
                             </button>
