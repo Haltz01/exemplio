@@ -5,6 +5,9 @@ import './NavbarHomepage.css';
 import logoExemplioWhite from '../assets/logoSVGWhite.svg';
 import logoExemplioColored from '../assets/logoSVG.svg';
 
+import { Link } from 'react-router-dom';
+import { linkPrefix } from '../options.json'
+
 export default function NavbarHomepage() {
     // Função para mudar design da navbar de acordo com o scroll da página
     $(document).ready(function() {
@@ -31,9 +34,9 @@ export default function NavbarHomepage() {
             <div className="container">
                 <div className="navbar-header">
                     {/* <!-- Logo--> */}
-                    <a className="navbar-brand" href="/">
+                    <Link className="navbar-brand" to={`/${linkPrefix}`}>
                         <img src={ logoExemplioWhite } className="imageLogoNavbarHomepage mt-0" alt="Logo Exemplio"/>
-                    </a>
+                    </Link>
                 </div>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
                     <span className="navbar-toggler-icon"></span>
@@ -41,13 +44,19 @@ export default function NavbarHomepage() {
                 <div className="collapse navbar-collapse text-center" id="navbarSite">
                     <ul className="customNavBarUL navbar-nav d-flex px-4 ml-auto py-2">
                         <li className="nav-item">
-                            <a className="nav-link mx-2" href="/sobre">Sobre nós</a>
+                            <Link className="nav-link mx-2" to={`/${linkPrefix}/sobre`}>
+                                Sobre nós
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link mx-2" href="/exemplos">Mais exemplos</a>
+                            <Link className="nav-link mx-2" to={`/${linkPrefix}/exemplos`}>
+                                Mais exemplos
+                            </Link>
                         </li>
                         <li className="nav-item d-flex align-itens-center justify-content-center">
-                            <a id="becomeMemberButton" className="btn-customHome btn text-center py-2 px-4  mx-2" href="/exemplos">Seja membro</a>
+                            <Link id="becomeMemberButton" className="btn-customHome btn text-center py-2 px-4  mx-2" to={`/${linkPrefix }/exemplos`}>
+                                Seja membro
+                            </Link>
                         </li>
                     </ul>
                 </div>
