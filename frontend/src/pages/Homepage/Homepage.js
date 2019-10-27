@@ -33,6 +33,7 @@ export default function Homepage() {
     } //Quando a lista de exemplos carragar
 
     useEffect(() => {
+        window.scrollTo(0,0);
         fetchExamples(NUM_EXAMPLE_CARDS);
     }, []); //Executa uma vez apenas.
 
@@ -87,7 +88,7 @@ export default function Homepage() {
                                     </div>
 
                                     <div className="col-11 mx-auto mx-lg-0 mt-4">
-                                        <Link to={`/${linkPrefix}/exemplos`}> 
+                                        <Link to={`${linkPrefix}/exemplos`}> 
                                             <button className="accessExamplesButton w-100 p-3">
                                                     Acessar exemplos
                                             </button>
@@ -173,7 +174,7 @@ export default function Homepage() {
                         </div>
                         <div>
                             <button className="accessExamplesButton shadow mt-5 mb-4 p-3">
-                                <Link to={`/${linkPrefix}/exemplos`}> 
+                                <Link to={`${linkPrefix}/exemplos`}> 
                                     Acessar exemplos
                                 </Link>
                             </button>

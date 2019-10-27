@@ -43,6 +43,7 @@ export default function ExamplesList() {
             }
         }
         getExamplesInfoList();
+        window.scrollTo(0,0);
     }, []); // [] => executa uma vez  
 
     //Handles notFoundDiv appearence

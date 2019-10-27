@@ -2,10 +2,17 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-app.use('*/static', express.static(path.join(__dirname, 'build', 'static')));
+const prefix = '/revamp'
 
-app.get(['/teste123','/teste123/*'], function(req, res) {
+app.use('*static', express.static(path.join(__dirname, 'build', 'static')));
+
+
+app.get(`${prefix}/*`, function(req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.listen(9000);  
+app.get(prefix, function(req, res) {
+  res.status(301).redirect(prefix + '/');
+});
+
+app.listen(9000);

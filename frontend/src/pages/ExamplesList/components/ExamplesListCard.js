@@ -16,7 +16,7 @@ export default function ExamplesListCard(props) {
                     (props.isNew === true) ? (<div className="newTopCardDetail justify-content-center">&nbsp;</div>) : (<div className="topCardDetail justify-content-center">&nbsp;</div>)
                 }
 
-                <Link to={`/${linkPrefix}/exemplo/${props.exampleInfo.exemploID}`}>
+                <Link to={`${linkPrefix}/exemplo/${props.exampleInfo.exemploID}`}>
                     <img className="img-fluid imageDetails mt-4 mb-4" src={ props.exampleInfo.imageLink } alt={ props.exampleInfo.firstName + " " + props.exampleInfo.lastName }/>
                     <h2 className="exampleNameText mx-1"> { props.exampleInfo.firstName + " " + props.exampleInfo.lastName } </h2>
                     <h5 className="placeOfOriginText mb-2"> 

@@ -5,7 +5,7 @@ import exemplioLogo from '../../../assets/LogoVertical.svg';
 
 import '../Homepage.css';
 
-const EXAMPLE_BASE_LINK = `/${linkPrefix}/exemplo/`;
+const EXAMPLE_BASE_LINK = `${linkPrefix}/exemplo/`;
 export default function ExampleCard(props) {
     const [ exampleLink, setExampleLink ] = useState('#');
     const [ imageLink, setImageLink ] = useState(exemplioLogo);

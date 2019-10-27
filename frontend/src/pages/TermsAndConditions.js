@@ -1,9 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './TermsAndConditions.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-export default function termsAndConditions() {
+export default function TermsAndConditions() {
+
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    },[]);
+
     return (
         <div>
             <Navbar />

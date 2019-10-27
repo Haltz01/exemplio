@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -14,6 +14,11 @@ import DaniloPereira from '../assets/exemplio-team-images/DaniloPereira.jpg';
 import MarcusVinicius from '../assets/exemplio-team-images/MarcusVinicius.jpg';
 
 export default function AboutUs() {
+
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    },[]);
+
     return (
         <div>
             <Navbar/>
