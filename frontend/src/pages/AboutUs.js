@@ -32,7 +32,7 @@ export default function AboutUs() {
                         </p>
                     </div>
                 </div>
-                <p className="sobre-titulo my-4 ml-5 col-12">Nossa equipe</p>
+                <p className="sobre-titulo my-4 ml-5 col-10">Nossa equipe</p>
 
                 { /* ------------------ PEDRO GUERRA ------------------ */}
                 <div className="row d-flex justify-content-center">

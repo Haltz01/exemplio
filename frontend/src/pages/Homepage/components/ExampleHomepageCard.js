@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import exemplioLogo from '../../../assets/LogoVertical.svg';
+import locationIcon from '../../../assets/locationIcon.svg';
 
 import '../Homepage.css';
 
@@ -42,6 +43,10 @@ export default function ExampleCard(props) {
                 <h2 className="exampleNameText mx-1"> 
                     { name } 
                 </h2>
+                <h5 className="placeOfOriginText mb-2"> 
+                        <img className="mr-2" alt="location" src={ locationIcon }/>
+                        { props.exampleInfo.placeOfOrigin }
+                    </h5>
                 <h4 className="exampleTagsText m-2 mb-4" >
                     { tags }
                 </h4> 
