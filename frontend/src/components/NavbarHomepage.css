@@ -14,13 +14,16 @@
   position: relative;
   overflow: hidden;
   transition-duration: 0.3s;
+  /* Temporary -> patreon not defined yet */
+  -webkit-filter: grayscale(100%); 
+  filter: grayscale(100%);
 }
 
-.btn-customHome:hover {
+/* .btn-customHome:hover {
   transition-duration: 0.3s;
   color: #4DDD4D;
   background: white;
-}
+} */
 
 .btn-customHomeAfterScroll {
   color: #4DDD4D;
@@ -33,13 +36,16 @@
   position: relative;
   overflow: hidden;
   transition-duration: 0.3s;
+  /* Temporary -> patreon not defined yet */
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
 }
 
-.btn-customHomeAfterScroll:hover {
+/* .btn-customHomeAfterScroll:hover {
   transition-duration: 0.3s;
   color: rgb(255, 255, 255);
   background: #4DDD4D;
-}
+} */
 
 .navbarHomepage {
   transition-duration: 0.2s;

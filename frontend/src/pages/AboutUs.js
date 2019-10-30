@@ -10,7 +10,6 @@ import PedroGuerra from '../assets/exemplio-team-images/PedroGuerra.jpg';
 import GuilhermeDavid from '../assets/exemplio-team-images/GuilhermeDavid.jpg';
 import BrendaMajor from '../assets/exemplio-team-images/BrendaMajor.jpg';
 import GuilhermeCoube from '../assets/exemplio-team-images/GuilhermeCoube.jpg';
-import DaniloPereira from '../assets/exemplio-team-images/DaniloPereira.jpg';
 import MarcusVinicius from '../assets/exemplio-team-images/MarcusVinicius.jpg';
 
 export default function AboutUs() {
@@ -138,24 +137,6 @@ export default function AboutUs() {
 
                 <div><br/></div>
 
-                { /* ------------------ DANILO PEREIRA ------------------ */}
-                <div className="row d-flex justify-content-center">
-                    <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
-                        <div className="topDetail justify-content-center mb-2"></div>
-                        <h2 className="titleCustom my-2"> Danilo Pereira </h2> 
-                        <img className="imageCustom img-fluid mb-3" src={ DaniloPereira } alt="Profile"/>
-                        <h5 className="placeOfOriginInProfile mb-2"> 
-                            <img className="mr-2" alt="location" src={locationIcon}/>
-                            Cubatão - SP
-                        </h5>
-                        <h4> Desenvolvedor Web </h4>
-                    </div>
-                    <div className="sobre-div d-flex flex-column m-2 p-4 col">
-                        <p className="sobre-titulo"> Sobre </p>
-                        -- Inserir descrição aqui --
-                    </div>
-                </div>
-
                 { /* ------------------ MARCUS VINICIUS ------------------ */}
                 <div className="row d-flex justify-content-center">
                     <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
@@ -173,6 +154,8 @@ export default function AboutUs() {
                         -- Inserir descrição aqui --
                     </div>
                 </div>
+
+                <div><br/></div>
             </div>
             
             <Footer/>

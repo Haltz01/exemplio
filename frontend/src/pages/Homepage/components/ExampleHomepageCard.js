@@ -36,10 +36,10 @@ export default function ExampleCard(props) {
             setExampleLink(`${EXAMPLE_BASE_LINK}${props.exampleInfo.exemploID}`);
     }, [props.exampleInfo.exemploID]);
 
-    console.log(props);
     return (
-        <div className={`exampleHomepageCard flex-column m-2 align-items-center text-center`}>
-            <Link to={ exampleLink } >  
+        <Link className="nonUnderlineLink" to={ exampleLink } >
+            <div className={`exampleHomepageCard flex-column m-2 p-1 align-items-center text-center`}>
+             
                 <img className="exampleLink img-fluid imageDetails mt-4 mb-4" src={ imageLink } alt="Carregando imagem"/>
                 <h2 className="exampleNameText mx-1"> 
                     { name } 
@@ -51,7 +51,7 @@ export default function ExampleCard(props) {
                 <h4 className="exampleTagsText m-2 mb-4" >
                     { tags }
                 </h4> 
-            </Link>
-        </div>
+            </div>
+        </Link>
     );
 }

@@ -13,7 +13,7 @@ export default function Navbar() {
                 <div className="navbar-header">
                     {/* <!-- Logo--> */}
                     <Link className="navbar-brand" to={`${linkPrefix}/`}>
-                        <img src={logoExemplio} className="mt-0" width="151" alt="Logo Exemplio"/>
+                        <img src={logoExemplio} className="imageLogoNavbar mt-0" alt="Logo Exemplio"/>
                     </Link>
                 </div>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
@@ -32,7 +32,7 @@ export default function Navbar() {
                             </Link>
                         </li>
                         <li className="nav-item d-flex align-itens-center justify-content-center">
-                            <Link className="btn btn-custom text-center py-2 px-4  mx-2" to={`${linkPrefix}/exemplos`}>
+                            <Link className="btn btn-custom text-center py-2 px-4 mx-2 disabled" to={`${linkPrefix}/exemplos`}>
                                 Seja Membro
                             </Link> 
 

@@ -12,7 +12,6 @@ export default function NavbarHomepage() {
     // Função para mudar design da navbar de acordo com o scroll da página
     $(document).ready(function() {
         function updateNavbarStyle() {
-            console.log($(window).scrollTop());
             if($(window).scrollTop() > 76) { //TODO: verificar se é esse o número certo (deve ser 20 a mais que o de baixo)
                 $('.navbarHomepage').addClass("navAfterScroll");
                 $('.navbarHomepage').addClass("shadow");
@@ -57,7 +56,7 @@ export default function NavbarHomepage() {
                             </Link>
                         </li>
                         <li className="nav-item d-flex align-itens-center justify-content-center">
-                            <Link id="becomeMemberButton" className="btn-customHome btn text-center py-2 px-4  mx-2" to={`${linkPrefix }/exemplos`}>
+                            <Link id="becomeMemberButton" className="btn-customHome btn text-center py-2 px-4 mx-2 disabled" to={`${linkPrefix }/exemplos`}>
                                 Seja membro
                             </Link>
                         </li>

@@ -17,6 +17,9 @@
   position: relative;
   overflow: hidden;
   background: #FFF;
+  /* Temporary -> patreon not defined yet */
+  -webkit-filter: grayscale(100%); 
+  filter: grayscale(100%);
 }
 
 /* Items da Navbar (sobre, mais exemplos) */ 
@@ -30,4 +33,8 @@ font-weight: 500;
 
 .nav-link {
   font-size: 20px;
+}
+
+.imageLogoNavbar {
+  width: 200px;
 }
