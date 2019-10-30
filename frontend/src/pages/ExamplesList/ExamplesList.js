@@ -9,7 +9,7 @@ import api from '../../services/api'; // -> Comunicar-se como backend!
 import ExamplesListCardInvalid from './components/ExamplesListCardInvalid';
 import ExamplesListCard from './components/ExamplesListCard';
 
-const caregoriesList = ['Novos Exemplos', 'Artes', 'Causas Sociais', 'Ciências', 'Educação', 'Esporte', 'Negócios', 'Política', 'Sustentabilidade', 'Tecnologia', 'Voluntariado' ];
+const categoriesList = ['Todos', 'Artes', 'Causas Sociais', 'Ciências', 'Educação', 'Negócios', 'Política', 'Sustentabilidade', 'Tecnologia', 'Voluntariado' ];
 
 export default function ExamplesList() {
     const [examplesInfoList, setExamplesInfoList] = useState([]);
@@ -34,7 +34,7 @@ export default function ExamplesList() {
                 });
                 setSearchingProgress(true);
                 setExamplesInfoList(response.data);
-                setCurrentCategory('Novos Exemplos');
+                setCurrentCategory('Todos');
             }
             catch (e) {
                 console.error('Failed to connect to Database!');
@@ -112,13 +112,12 @@ export default function ExamplesList() {
         //Controls the exibition of "No examples" message
         let atLeastOneExampleFound = false;
 
-        if (currentCategory === 'Novos Exemplos') {
+        if (currentCategory === 'Todos') {
             //Show everyone (it's already sorted by descending addition date)
             for (let example of examplesInfoList) {
                 let exampleDiv = getDivByExample(example);
                 showDiv(exampleDiv);
             }
-
 
             if (examplesInfoList.length > 0) 
                 atLeastOneExampleFound = true;
@@ -147,7 +146,6 @@ export default function ExamplesList() {
 
         return;
     };
-
     // altera a posição e o estilo da aba de categorias após scroll
     $(document).ready(function() {
         $(document).scroll(function() {
@@ -178,7 +176,7 @@ export default function ExamplesList() {
                                     <nav className="nav d-flex flex-column align-itens-center justify-content-center" id="categoriesNav" role="tablist">
                                         <div> 
                                             {
-                                                caregoriesList.map((category) => <Link id={category} className="categoryText nav-link" key={category} to="#" onClick={ () => setCurrentCategory(category)}>{category}</Link>)
+                                                categoriesList.map((category) => <Link id={category} className="categoryText nav-link" key={category} to="#" onClick={ () => setCurrentCategory(category)}>{category}</Link>)
                                             }
                                         </div>
                                     </nav>
@@ -225,7 +223,8 @@ export default function ExamplesList() {
                         { /* LISTA QUEBRANDO MARGEM ESQUERDA EM PEQUENAS RESOLUÇÕES*/}
                         <div className="customAlignCssRow row">
                             { 
-                                examplesInfoList.map((exampleInfo) => <ExamplesListCard key = { `exampleCard_${exampleInfo.exemploID}` } exampleInfo = { exampleInfo } isNew = { true }/>)
+                                examplesInfoList.map(
+                                    (exampleInfo, numNewExamples = 0) => <ExamplesListCard key = { `exampleCard_${exampleInfo.exemploID}` } exampleInfo = { exampleInfo } isNew = { (numNewExamples++ < 3) ? true : false } /> )
                             }
                         </div>
                     </div>

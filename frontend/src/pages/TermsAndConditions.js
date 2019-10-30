@@ -12,7 +12,7 @@ export default function TermsAndConditions() {
     return (
         <div>
             <Navbar />
-            <div className="container containerBox p-4 mt-4">
+            <div className="container containerBox p-4 mt-4 mb-5">
                 <div>
                     <h1 className="pageTitle mb-4 mt-1"> TERMOS DE USO E POLÍTICA DE PRIVACIDADE </h1>
                     <p className="titleText">VISÃO GERAL</p>
@@ -53,7 +53,7 @@ export default function TermsAndConditions() {
                     </p>
                     <p className="titleText">INFORMAÇÕES DE CONTATO </p>
                     <p>
-                        As perguntas sobre os Termos de serviço devem ser enviadas para nós através do contato_exemplio@teste.com
+                        As perguntas sobre os Termos de serviço devem ser enviadas para nós através do exempliobrasil@gmail.com
                     </p>
                 </div>
             </div>

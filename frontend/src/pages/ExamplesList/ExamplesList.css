@@ -188,21 +188,25 @@
 }
 
 .placeOfOriginText {
-    font: Medium 13px/15px Rubik;
+    font: 18px Rubik;
     letter-spacing: 0;
     color: #9B9B9B;
     opacity: 1;
 }
 
 .exampleNameText {
-    font-family: Medium Rubik;
+    font: 28px Rubik;
     color: #000000;
     letter-spacing: 0;
 }
 
 .exampleTagsText {
-    font: Regular 15px/18px Rubik;
+    font: 24px Rubik;
     letter-spacing: 0;
     color: #000000;
     opacity: 1;
+}
+
+.nonUnderlineLink {
+    text-decoration: none !important;
 }

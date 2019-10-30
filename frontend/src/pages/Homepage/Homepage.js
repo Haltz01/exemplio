@@ -8,9 +8,6 @@ import NavbarHomepage from '../../components/NavbarHomepage';
 import Footer from '../../components/Footer';
 
 import exemplioLogo from '../../assets/LogoVertical.svg';
-import PerfilGuilhermeDavid from '../../assets/exemplio-team-images/GuilhermeDavid.jpg';
-import PerfilBrendaMajor from '../../assets/exemplio-team-images/BrendaMajor.jpg';
-import PerfilGuilhermeCoube from '../../assets/exemplio-team-images/GuilhermeCoube.jpg';
 
 import api from '../../services/api.js';
 import ExampleCard from './components/ExampleHomepageCard';
@@ -129,7 +126,7 @@ export default function Homepage() {
                         </div>
                     </div>
                 </div>
-                <div id="thirdBlock" className="teamBlock row pt-4">
+                {/* <div id="thirdBlock" className="teamBlock row pt-4">
                     <div className="col-12">
                         <div className="row">
                             <div className="col-12">
@@ -166,7 +163,7 @@ export default function Homepage() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <div id="fourthBlock" className="row bg-light pt-5">
                     <div className="container d-flex flex-column text-center align-itens-center justify-content-center">
                         <div>
