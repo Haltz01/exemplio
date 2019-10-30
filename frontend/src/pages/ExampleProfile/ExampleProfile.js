@@ -64,6 +64,10 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
         setTimeout(removeImageDiv, 6000);
     }, [exampleInfo.podcastLink]);
 
+    useEffect(() => {
+        window.scrollTo(0,0);
+    }, []);
+
     return (
         <div> 
                 <Navbar/>

@@ -9,7 +9,7 @@ import api from '../../services/api'; // -> Comunicar-se como backend!
 import ExamplesListCardInvalid from './components/ExamplesListCardInvalid';
 import ExamplesListCard from './components/ExamplesListCard';
 
-const caregoriesList = ['Todos', 'Artes', 'Causas Sociais', 'Ciências', 'Educação', 'Esporte', 'Negócios', 'Política', 'Sustentabilidade', 'Tecnologia', 'Voluntariado' ];
+const categoriesList = ['Todos', 'Artes', 'Causas Sociais', 'Ciências', 'Educação', 'Esporte', 'Negócios', 'Política', 'Sustentabilidade', 'Tecnologia', 'Voluntariado' ];
 
 export default function ExamplesList() {
     const [examplesInfoList, setExamplesInfoList] = useState([]);
@@ -43,6 +43,7 @@ export default function ExamplesList() {
             }
         }
         getExamplesInfoList();
+        window.scrollTo(0,0);
     }, []); // [] => executa uma vez  
 
     //Handles notFoundDiv appearence
@@ -175,7 +176,7 @@ export default function ExamplesList() {
                                     <nav className="nav d-flex flex-column align-itens-center justify-content-center" id="categoriesNav" role="tablist">
                                         <div> 
                                             {
-                                                caregoriesList.map((category) => <Link id={category} className="categoryText nav-link" key={category} to="#" onClick={ () => setCurrentCategory(category)}>{category}</Link>)
+                                                categoriesList.map((category) => <Link id={category} className="categoryText nav-link" key={category} to="#" onClick={ () => setCurrentCategory(category)}>{category}</Link>)
                                             }
                                         </div>
                                     </nav>

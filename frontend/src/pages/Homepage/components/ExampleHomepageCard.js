@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import { linkPrefix } from '../../../options.json'
 import exemplioLogo from '../../../assets/LogoVertical.svg';
 import locationIcon from '../../../assets/locationIcon.svg';
 
 import '../Homepage.css';
 
-const EXAMPLE_BASE_LINK = '/exemplo/';
+const EXAMPLE_BASE_LINK = `${linkPrefix}/exemplo/`;
 export default function ExampleCard(props) {
     const [ exampleLink, setExampleLink ] = useState('#');
     const [ imageLink, setImageLink ] = useState(exemplioLogo);

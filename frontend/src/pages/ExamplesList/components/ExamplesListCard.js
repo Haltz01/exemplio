@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { linkPrefix } from '../../../options.json';
 
 import locationIcon from '../../../assets/locationIcon.svg';
 
 export default function ExamplesListCard(props) {
     return (
-        <Link className="nonUnderlineLink" to={'/exemplo/' + props.exampleInfo.exemploID }>
+        <Link className="nonUnderlineLink" to={`${linkPrefix}/exemplo/${props.exampleInfo.exemploID}`}>
             <div id={ props.exampleInfo.firstName + "_" + props.exampleInfo.exemploID } key={ props.exampleInfo.firstName + "_" + props.exampleInfo.exemploID }>
                 <div className=
                 {
@@ -16,7 +17,6 @@ export default function ExamplesListCard(props) {
                         (props.isNew === true) ? (<div className="newTopCardDetail justify-content-center">&nbsp;</div>) : (<div className="topCardDetail justify-content-center">&nbsp;</div>)
                     }
 
-                
                     <img className="img-fluid imageDetails mt-4 mb-4" src={ props.exampleInfo.imageLink } alt={ props.exampleInfo.firstName + " " + props.exampleInfo.lastName }/>
                     <h2 className="exampleNameText mx-1"> { props.exampleInfo.firstName + " " + props.exampleInfo.lastName } </h2>
                     <h5 className="placeOfOriginText mb-2"> 
