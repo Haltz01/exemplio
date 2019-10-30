@@ -53,7 +53,7 @@ export default function TermsAndConditions() {
                     </p>
                     <p className="titleText">INFORMAÇÕES DE CONTATO </p>
                     <p>
-                        As perguntas sobre os Termos de serviço devem ser enviadas para nós através do contato_exemplio@teste.com
+                        As perguntas sobre os Termos de serviço devem ser enviadas para nós através do exempliobrasil@gmail.com
                     </p>
                 </div>
             </div>

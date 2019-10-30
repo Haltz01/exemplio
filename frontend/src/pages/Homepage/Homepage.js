@@ -129,7 +129,7 @@ export default function Homepage() {
                         </div>
                     </div>
                 </div>
-                <div id="thirdBlock" className="teamBlock row pt-4">
+                {/* <div id="thirdBlock" className="teamBlock row pt-4">
                     <div className="col-12">
                         <div className="row">
                             <div className="col-12">
@@ -166,7 +166,7 @@ export default function Homepage() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <div id="fourthBlock" className="row bg-light pt-5">
                     <div className="container d-flex flex-column text-center align-itens-center justify-content-center">
                         <div>

@@ -9,7 +9,7 @@ import api from '../../services/api'; // -> Comunicar-se como backend!
 import ExamplesListCardInvalid from './components/ExamplesListCardInvalid';
 import ExamplesListCard from './components/ExamplesListCard';
 
-const categoriesList = ['Todos', 'Artes', 'Causas Sociais', 'Ciências', 'Educação', 'Esporte', 'Negócios', 'Política', 'Sustentabilidade', 'Tecnologia', 'Voluntariado' ];
+const categoriesList = ['Todos', 'Artes', 'Causas Sociais', 'Ciências', 'Educação', 'Negócios', 'Política', 'Sustentabilidade', 'Tecnologia', 'Voluntariado' ];
 
 export default function ExamplesList() {
     const [examplesInfoList, setExamplesInfoList] = useState([]);
