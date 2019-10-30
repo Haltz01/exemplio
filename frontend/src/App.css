@@ -14,13 +14,14 @@ html, body, #root {
 
 body {
   /* background-color: #4DDD4D !important; */
-  background: url("https://png.clipart.me/previews/749/green-abstract-background-vector-illustration-3770.jpg") no-repeat center center fixed;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   height: 100%;
-  /* overflow: hidden;
+  /* overflow: hidden;*/
+  background: rgb(107,201,190);
+  background: linear-gradient(90deg, rgba(107,201,190,1) 0%, rgba(84,216,190,1) 48%, rgba(60,231,191,1) 100%);
 }
 
 body, input, button { /* Input e button, por padrão, não herdam a fonte do corpo do HTML */
