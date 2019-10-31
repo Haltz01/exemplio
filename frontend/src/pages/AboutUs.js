@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 import React, {useEffect} from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -15,7 +17,15 @@ import MarcusVinicius from '../assets/exemplio-team-images/MarcusVinicius.jpg';
 export default function AboutUs() {
 
     useEffect(()=>{
+        async function loadProfileImages() {
+            const profilePics = $('[data-src]');
+            profilePics.map((ind, elem) => {
+                console.log(elem);
+                elem.src = elem.dataset.src;
+            })
+        }
         window.scrollTo(0,0);
+        loadProfileImages();
     },[]);
 
     return (
@@ -43,8 +53,8 @@ export default function AboutUs() {
                     { /* MESMO CSS UTILIZADO NA PÁGINA DO EXEMPLO (INDIVIDUAL)*/}
                     <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
                         <div className="topDetail justify-content-center mb-2"></div>
-                        <h2 className="titleCustom my-2"> Pedro Guerra </h2> 
-                        <img className="imageCustom img-fluid mb-3" src={ PedroGuerra } alt="Profile"/>
+                        <h2 className="titleCustom my-2"> Pedro Guerra </h2>
+                        <img className="imageCustom img-fluid mb-3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src={ PedroGuerra } alt="Profile"/>
                         <h5 className="placeOfOriginInProfile mb-2"> 
                             <img className="mr-2" alt="location" src={locationIcon}/>
                             Santos - SP
@@ -75,7 +85,7 @@ export default function AboutUs() {
                     <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
                         <div className="topDetail justify-content-center mb-2"></div>
                         <h2 className="titleCustom my-2"> Guilherme David </h2> 
-                        <img className="imageCustom img-fluid mb-3" src={ GuilhermeDavid } alt="Profile"/>
+                        <img className="imageCustom img-fluid mb-3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src={ GuilhermeDavid } alt="Profile"/>
                         <h5 className="placeOfOriginInProfile mb-2"> 
                             <img className="mr-2" alt="location" src={locationIcon}/>
                             Cubatão - SP
@@ -101,7 +111,7 @@ export default function AboutUs() {
                     <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
                         <div className="topDetail justify-content-center mb-2"></div>
                         <h2 className="titleCustom my-2"> Brenda Major </h2> 
-                        <img className="imageCustom img-fluid mb-3" src={ BrendaMajor } alt="Profile"/>
+                        <img className="imageCustom img-fluid mb-3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src={ BrendaMajor } alt="Profile"/>
                         <h5 className="placeOfOriginInProfile mb-2"> 
                             <img className="mr-2" alt="location" src={locationIcon}/>
                             São Paulo - SP
@@ -122,7 +132,7 @@ export default function AboutUs() {
                     <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
                         <div className="topDetail justify-content-center mb-2"></div>
                         <h2 className="titleCustom my-2"> Guilherme Coube </h2> 
-                        <img className="imageCustom img-fluid mb-3" src={ GuilhermeCoube } alt="Profile"/>
+                        <img className="imageCustom img-fluid mb-3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src={ GuilhermeCoube } alt="Profile"/>
                         <h5 className="placeOfOriginInProfile mb-2"> 
                             <img className="mr-2" alt="location" src={locationIcon}/>
                             São Paulo - SP
@@ -142,7 +152,7 @@ export default function AboutUs() {
                     <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
                         <div className="topDetail justify-content-center mb-2"></div>
                         <h2 className="titleCustom my-2"> Marcus Vinícius </h2> 
-                        <img className="imageCustom img-fluid mb-3" src={ MarcusVinicius } alt="Profile"/>
+                        <img className="imageCustom img-fluid mb-3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src={ MarcusVinicius } alt="Profile"/>
                         <h5 className="placeOfOriginInProfile mb-2"> 
                             <img className="mr-2" alt="location" src={locationIcon}/>
                             Santos - SP
