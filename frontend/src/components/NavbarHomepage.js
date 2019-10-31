@@ -57,7 +57,7 @@ export default function NavbarHomepage() {
                             <div className="col">
                                 <li className="nav-item d-flex justify-content-center mr-0 ">
                                     <Link id="becomeMemberButton" className="btn-customHome btn text-center py-2 px-2" to={`${linkPrefix }/exemplos`}>
-                                        Mais exemplos
+                                        Ver exemplos
                                     </Link>
                                 </li>
                             </div>
