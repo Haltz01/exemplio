@@ -59,24 +59,26 @@ export default function Homepage() {
                                     </div>
                                     {/* Cards quando a tela está pequena, entre o titulo e o botão */}
                                     <div className="d-lg-none col-12 col-lg-8 col-xl-7">
-                                        <div className="row">
+                                        <div className="row no-gutters px-0">
                                             <div className="col-12 d-none d-flex justify-content-center">
                                                 <div className="row no-gutters">
-                                                    <div className="col ml-n5">
+                                                    <div className="col ml-n1">
                                                         <ExampleCard exampleInfo={examplesList[0]}/>
                                                     </div>
-                                                    <div className="col mr-n5">
+                                                    <div className="col">
                                                         <ExampleCard exampleInfo={examplesList[1]}/>
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div className="row no-gutters px-0">
                                             <div className="col-12 d-none d-flex justify-content-center">
-                                                <div className="row no-gutters">
-                                                    <div className="col ml-n5">
+                                                <div className="row no-gutters px-0">
+                                                    <div className="col ml-n1">
                                                         <ExampleCard exampleInfo={examplesList[2]}/>
                                                     </div>
 
-                                                    <div className="col mr-n5">
+                                                    <div className="col">
                                                         <ExampleCard exampleInfo={examplesList[3]}/>
                                                     </div>
                                                 </div>

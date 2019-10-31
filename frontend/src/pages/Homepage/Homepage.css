@@ -1,5 +1,5 @@
 .firstBlockTitle {
-    font: 45px Rubik;
+    font: 2.8125rem Rubik;
     font-weight: bold;
     letter-spacing: 0;
     color: rgb(255, 255, 255);
@@ -47,7 +47,7 @@
 
 @media (min-width:436px) and (max-width: 566px) {
     .exampleHomepageCard {
-        width: 180px;
+        max-width: 230px;
         height: 330px;
         background: #FFFFFF 0% 0% no-repeat padding-box;
         box-shadow: 0px 3px 6px #00000029;

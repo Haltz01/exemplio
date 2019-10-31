@@ -12,14 +12,14 @@ export default function NavbarHomepage() {
     // Função para mudar design da navbar de acordo com o scroll da página
     $(document).ready(function() {
         function updateNavbarStyle() {
-            if($(window).scrollTop() > 56) { //TODO: verificar se é esse o número certo (deve ser 20 a mais que o de baixo)
+            if($(window).scrollTop() > 46) { //TODO: verificar se é esse o número certo (deve ser 20 a mais que o de baixo)
                 $('.navbarHomepage').addClass("navAfterScroll");
                 $('.navbarHomepage').addClass("shadow");
                 $('.navbarHomepage ul').removeClass("customNavBarUL");
                 $('.imageLogoNavbarHomepage').attr("src", logoExemplioColored); //TODO: Ver como cachear a imagem
                 $('#becomeMemberButton').addClass(" btn-customHomeAfterScroll");
             }
-            else if ($(window).scrollTop() < 35) {
+            else if ($(window).scrollTop() < 25) {
                 $('.navbarHomepage').removeClass("navAfterScroll");
                 $('.navbarHomepage').removeClass("shadow");
                 $('.navbarHomepage ul').addClass("customNavBarUL");
