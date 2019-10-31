@@ -2,22 +2,27 @@
 *{
   font-family: 'Rubik', sans-serif;
 }
+
+.btnNav {
+  position: relative;
+  width: max-content;
+}
+
 /* Botão "Seja membro" */ 
 .btn-custom {
-  padding: 0;
   font-family: 'Rubik', sans-serif;
-  font-weight: 500;
-  width: auto;
+  font-weight: bold;
+  width: max-content;
   height: auto;
   border-radius: 47.5px;
-  text-align: center;
   border: 2pt solid #4DDD4D;
-  margin-left: 2rem;
   color:#4DDD4D;
+  text-align: center;
   position: relative;
   overflow: hidden;
-  background: #FFF;
-  /* Temporary -> patreon not defined yet */
+}
+
+.btn-custom.disabled {
   -webkit-filter: grayscale(100%); 
   filter: grayscale(100%);
 }

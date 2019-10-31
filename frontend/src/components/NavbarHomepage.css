@@ -2,11 +2,17 @@
 *{
   font-family: 'Rubik', sans-serif;
 }
+
+.btnNavHome {
+  position: relative;
+  width: max-content;
+}
+
 /* Botão "Seja membro" */ 
 .btn-customHome {
   font-family: 'Rubik', sans-serif;
   font-weight: bold;
-  width: auto;
+  width: max-content;
   height: auto;
   border-radius: 47.5px;
   border: 3px solid rgb(255, 255, 255);
@@ -15,8 +21,8 @@
   overflow: hidden;
   transition-duration: 0.3s;
   /* Temporary -> patreon not defined yet */
-  -webkit-filter: grayscale(100%); 
-  filter: grayscale(100%);
+  /* -webkit-filter: grayscale(100%); 
+  filter: grayscale(100%); */
 }
 
 /* .btn-customHome:hover {
@@ -26,19 +32,19 @@
 } */
 
 .btn-customHomeAfterScroll {
-  color: #4DDD4D;
-  border: 3px solid #4DDD4D;
   font-family: 'Rubik', sans-serif;
   font-weight: bold;
-  width: auto;
+  width: max-content;
   height: auto;
   border-radius: 47.5px;
+  border: 3px solid #4DDD4D;
+  color: #4DDD4D;
   position: relative;
   overflow: hidden;
   transition-duration: 0.3s;
   /* Temporary -> patreon not defined yet */
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
+  /* -webkit-filter: grayscale(100%); Safari 6.0 - 9.0 */
+  /* filter: grayscale(100%); */
 }
 
 /* .btn-customHomeAfterScroll:hover {

@@ -9,7 +9,7 @@ import logoExemplio from '../assets/logoSVG.svg';
 
 
 export default function Navbar(props) {
-    const [navItemsState, setNavItemsState] = useState({AboutUs: '', ExamplesList: ''});
+    const [navItemsState, setNavItemsState] = useState({AboutUs: 'disabled', ExamplesList: 'disabled'});
     useEffect(() => {
         switch(props.activePage) {
             case 'Sobre nós':
@@ -19,6 +19,7 @@ export default function Navbar(props) {
                     setNavItemsState({AboutUs: '', ExamplesList: 'disabled'});
             break;
             default:
+                setNavItemsState({AboutUs: '', ExamplesList: ''});
                 break;
         }
     },[props.activePage]);
@@ -35,24 +36,25 @@ export default function Navbar(props) {
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarSite">
+                <div className="collapse navbar-collapse text-center" id="navbarSite">
                     <ul className="navbar-nav ml-auto">
-                        <li className="nav-item ">
-                            <Link className={`nav-link mx-2 ${navItemsState.AboutUs}`} to={`${linkPrefix}/sobre`}>
-                                Sobre nós 
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className={`nav-link mx-2 ${navItemsState.ExamplesList}`} to={`${linkPrefix}/exemplos`}>
-                                Mais exemplos
-                            </Link>
-                        </li>
-                        <li className="nav-item d-flex align-itens-center justify-content-center">
-                            <Link className={`btn-custom btn text-center py-2 px-2 disabled`} to={`${linkPrefix}/exemplos`}>
-                                Seja Membro
-                            </Link> 
-
-                        </li>
+                        <div className="row">
+                            {/* I don't know what's happening here */}
+                            <div className="col align-items-center">
+                                <li className="nav-item">
+                                    <Link className={`nav-link mx-auto px-0 btnNav ${navItemsState.AboutUs}`} to={`${linkPrefix}/sobre`}>
+                                        Sobre nós
+                                    </Link>
+                                </li>
+                            </div>
+                            <div className="col">
+                                <li className="nav-item d-flex justify-content-center mr-0 ">
+                                    <Link id="becomeMemberButton" className={`btn-custom btn text-center py-2 px-2 ${navItemsState.ExamplesList}`} to={`${linkPrefix }/exemplos`}>
+                                        Mais exemplos
+                                    </Link>
+                                </li>
+                            </div>
+                        </div>
                     </ul>
                 </div>
             </div>

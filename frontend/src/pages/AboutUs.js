@@ -108,7 +108,8 @@ export default function AboutUs() {
                     </div>
                     <div className="sobre-div d-flex flex-column m-2 p-4 col">
                         <p className="sobre-titulo"> Sobre </p>
-                        -- Inserir descrição aqui --
+                        Guilherme Ricci Coube tem 15 anos e nasceu e mora em São Paulo. É co-fundador da Exempl.io e da Creos App Development. 
+                        Em um curso extra-curricular que frequentou no 8º ano, descobriu o poder da tecnologia, empreendedorismo e sustentabilidade. Desde então, vem realizando pesquisas científicas como a “Bicicleta de Bambu Sustentável, Tecnológica e Segura” e “Conversão Eletromecânica de Energia Sonora em Elétrica”, com as quais já foi premiado em feiras como a FEBRACE. Seu sonho é provar que o segredo para um futuro melhor é a união de áreas como sustentabilidade, tecnologia e empreendedorismo. Para isso, acredita que alguma adaptação da metodologia utilizada no sistema escolar brasileiro é necessária para que as futuras gerações cresçam com os conhecimentos dessas áreas.
                     </div>
                 </div>
 
