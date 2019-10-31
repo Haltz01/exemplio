@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import $ from 'jquery';
+
 import './ExampleProfile.css';
 import Navbar from '../../components/Navbar.js';
 import Footer from '../../components/Footer.js';
@@ -26,7 +28,7 @@ this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL va
 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 */
-(function() {
+(async function() {
 var d = document, s = d.createElement('script');
 s.src = 'https://exemplio.disqus.com/embed.js';
 s.setAttribute('data-timestamp', +new Date());
@@ -57,9 +59,15 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
     useEffect(() => {
         setPodcastURL(normalizePodcastUrl(exampleInfo.podcastLink));
         const removeImageDiv = () => {
-            // const podcastIframe = frames['podcastIframe'];
-            // console.log(podcastIframe);
-
+            // if (exampleInfo.podcastLink){
+            //     $('iframe[name=podcastIframe]').ready((e) => {
+            //         console.log(e);
+            //         console.log($(e));
+            //         console.log($(e).contents());
+                    
+            //     })
+            //     console.log('Chamado!');
+            // }
         }
         setTimeout(removeImageDiv, 6000);
     }, [exampleInfo.podcastLink]);

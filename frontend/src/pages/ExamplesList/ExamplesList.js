@@ -160,7 +160,7 @@ export default function ExamplesList() {
 
     return (
         <div> 
-            <Navbar/>
+            <Navbar activePage="Mais exemplos"/>
             <div className="container bg-light">
                 <div className="row">
                     <div className="col col-sm-5 col-md-5 col-lg-4 col-xl-3">

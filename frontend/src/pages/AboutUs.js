@@ -29,7 +29,7 @@ export default function AboutUs() {
 
     return (
         <div>
-            <Navbar/>
+            <Navbar activePage="Sobre nós"/>
             <div className="container mt-4">
                 <div className="row d-flex justify-content-center">
                     <div className="sobre-div m-2 col-xs-12 col-sm-12 col-md-6 col-lg">
