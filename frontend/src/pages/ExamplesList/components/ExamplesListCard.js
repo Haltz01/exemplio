@@ -17,13 +17,13 @@ export default function ExamplesListCard(props) {
                         (props.isNew === true) ? (<div className="newTopCardDetail justify-content-center">&nbsp;</div>) : (<div className="topCardDetail justify-content-center">&nbsp;</div>)
                     }
 
-                    <img className="img-fluid imageDetails mt-4 mb-4" src={ props.exampleInfo.imageLink } alt={ props.exampleInfo.firstName + " " + props.exampleInfo.lastName }/>
-                    <h2 className="exampleNameText mx-1"> { props.exampleInfo.firstName + " " + props.exampleInfo.lastName } </h2>
-                    <h5 className="placeOfOriginText mb-2"> 
+                    <img className="img-fluid imageDetails my-3 " src={ props.exampleInfo.imageLink } alt={ props.exampleInfo.firstName + " " + props.exampleInfo.lastName }/>
+                    <h2 className="exampleNameText"> { props.exampleInfo.firstName + " " + props.exampleInfo.lastName } </h2>
+                    <h5 className="placeOfOriginText"> 
                         <img className="mr-2" alt="location" src={ locationIcon }/>
                         { props.exampleInfo.placeOfOrigin }
                     </h5>
-                    <h4 className="exampleTagsText mt-2">
+                    <h4 className="exampleTagsText">
                         {   
                             (props.exampleInfo.tags.length > 0) ?
                             //Builds a string from all 'nextTag' (foreach) by concatenating them with ',' as separator
@@ -35,7 +35,7 @@ export default function ExamplesListCard(props) {
                     </h4> 
                     <div className="d-flex h-100 align-items-end">
                     { 
-                        (props.isNew === true) ? (<div className="newBottomCardDetail px-3 pt-1">Novo Exemplo</div>) : null
+                        (props.isNew === true) ? (<div className="newBottomCardDetail px-3 pt-1">Novo Exemplo</div>) : (<div className="newBottomCardDetail px-3 pt-1">Novo Exemplo</div>)
                     }
                     </div>
                 </div>

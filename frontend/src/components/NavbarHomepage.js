@@ -56,7 +56,7 @@ export default function NavbarHomepage() {
                             </Link>
                         </li>
                         <li className="nav-item d-flex align-itens-center justify-content-center">
-                            <Link id="becomeMemberButton" className="btn-customHome btn text-center py-2 px-4 mx-2 disabled" to={`${linkPrefix }/exemplos`}>
+                            <Link id="becomeMemberButton" className="btn-customHome btn text-center py-2 px-2 disabled" to={`${linkPrefix }/exemplos`}>
                                 Seja membro
                             </Link>
                         </li>

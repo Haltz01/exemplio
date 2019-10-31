@@ -1,5 +1,5 @@
 .firstBlockTitle {
-    font: 50px/60px Rubik;
+    font: 45px Rubik;
     font-weight: bold;
     letter-spacing: 0;
     color: rgb(255, 255, 255);
@@ -7,7 +7,7 @@
 }
 
 .firstBlockSubtitle {
-    font: 30px/36px Rubik;
+    font: 28px Rubik;
     letter-spacing: 0;
     color: rgb(255, 255, 255);
     opacity: 1;
@@ -47,8 +47,8 @@
 
 @media (min-width:436px) and (max-width: 566px) {
     .exampleHomepageCard {
-        width: 200px;
-        height: 360px;
+        width: 180px;
+        height: 330px;
         background: #FFFFFF 0% 0% no-repeat padding-box;
         box-shadow: 0px 3px 6px #00000029;
         border-radius: 16px;
@@ -59,8 +59,8 @@
 
 @media (min-width: 566px) {
     .exampleHomepageCard {
-        width: 265px;
-        height: 360px;
+        width: 240px;
+        height: 320px;
         background: #FFFFFF 0% 0% no-repeat padding-box;
         box-shadow: 0px 3px 6px #00000029;
         border-radius: 16px;
@@ -85,7 +85,7 @@
 /* setar estilos para nome e tags!!*/
 
 .accessExamplesButton {
-    font: 32px Rubik;
+    font: 26px Rubik;
     font-weight: bold;
     color: #4ddd89;
     background: white;
@@ -132,13 +132,13 @@
 
 .missionVisionDescriptionBox {
     background: #F9F9F9 0% 0% no-repeat padding-box;
-    box-shadow: 0px 4px 6px #82828229;
+    box-shadow: 3px 3px 6px 6px #8282825e;
     border-radius: 14px;
     opacity: 1;
 }
 
 .secondBlockTitle {
-    font: 50px/60px Rubik;
+    font: 42px Rubik;
     font-weight: bold;
     letter-spacing: 0;
     color: #747171;
@@ -146,7 +146,7 @@
 }
 
 .secondBlockDescription {
-    font: 30px/36px Rubik;
+    font: 26px Rubik;
     font-weight: bold;
     letter-spacing: 0;
     color: #000000;
@@ -154,7 +154,7 @@
 }
 
 .thirdBlockTitle {
-    font: 50px/60px Rubik;
+    font: 46px Rubik;
     font-weight: bold;
     letter-spacing: 0;
     color: #000000;

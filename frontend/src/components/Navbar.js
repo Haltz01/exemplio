@@ -20,7 +20,7 @@ export default function Navbar() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSite">
-                    <ul className="navbar-nav px-4 ml-auto">
+                    <ul className="navbar-nav ml-auto">
                         <li className="nav-item ">
                             <Link className="nav-link mx-2" to={`${linkPrefix}/sobre`}>
                                 Sobre nós 
@@ -32,7 +32,7 @@ export default function Navbar() {
                             </Link>
                         </li>
                         <li className="nav-item d-flex align-itens-center justify-content-center">
-                            <Link className="btn btn-custom text-center py-2 px-4 mx-2 disabled" to={`${linkPrefix}/exemplos`}>
+                            <Link className="btn-custom btn text-center py-2 px-2 disabled" to={`${linkPrefix}/exemplos`}>
                                 Seja Membro
                             </Link> 
 

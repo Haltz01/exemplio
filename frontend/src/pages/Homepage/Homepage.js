@@ -38,12 +38,12 @@ export default function Homepage() {
         <div>
             <NavbarHomepage />
             <div className="container-fluid">
-                <div id="firstBlock" className="firstBlockBackground row py-5">
+                <div id="firstBlock" className="firstBlockBackground row py-3">
                     <div className="container">
                         <div className="row">
                             <div className="col-12 col-lg d-flex flex-column">
                                 <div className="row">
-                                    <div className="col-12 my-5">
+                                    <div className="col-12 mt-5 mb-4">
                                         <div className="mt-n5 mt-lg-4 text-left text-md-center text-lg-left"> 
                                             <h1 className="firstBlockTitle my-0 p-0">
                                                 Conheça exemplos de jovens que te inspirem. 
@@ -51,7 +51,7 @@ export default function Homepage() {
                                         </div>
                                     </div>
                                     
-                                    <div className="col-12 my-3">
+                                    <div className="col-12 my-2">
                                         <h3 className="firstBlockSubtitle">
                                             Imagina que legal poder conhecer o passo a passo de pessoas que tiveram sucesso 
                                             naquilo em que você é apaixonado. A exemplio tornou isso uma realidade.
