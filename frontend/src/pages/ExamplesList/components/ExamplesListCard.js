@@ -35,7 +35,7 @@ export default function ExamplesListCard(props) {
                     </h4> 
                     <div className="d-flex h-100 align-items-end">
                     { 
-                        (props.isNew === true) ? (<div className="newBottomCardDetail px-3 pt-1">Novo Exemplo</div>) : (<div className="newBottomCardDetail px-3 pt-1">Novo Exemplo</div>)
+                        (props.isNew === true) ? (<div className="newBottomCardDetail px-3 pt-1">Novo Exemplo</div>) : null
                     }
                     </div>
                 </div>

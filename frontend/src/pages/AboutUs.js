@@ -19,10 +19,9 @@ export default function AboutUs() {
     useEffect(()=>{
         async function loadProfileImages() {
             const profilePics = $('[data-src]');
-            profilePics.map((ind, elem) => {
-                console.log(elem);
+            $.each(profilePics, (ind, elem) => {
                 elem.src = elem.dataset.src;
-            })
+            });
         }
         window.scrollTo(0,0);
         loadProfileImages();
@@ -47,38 +46,6 @@ export default function AboutUs() {
                     </div>
                 </div>
                 <p className="sobre-titulo my-4 ml-5 col-10">Nossa equipe</p>
-
-                { /* ------------------ PEDRO GUERRA ------------------ */}
-                <div className="row d-flex justify-content-center">
-                    { /* MESMO CSS UTILIZADO NA PÁGINA DO EXEMPLO (INDIVIDUAL)*/}
-                    <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
-                        <div className="topDetail justify-content-center mb-2"></div>
-                        <h2 className="titleCustom my-2"> Pedro Guerra </h2>
-                        <img className="imageCustom img-fluid mb-3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src={ PedroGuerra } alt="Profile"/>
-                        <h5 className="placeOfOriginInProfile mb-2"> 
-                            <img className="mr-2" alt="location" src={locationIcon}/>
-                            Santos - SP
-                        </h5>
-                        <h4> Desenvolvedor Web Full Stack </h4>
-                    </div>
-                    <div className="sobre-div d-flex flex-column m-2 p-4 col">
-                        <p className="sobre-titulo"> Sobre </p>
-                        Ela achou meu cabelo engraçado
-                        Proibida pra mim no way
-                        Disse que não podia ficar
-                        Mas levou a sério o que eu falei
-                        Eu vou fazer de tudo que eu puder
-                        Eu vou roubar essa mulher pra mim
-                        Eu posso te ligar a qualquer hora
-                        Mas eu nem sei seu nome
-                        Se não eu, quem vai fazer você feliz?
-                        Se não eu, quem vai fazer você feliz? Guerra
-                        Se não eu, quem vai fazer você feliz?
-                        Se não eu, quem vai fazer você feliz? Guerra
-                    </div>
-                </div>
-
-                <div><br/></div>
 
                 { /* ------------------ GUILHERME DAVID ------------------ */}
                 <div className="row d-flex justify-content-center">
@@ -142,6 +109,38 @@ export default function AboutUs() {
                     <div className="sobre-div d-flex flex-column m-2 p-4 col">
                         <p className="sobre-titulo"> Sobre </p>
                         -- Inserir descrição aqui --
+                    </div>
+                </div>
+
+                <div><br/></div>
+
+                { /* ------------------ PEDRO GUERRA ------------------ */}
+                <div className="row d-flex justify-content-center">
+                    { /* MESMO CSS UTILIZADO NA PÁGINA DO EXEMPLO (INDIVIDUAL)*/}
+                    <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
+                        <div className="topDetail justify-content-center mb-2"></div>
+                        <h2 className="titleCustom my-2"> Pedro Guerra </h2>
+                        <img className="imageCustom img-fluid mb-3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src={ PedroGuerra } alt="Profile"/>
+                        <h5 className="placeOfOriginInProfile mb-2"> 
+                            <img className="mr-2" alt="location" src={locationIcon}/>
+                            Santos - SP
+                        </h5>
+                        <h4> Desenvolvedor Web Full Stack </h4>
+                    </div>
+                    <div className="sobre-div d-flex flex-column m-2 p-4 col">
+                        <p className="sobre-titulo"> Sobre </p>
+                        Ela achou meu cabelo engraçado
+                        Proibida pra mim no way
+                        Disse que não podia ficar
+                        Mas levou a sério o que eu falei
+                        Eu vou fazer de tudo que eu puder
+                        Eu vou roubar essa mulher pra mim
+                        Eu posso te ligar a qualquer hora
+                        Mas eu nem sei seu nome
+                        Se não eu, quem vai fazer você feliz?
+                        Se não eu, quem vai fazer você feliz? Guerra
+                        Se não eu, quem vai fazer você feliz?
+                        Se não eu, quem vai fazer você feliz? Guerra
                     </div>
                 </div>
 
