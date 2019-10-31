@@ -35,6 +35,10 @@ s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
 
+function convertDate(dbDate) {
+    return new Date(dbDate).toLocaleDateString('pt-br');
+}
+
 export default function ExampleProfile({ match }) { // match contém os parâmetros passados na rota (id)
     const [exampleInfo, setExampleInfo] = useState({});
     const [podcastURL, setPodcastURL] = useState('https://exempl.io/lfnwpvurnvpr9uvdvhdvudnvuidnvnruon'); //Forçar 404 caso o player dê problema
@@ -114,7 +118,7 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                 </div>
                                 <div className="col">
                                     <div className="podcastBox d-flex flex-column mt-3 p-4 align-items-left text-left col">
-                                        <h1 className="m-1 titleCustom"> Entrevista </h1>
+                                        <h1 className="m-1 titleCustom"> Entrevista em {convertDate(exampleInfo.insertionDate)} </h1>
                                         <div className="m-1 p-2">
                                             <iframe name="podcastIframe" title="podcastIframe" src={ podcastURL } frameBorder="0" className="castbox-responsive-player"/> 
                                             {
