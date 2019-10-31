@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 import './ExampleProfile.css';
 import Navbar from '../../components/Navbar.js';
@@ -109,7 +109,7 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                             }
                                         </h4> 
                                     </div>
-                                    <div className="d-flex flex-column m-3 align-items-left text-justify col">
+                                    <div className="d-flex flex-column m-3 align-items-left text-left col">
                                         <h1 className="titleCustom text-center"> Sobre </h1> 
                                         <p className="aboutDescription"> 
                                             { exampleInfo.briefing }
