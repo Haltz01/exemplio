@@ -1,0 +1,29 @@
+.warningText {
+    font: 50px Rubik;
+    font-weight: bold;
+}
+
+.warningDescription {
+    font: 28px Rubik;
+    color: rgb(143, 143, 143);
+    font-weight: bold;
+}
+
+.warningLinkExemplio a {
+    text-decoration: none;
+    font: 26px Rubik;
+    color: #4ddd4d;
+    transition-duration: 0.2s;
+}
+
+.warningLinkExemplio a:hover {
+    color: #5b82d6;
+    transition-duration: 0.2s;
+}
+
+.warningBox {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 16px;
+    opacity: 1;
+}

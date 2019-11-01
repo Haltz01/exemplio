@@ -20,6 +20,13 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  transition-duration: 0.3s;
+}
+
+.btn-custom:hover {
+  transition-duration: 0.3s;
+  color: rgb(255, 255, 255);
+  background: #4DDD4D;
 }
 
 .btn-custom.disabled {
