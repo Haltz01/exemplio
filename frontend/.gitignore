@@ -10,6 +10,8 @@
 
 # production
 /build
+/build_rep
+credentials.txt
 
 # misc
 .DS_Store

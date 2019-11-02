@@ -1,0 +1,11 @@
+#!/bin/bash
+yarn build
+mkdir build_rep
+rm -rf build_rep/*
+cp -rf build/* build_rep/
+cd build_rep
+git add .
+git commit -am "Default commit message"
+git push
+cd ..
+python refresh.py

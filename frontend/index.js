@@ -4,9 +4,9 @@ const app = express();
 
 const exec = require('child_process').exec;
 
-exec('cd build && git pull');
+exec('git clone https://github.com/marcuscastelo/exemplio-build-frontend build');
 
-const prefix = '/revamp'
+const prefix = '/revamp';
 
 app.use('*static', express.static(path.join(__dirname, 'build', 'static')));
 
