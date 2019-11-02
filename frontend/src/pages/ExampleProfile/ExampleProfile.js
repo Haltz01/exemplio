@@ -6,7 +6,6 @@ import Navbar from '../../components/Navbar.js';
 import Footer from '../../components/Footer.js';
 import { normalizePodcastUrl } from './utils';
 
-import locationIcon from '../../assets/locationIcon.svg'
 
 /*
 -> Align "justified" text inside everything (don't align to the left)
@@ -18,6 +17,9 @@ https://xd.adobe.com/spec/cc1222ea-4331-481b-5719-3dd15471d179-ba23/screen/81b20
 */
 
 import api from '../../services/api'; // -> Comunicar-se com o backend!
+import ValidProfile from './components/ValidProfile';
+import NotFoundProfile from './components/NotFoundProfile';
+import LoadingProfile from './components/LoadingProfile';
 
 /**
 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -28,164 +30,56 @@ this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL va
 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 */
-(async function() {
-var d = document, s = d.createElement('script');
-s.src = 'https://exemplio.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
+async function loadDisqus() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://exemplio.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+};
 
-function convertDate(dbDate) {
-    return new Date(dbDate).toLocaleDateString('pt-br');
-}
+const LOAD_TIMEOUT = 5000; //5 seconds
 
 export default function ExampleProfile({ match }) { // match contém os parâmetros passados na rota (id)
     const [exampleInfo, setExampleInfo] = useState({});
-    const [podcastURL, setPodcastURL] = useState('https://exempl.io/lfnwpvurnvpr9uvdvhdvudnvuidnvnruon'); //Forçar 404 caso o player dê problema
-    
+    const [loadingHasTimeout, setLoadingHasTimeout] = useState(false);
+
     // Conexão com backend para buscar informações de um exemplo específico
     useEffect(() => {
-        async function getExampleInfo() {
+        async function getExampleInfo(timeoutProcess) {
             const response = await api.get(`/exemplos/${match.params.exampleID}`, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
             });
-            console.log(response.data);
-            setExampleInfo(response.data);
-            setPodcastURL(response.data.podcastLink);
+            if (!response.data.message) {
+                clearTimeout(timeoutProcess);
+                setLoadingHasTimeout(false);
+                setExampleInfo(response.data);
+                loadDisqus();
+            }
         }
-
-        getExampleInfo();
+        let timeoutProcess = setTimeout(()=>setLoadingHasTimeout(true), LOAD_TIMEOUT);        
+        getExampleInfo(timeoutProcess);
 
     }, [match.params.exampleID]); // executa sempre que há alteração em match.params.exampleID
-
-    useEffect(() => {
-        setPodcastURL(normalizePodcastUrl(exampleInfo.podcastLink));
-        const removeImageDiv = () => {
-            // if (exampleInfo.podcastLink){
-            //     $('iframe[name=podcastIframe]').ready((e) => {
-            //         console.log(e);
-            //         console.log($(e));
-            //         console.log($(e).contents());
-                    
-            //     })
-            //     console.log('Chamado!');
-            // }
-        }
-        setTimeout(removeImageDiv, 6000);
-    }, [exampleInfo.podcastLink]);
 
     useEffect(() => {
         window.scrollTo(0,0);
     }, []);
 
     return (
-        <div> 
+        <React.Fragment> 
                 <Navbar/>
                 <div className="container bg-light">
                 {
                     /* // Pesquisar um jeito mais fácil de verificar estas condições: */
-                    (Object.keys(exampleInfo).length !== 0 && exampleInfo.tags !== undefined && exampleInfo.tags.length !== 0 && exampleInfo.message === undefined) ? (
-                        <div className="container">
-                            <div className="row">
-                                <div id={ exampleInfo.exemploID } className="customBox d-flex flex-column m-3 align-items-center text-center h-100 col-xs col-sm-11 col-md-11 col-lg-3">
-                                    <div className="topDetail justify-content-center mb-2"></div>
-                                    <h2 className="titleCustom mb-2"> { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
-                                    <h5 className="placeOfOriginInProfile mb-2"> 
-                                        <img className="mr-2" alt="location" src={locationIcon}/>
-                                        { exampleInfo.placeOfOrigin }
-                                    </h5>  
-                                    <img className="imageCustom img-fluid mb-3" src={ exampleInfo.imageLink } alt="Profile"/>
-                                    <div>
-                                        <h4 className="TagsInProfile mb-2" >
-                                            {   
-                                                (exampleInfo.tags.length > 0) ?
-                                                //Builds a string from all 'nexTag' (foreach) by concatenating them with ',' as separator
-                                                exampleInfo.tags.reduce((currentString, nextTag) => {
-                                                    return currentString + ', ' + nextTag;
-                                                })
-                                                : 'Erro, exampleTags.length == 0'
-                                            }
-                                        </h4> 
-                                    </div>
-                                    <div className="d-flex flex-column m-3 align-items-left text-left col">
-                                        <h1 className="titleCustom text-center"> Sobre </h1> 
-                                        <p className="aboutDescription"> 
-                                            { exampleInfo.briefing }
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="col">
-                                    <div className="podcastBox d-flex flex-column mt-3 p-4 align-items-left text-left col">
-                                        <h1 className="m-1 titleCustom"> Entrevista em {convertDate(exampleInfo.insertionDate)} </h1>
-                                        <div className="m-1 p-2">
-                                            <iframe name="podcastIframe" title="podcastIframe" src={ podcastURL } frameBorder="0" className="castbox-responsive-player"/> 
-                                            {
-                                                /* //A cookie associated with a cross-site resource at http://castbox.fm/ was set without the `SameSite` attribute. 
-                                                    A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and 
-                                                    `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at 
-                                                    https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032
-                                                    https://www.w3schools.com/js/js_ajax_http_send.asp
-                                                    https://stackoverflow.com/questions/17694807/how-to-set-custom-http-headers-when-changing-iframe-src/40623473
-                                                */
-                                            }
-                                        </div>
-                                    </div>
-                                    <div className="customBox mt-3 p-3 col">
-                                        <h2 className="titleCustom ml-4"> Linha do tempo de { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
-                                        <div className="d-flex comments flex-column m-2 align-items-center">
-                                        { 
-                                            (exampleInfo.eventDescriptionList !== undefined) ? ( 
-                                                exampleInfo.eventDescriptionList.map((element, index) => {
-                                                    return (
-                                                        // TODO validar remover bubble
-                                                        <div key={"timeline_"+index} className="timelineInfo comment bubble m-1 mt-4 p-3 col-xs col-sm-10 col-md-8 col-lg-8">
-                                                            <div className="row ">
-                                                                <div className="col text-left">
-                                                                    <p className="eventTitle"> <strong> {exampleInfo.eventTitleList[index]} </strong> </p>
-                                                                </div>
-                                                                <div className="align-items-right col">
-                                                                    <div className="d-flex flex-column align-items-center float-right">
-                                                                        <div className="eventDate">
-                                                                            {exampleInfo.eventDateList[index]}
-                                                                        </div>
-                                                                        <div className="dateDetailLine"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            { element }
-                                                        </div>
-                                                    )
-                                                })
-                                            )  : (console.log("Just wait a moment... Event Description List is empty")) 
-                                        }
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="row">
-                               
-                            </div>
-                            <div className="row">
-                                
-                            </div>
-                        </div>
-                    )
+                    (Object.keys(exampleInfo).length !== 0) ? 
+                        <ValidProfile exampleInfo={exampleInfo}/>
                     : 
-                    (
-                        <div className="container">
-                            <div className="customBox d-flex flex-column m-3 align-items-center text-center"> 
-                                <br/><br/><br/><br/> 
-                                <h1 className="errorMessage"> 
-                                    Não encontramos o exemplo que você procurava. 
-                                    <br/><br/> 
-                                    Desculpe :(
-                                </h1> 
-                                <br/><br/><br/><br/>
-                            </div>
-                        </div>
-                    )
+                    (loadingHasTimeout) ?
+                        <NotFoundProfile/>
+                    :
+                        <LoadingProfile/>
                 }
 
                 {/* Disqus DIV */}
@@ -194,7 +88,7 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                                             
                 <Footer />
                 </div>
-        </div>
+        </React.Fragment>
     );
 }
 

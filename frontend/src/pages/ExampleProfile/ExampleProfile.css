@@ -99,40 +99,54 @@
 
 .comments{
     width: 100%;
-  }
-  .comments .comment{
+}
+.comments .comment{
     width:100%;
     margin-bottom:20px;
-  }
-  
-  .comments  .comment p{
+}
+
+.comments  .comment p{
     margin: 0 0 10px 0;
     font-weight: 500;
     font-size: 15px;
     flex-direction: row;
-  }
-  
-  .bubble{
+}
+
+.bubble{
     position: relative;
     background: #F9F9F9;
     padding: 20px;
     color: #222;
     border-radius: 14px;
     margin-left: 20px;
-  }
-  
-/* TODO: validar sem bubble */
-/* .bubble::after{
-    content: "";
-    display: block;
-    position: absolute;
-    
-    right: -26px;
-    top: 15px;
-  
-    width: 0;
-    height: 0;
-    border-top: 26px solid transparent;
-    border-bottom: 26px solid transparent;
-    border-left: 26px solid #F9F9F9;
-} */
+}
+
+:root {
+    --darkColor: rgb(228, 225, 225);
+    --lightColor: rgb(218, 216, 216);
+}
+
+@keyframes exampleLoading {
+    0% {
+        background-color: var(--darkColor);
+        color: var(--darkColor);
+    }
+    50% {
+        background-color:  var(--lightColor);
+        color: var(--lightColor);
+    }
+    100% {
+        background-color:  var(--darkColor);
+        color: var(--darkColor);
+    }
+}
+
+.invalidBlock {
+    background-color:  rgb(98, 184, 176);
+    color: rgb(98, 184, 176);
+
+    border-radius: 10px;
+    animation: exampleLoading 2s;
+    animation-iteration-count: infinite;
+}
+

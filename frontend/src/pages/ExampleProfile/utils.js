@@ -19,3 +19,7 @@ export function normalizePodcastUrl(rawURL) {
     let newURL = `https://castbox.fm/app/castbox/player/id${profileID}/id${podcastID}?v=${podcastVersion}&autoplay=0&hide_list=1`;
     return newURL;
 }
+
+export function convertDate(dbDate) {
+    return new Date(dbDate).toLocaleDateString('pt-br');
+}
