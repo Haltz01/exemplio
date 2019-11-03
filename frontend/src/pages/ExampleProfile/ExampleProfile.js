@@ -4,8 +4,6 @@ import React, { useState, useEffect } from 'react';
 import './ExampleProfile.css';
 import Navbar from '../../components/Navbar.js';
 import Footer from '../../components/Footer.js';
-import { normalizePodcastUrl } from './utils';
-
 
 /*
 -> Align "justified" text inside everything (don't align to the left)

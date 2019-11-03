@@ -178,7 +178,7 @@ export default function Homepage() {
                                 </Link>
                             </button>
                         </div>
-                        <div className="w-50 mx-auto mb-5">
+                        <div className="w-50 homepageBottomLogo mx-auto mb-5">
                             <img className="img-fluid" src={ exemplioLogo } alt="Exemplio Logo"></img>
                         </div>
                     </div>
