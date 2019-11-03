@@ -146,6 +146,34 @@
     animation-iteration-count: 3.3;
 }
 
+.invalidBox {
+    background-color:  rgb(98, 184, 176) !important;
+    color: rgb(98, 184, 176) !important;
+    border-radius: 10px !important;
+    animation: loadingBoxAnimation 2s;
+    animation-iteration-count: infinite;
+}
+
+.invalidImage {
+    width: 130px !important;
+    height: 130px !important;
+}
+
+@keyframes loadingBoxAnimation {
+    0% {
+        background-color: var(--darkColor);
+        color: var(--darkColor);
+    }
+    50% {
+        background-color:  var(--lightColor);
+        color: var(--lightColor);
+    }
+    100% {
+        background-color:  var(--darkColor);
+        color: var(--darkColor);
+    }
+}
+
 @keyframes pulse {
     0% {
         background-color: rgb(255, 255, 255, 0.9);

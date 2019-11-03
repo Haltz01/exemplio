@@ -220,7 +220,6 @@ export default function ExamplesList() {
                                 </div>
                             </div>
                         </div>
-                        { /* LISTA QUEBRANDO MARGEM ESQUERDA EM PEQUENAS RESOLUÇÕES*/}
                         <div className="customAlignCssRow row">
                             { 
                                 examplesInfoList.map(
