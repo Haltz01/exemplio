@@ -65,11 +65,11 @@ export default function ValidProfile({exampleInfo}) {
                                                     <p className="eventTitle"> <strong> {exampleInfo.eventTitleList[index]} </strong> </p>
                                                 </div>
                                                 <div className="align-items-right col">
-                                                    <div className="d-flex flex-column align-items-center float-right">
+                                                    <div className="d-flex flex-column align-items-center float-right eventDate">
                                                         <div className="eventDate">
                                                             {exampleInfo.eventDateList[index]}
                                                         </div>
-                                                        <div className="dateDetailLine"></div>
+                                                        {/* <div className="dateDetailLine"></div> --> removendo temporariamente a data */}
                                                     </div>
                                                 </div>
                                             </div>
