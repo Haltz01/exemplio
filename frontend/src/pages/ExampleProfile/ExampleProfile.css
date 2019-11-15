@@ -87,8 +87,8 @@
     color: #8B8B8B;
     opacity: 1;
     /* removing/covering dates temporarly */
-    background: #4DDD4D; 
-    color: #4DDD4D;
+    background: #F9F9F9; 
+    color: #F9F9F9;
     border-radius: 50%;
 }
 
