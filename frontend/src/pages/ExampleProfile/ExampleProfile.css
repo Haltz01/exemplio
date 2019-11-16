@@ -47,7 +47,7 @@
 }
 
 .aboutDescription {
-    font: Regular 20px/24px Rubik;
+    font: 20px/24px Rubik;
     letter-spacing: 0;
     color: #3A3B3A;
     opacity: 1;
@@ -61,7 +61,7 @@
 }
 
 .errorMessage {
-    font: Regular 30px/36px Rubik;
+    font: 30px/36px Rubik;
     letter-spacing: 0;
     color: rgb(104, 104, 104);
     opacity: 0.8;

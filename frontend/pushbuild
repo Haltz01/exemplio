@@ -6,6 +6,6 @@ cp -rf build/* build_rep/
 cd build_rep
 git add .
 git commit -am "Default commit message"
-git push
+git push --force
 cd ..
 python refresh.py

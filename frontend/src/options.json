@@ -1,4 +1,4 @@
 {
-    "linkPrefix":"/revamp",
+    "linkPrefix":"",
     "backendLocation":"https://api.exempl.io"
 }
