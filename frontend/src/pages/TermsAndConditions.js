@@ -12,7 +12,7 @@ export default function TermsAndConditions() {
     return (
         <div>
             <Navbar />
-            <div className="container containerBox p-4 mt-4 mb-5 mx-1">
+            <div className="container containerBox p-4 mt-4 mb-5 mx-auto">
                 <div className="row">
                     <div className="col">
                         <h1 className="pageTitle mb-4 mt-1"> TERMOS DE USO E POLÍTICA DE PRIVACIDADE </h1>
