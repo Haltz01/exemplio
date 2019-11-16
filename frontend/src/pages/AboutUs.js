@@ -10,7 +10,7 @@ import locationIcon from '../assets/locationIcon.svg'
 
 import PedroGuerra from '../assets/exemplio-team-images/PedroGuerra.jpg';
 import GuilhermeDavid from '../assets/exemplio-team-images/GuilhermeDavid.jpg';
-import BrendaMajor from '../assets/exemplio-team-images/BrendaMajor.jpg';
+// import BrendaMajor from '../assets/exemplio-team-images/BrendaMajor.jpg';
 import GuilhermeCoube from '../assets/exemplio-team-images/GuilhermeCoube.jpg';
 import MarcusVinicius from '../assets/exemplio-team-images/MarcusVinicius.jpg';
 
@@ -73,7 +73,8 @@ export default function AboutUs() {
 
                 <div><br/></div>
 
-                { /* ------------------ BRENDA MAJOR ------------------ */}
+                {/* 
+                ------------------ BRENDA MAJOR ------------------ 
                 <div className="row d-flex justify-content-center">
                     <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
                         <div className="topDetail justify-content-center mb-2"></div>
@@ -92,7 +93,7 @@ export default function AboutUs() {
                     </div>
                 </div>
 
-                <div><br/></div>
+                <div><br/></div> */}
 
                 { /* ------------------ GUI COUBE ------------------ */}
                 <div className="row d-flex justify-content-center">
@@ -130,18 +131,7 @@ export default function AboutUs() {
                     </div>
                     <div className="sobre-div d-flex flex-column m-2 p-4 col">
                         <p className="sobre-titulo"> Sobre </p>
-                        Ela achou meu cabelo engraçado
-                        Proibida pra mim no way
-                        Disse que não podia ficar
-                        Mas levou a sério o que eu falei
-                        Eu vou fazer de tudo que eu puder
-                        Eu vou roubar essa mulher pra mim
-                        Eu posso te ligar a qualquer hora
-                        Mas eu nem sei seu nome
-                        Se não eu, quem vai fazer você feliz?
-                        Se não eu, quem vai fazer você feliz? Guerra
-                        Se não eu, quem vai fazer você feliz?
-                        Se não eu, quem vai fazer você feliz? Guerra
+                        -- Inserir descrição aqui --
                     </div>
                 </div>
 
