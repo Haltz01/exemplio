@@ -73,28 +73,6 @@ export default function AboutUs() {
 
                 <div><br/></div>
 
-                {/* 
-                ------------------ BRENDA MAJOR ------------------ 
-                <div className="row d-flex justify-content-center">
-                    <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
-                        <div className="topDetail justify-content-center mb-2"></div>
-                        <h2 className="titleCustom my-2"> Brenda Major </h2> 
-                        <img className="imageCustom img-fluid mb-3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src={ BrendaMajor } alt="Profile"/>
-                        <h5 className="placeOfOriginInProfile mb-2"> 
-                            <img className="mr-2" alt="location" src={locationIcon}/>
-                            São Paulo - SP
-                        </h5>
-                        <h4> Chefe de Conteúdo </h4>
-                    </div>
-                    <div className="sobre-div d-flex flex-column m-2 p-4 col">
-                        <p className="sobre-titulo"> Sobre </p>
-                        Brenda é uma mina que estudou no etapa e pa e agora ta vivendo em London. 
-                        A bixa já foi estudar em Harvard em 2018 e já comandou o GirlUp, clube feminista da Onu.
-                    </div>
-                </div>
-
-                <div><br/></div> */}
-
                 { /* ------------------ GUI COUBE ------------------ */}
                 <div className="row d-flex justify-content-center">
                     <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
@@ -131,7 +109,17 @@ export default function AboutUs() {
                     </div>
                     <div className="sobre-div d-flex flex-column m-2 p-4 col">
                         <p className="sobre-titulo"> Sobre </p>
-                        -- Inserir descrição aqui --
+                        <p>
+                            Pedro Guerra é um jovem estudante nascido em Santos/SP. 
+                            Desde seu ensino fundamental particiou e foi medalhista de olimpíadas de Matemática, 
+                            Física e Informática. Durante o ensino médio no IFSP pôde reafirmar sua paixão pela computação, 
+                            desenvolvendo um aplicativo de Realidade Aumentada para auxiliar no ensino de Física. 
+                            Atualmente cursa Ciências da Computação na USP e participa de projetos externos, 
+                            como a Exemplio e o <a href='https://ganesh.icmc.usp.br/'>Ganesh</a>, em áreas que o cativam. Acredita que a educação é a mais poderosa 
+                            ferramenta de  transformação positiva no âmbito econômico, político, social e cultural. 
+                            Um de seus sonhos é ver um país que verdadeiramente valorize a educação e tudo que há ao seu redor. 
+                            Para isso, devemos ensinar às pessoas a importância e o poder da educação, basta termos iniciativa.
+                        </p>
                     </div>
                 </div>
 
