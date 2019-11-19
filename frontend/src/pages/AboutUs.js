@@ -111,11 +111,11 @@ export default function AboutUs() {
                         <p className="sobre-titulo"> Sobre </p>
                         <p>
                             Pedro Guerra é um jovem estudante nascido em Santos/SP. 
-                            Desde seu ensino fundamental particiou e foi medalhista de olimpíadas de Matemática, 
+                            Desde seu ensino fundamental participou e foi medalhista de olimpíadas de Matemática, 
                             Física e Informática. Durante o ensino médio no IFSP pôde reafirmar sua paixão pela computação, 
                             desenvolvendo um aplicativo de Realidade Aumentada para auxiliar no ensino de Física. 
                             Atualmente cursa Ciências da Computação na USP e participa de projetos externos, 
-                            como a Exemplio e o <a href='https://ganesh.icmc.usp.br/'>Ganesh</a>, em áreas que o cativam. Acredita que a educação é a mais poderosa 
+                            como a <i>Exemplio</i> e o <a href='https://ganesh.icmc.usp.br/'>Ganesh</a>, em áreas que o cativam. Acredita que a educação é a mais poderosa 
                             ferramenta de  transformação positiva no âmbito econômico, político, social e cultural. 
                             Um de seus sonhos é ver um país que verdadeiramente valorize a educação e tudo que há ao seu redor. 
                             Para isso, devemos ensinar às pessoas a importância e o poder da educação, basta termos iniciativa.
@@ -139,7 +139,16 @@ export default function AboutUs() {
                     </div>
                     <div className="sobre-div d-flex flex-column m-2 p-4 col">
                         <p className="sobre-titulo"> Sobre </p>
-                        -- Inserir descrição aqui --
+                        <p>
+                            Marcus Vinícius é um jovem de 19 anos nascido em Santos (SP). Com 15 anos descobriu sua paixão por computação e desde então segue esse caminho. Fez ensino técnico de informática no IFSP e agora é estudante de Ciência da Computação na USP. <br/>
+                            Já foi medalhista da OBMEP, realizando, também, a OBI 2018 e 2019.  Participou do desenvolvimento do Librasim (projeto voltado à ampliação da acessibilidade a materiais didáticos para deficientes auditivos). Acredita na proposta da Exemplio de democratizar o acesso à educação, bem como na educação holística. 
+                            Atualmente, participa da equipe de desenvolvimento da <i>Exemplio</i> e frequenta um grupo de estudos de Segurança da Informação (Ganesh).
+                            <br/><br/>
+                            Outros projetos:<br/>
+                            <a href="https://github.com/marcuscastelo">
+                                github/marcuscastelo
+                            </a>
+                        </p>
                     </div>
                 </div>
 
