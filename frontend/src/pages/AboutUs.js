@@ -10,7 +10,6 @@ import locationIcon from '../assets/locationIcon.svg'
 
 import PedroGuerra from '../assets/exemplio-team-images/PedroGuerra.jpg';
 import GuilhermeDavid from '../assets/exemplio-team-images/GuilhermeDavid.jpg';
-// import BrendaMajor from '../assets/exemplio-team-images/BrendaMajor.jpg';
 import GuilhermeCoube from '../assets/exemplio-team-images/GuilhermeCoube.jpg';
 import MarcusVinicius from '../assets/exemplio-team-images/MarcusVinicius.jpg';
 
@@ -97,16 +96,18 @@ export default function AboutUs() {
                 { /* ------------------ PEDRO GUERRA ------------------ */}
                 <div className="row d-flex justify-content-center">
                     { /* MESMO CSS UTILIZADO NA PÁGINA DO EXEMPLO (INDIVIDUAL)*/}
-                    <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
-                        <div className="topDetail justify-content-center mb-2"></div>
-                        <h2 className="titleCustom my-2"> Pedro Guerra </h2>
-                        <img className="imageCustom img-fluid mb-3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src={ PedroGuerra } alt="Profile"/>
-                        <h5 className="placeOfOriginInProfile mb-2"> 
-                            <img className="mr-2" alt="location" src={locationIcon}/>
-                            Santos - SP
-                        </h5>
-                        <h4> Desenvolvedor Web Full Stack </h4>
-                    </div>
+                        <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
+                            <div className="topDetail justify-content-center mb-2"></div>
+                            <a href="https://github.com/Haltz01" style={{"text-decoration":"none"}}>
+                                <h2 className="titleCustom my-2"> Pedro Guerra </h2>
+                                <img className="imageCustom img-fluid mb-3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src={ PedroGuerra } alt="Profile"/>
+                                <h5 className="placeOfOriginInProfile mb-2"> 
+                                    <img className="mr-2" alt="location" src={locationIcon}/>
+                                    Santos - SP
+                                </h5>
+                                <h4> Desenvolvedor Web Full Stack </h4>
+                            </a>
+                        </div>
                     <div className="sobre-div d-flex flex-column m-2 p-4 col">
                         <p className="sobre-titulo"> Sobre </p>
                         <p>
@@ -129,13 +130,15 @@ export default function AboutUs() {
                 <div className="row d-flex justify-content-center">
                     <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
                         <div className="topDetail justify-content-center mb-2"></div>
-                        <h2 className="titleCustom my-2"> Marcus Vinícius </h2> 
-                        <img className="imageCustom img-fluid mb-3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src={ MarcusVinicius } alt="Profile"/>
-                        <h5 className="placeOfOriginInProfile mb-2"> 
-                            <img className="mr-2" alt="location" src={locationIcon}/>
-                            Santos - SP
-                        </h5>
-                        <h4> Desenvolvedor Web Full Stack </h4>
+                        <a href="https://github.com/marcuscastelo" style={{"text-decoration":"none"}}>
+                            <h2 className="titleCustom my-2"> Marcus Vinícius </h2> 
+                            <img className="imageCustom img-fluid mb-3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src={ MarcusVinicius } alt="Profile"/>
+                            <h5 className="placeOfOriginInProfile mb-2"> 
+                                <img className="mr-2" alt="location" src={locationIcon}/>
+                                Santos - SP
+                            </h5>
+                            <h4> Desenvolvedor Web Full Stack </h4>
+                        </a>
                     </div>
                     <div className="sobre-div d-flex flex-column m-2 p-4 col">
                         <p className="sobre-titulo"> Sobre </p>

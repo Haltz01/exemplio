@@ -14,10 +14,11 @@ router.get('/exemplos/basicList', exemploController.getBasicList);
 // ---------- PEGANDO INFORMAÇÕES DE UM EXEMPLOS ESPECÍFICO ----------
 router.get('/exemplos/:exemploID', exemploController.getSpecificExemplo);
 
-
 // If the table has a primary key with auto_increment, the value of that will be returned in the results.insertId value: (error, result, fields) => {}
 
-// TO DO: FUNÇÃO PARA PEGAR SOMENTE OS EXEMPLOS COM DETERMINADA CARACTERISTICA (data de inserção, tags...)!!
 // let tag = req.query.exemploID; // itens da 'query' vem após ? na url (ex.: param1=Teste => req.query.param1 = Teste)
+
+// ---------- INSERINDO NO BANCO DE DADOS OS DADOS DE UM NOVO EXEMPLO ----------
+// router.post(); TO DO!
 
 module.exports = router;
