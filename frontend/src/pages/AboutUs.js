@@ -34,7 +34,7 @@ export default function AboutUs() {
                     <div className="sobre-div m-2 col-xs-12 col-sm-12 col-md-6 col-lg">
                         <p className="sobre-titulo ml-5 mt-4">Nossa proposta</p>
                         <p className="mx-5 mb-5">
-                            Imagina poder conhecer em detalhes a história de alguém que formou-se em Harvard, passou em medicina em uma universidade federal ou foi dançar ballet no Programa do Faustão. A proposta da exemplio é democratizar o acesso a exemplos de jovens que tiveram destaque em sua trajetória pessoal. Por meio de uma entrevista e linha do tempo, você pode estudar com clareza cada etapa, falha e dificuldade de quem foi além da média.
+                            Imagina poder conhecer em detalhes a história de alguém que formou-se em Harvard, passou em medicina em uma universidade federal ou foi dançar ballet no programa do Faustão. A proposta da exemplio é democratizar o acesso a exemplos de jovens que tiveram destaque em sua trajetória pessoal. Por meio de uma entrevista e linha do tempo, você pode estudar com clareza cada etapa, falha e dificuldade de quem foi além da média.
                         </p>
                     </div>
                     <div className="sobre-div m-2 col-xs-12 col-sm-12 col-md col-lg">
