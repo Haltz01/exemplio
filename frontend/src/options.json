@@ -1,4 +1,4 @@
 {
     "linkPrefix":"",
-    "backendLocation":"https://api.exempl.io"
+    "backendLocation":"http://127.0.0.1:3333"
 }
