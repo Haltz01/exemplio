@@ -19,7 +19,7 @@ CREATE TABLE exemploBasicInfo (
 );
 
 CREATE TABLE exemploTimelineInfo (
-	exemploID_FKEY int NOT NULL,
+	exemploID_FKEY varchar(80) NOT NULL,
 	eventTitleList varchar(1000) NOT NULL,
 	eventDateList varchar(1000) NOT NULL,
 	eventDescriptionList varchar(12000) NOT NULL,
