@@ -2,7 +2,7 @@ import React from 'react'
 
 import locationIcon from '../../../assets/locationIcon.svg'
 
-import { convertDate, normalizePodcastUrl } from '../utils.js'
+import { /*convertDate,*/ normalizePodcastUrl } from '../utils.js'
 
 export default function ValidProfile({exampleInfo}) {
     return (
@@ -45,7 +45,7 @@ export default function ValidProfile({exampleInfo}) {
                 </div>
                 <div className="col">
                     <div className="podcastBox d-flex flex-column mt-3 p-4 align-items-left text-left col">
-                        <h1 className="m-1 titleCustom"> Entrevista em {convertDate(exampleInfo.insertionDate)} </h1>
+                        {/* <h1 className="m-1 titleCustom"> Entrevista em {convertDate(exampleInfo.insertionDate)} </h1> */}
                         <div className="m-1 p-2">
                             <iframe name="podcastIframe" title="podcastIframe" src={ normalizePodcastUrl(exampleInfo.podcastLink) } frameBorder="0" className="castbox-responsive-player"/> 
                             {
