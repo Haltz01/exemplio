@@ -10,7 +10,7 @@ const express = require('express');
  */
 async function newExemplo(req, res) {
     //TODO: tratar envio de imagens
-    const exemplo = 
+    const sqlData = 
     [
         req.body.id,
         req.body.firstname,
@@ -23,8 +23,11 @@ async function newExemplo(req, res) {
         req.body.insertiondate
     ];
 
+    //TODO: check if pass is 221a4cf3f48684ce0cd886d04820d25259e6f066fbb087cb323e9a0f60dc9897 sha256
+
+
     let sqlCommand1 = 'INSERT INTO exemploBasicInfo values (?,?,?,?,?,?,?,?,?);';
-    db.query(sqlCommand1, [...exemplo] ,(error, result) => {
+    db.query(sqlCommand1, sqlData ,(error, result) => {
         if (error) {
             if (error.code == "ER_DUP_ENTRY") {
                 return res.status(400).json({errorCode: "ER_DUP_ENTRY", errorMessage: "duplicated entry"});

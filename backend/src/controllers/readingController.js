@@ -29,7 +29,7 @@ module.exports = {
     */
     async getSpecificExemplo(req, res) {
         const exemploID = req.params.exemploID;
-        let sqlQuery = "select * from exemploBasicInfo INNER JOIN exemploTimelineInfo ON exemploBasicInfo.exemploID = exemploTimelineInfo.exemploID_FKEY AND exemploBasicInfo.exemploID = ?";
+        let sqlQuery = "select * from exemploBasicInfo INNER JOIN exemploTimelineItem ON exemploBasicInfo.exemploID = exemploTimelineItem.exemploID_FKEY AND exemploBasicInfo.exemploID = ?";
         let insertOnQuery = [exemploID];
     
         sqlQuery = mysql.format(sqlQuery, insertOnQuery); // evitando SQL  Injection :)
@@ -40,19 +40,36 @@ module.exports = {
                 throw error;
             }
             
+            let response = {
+                tags: [],
+                eventDescriptionList: [],
+                eventDateList: [],
+                eventTitleList: []
+            };
+
             if (queryResult.length != 0) {
-                queryResult = JSON.parse(JSON.stringify(queryResult))[0];
-    
-                queryResult["tags"] = queryResult["tags"].split('|');
-                queryResult["eventDescriptionList"] = queryResult["eventDescriptionList"].split('|');
-                queryResult["eventDateList"] = queryResult["eventDateList"].split('|');
-                queryResult["eventTitleList"] = queryResult["eventTitleList"].split('|');
+                
+                let firstRow = JSON.parse(JSON.stringify(queryResult))[0]
+                response["firstName"] = firstRow["firstName"];
+                response["lastName"] = firstRow["lastName"];
+                response["placeOfOrigin"] = firstRow["placeOfOrigin"];
+                response["briefing"] = firstRow["briefing"];
+                response["podcastLink"] = firstRow["podcastLink"];
+                response["imageLink"] = firstRow["imageLink"];
+                response["insertionDate"] = firstRow["insertionDate"];
+                response["tags"] = firstRow["tags"].split('|');
+                for (let i = 0; i < queryResult.length; i++) {   
+                    let currentRow = JSON.parse(JSON.stringify(queryResult))[i];
+                    
+                    response["eventDescriptionList"].push(currentRow["eventDescription"]);
+                    response["eventTitleList"].push(currentRow["eventTitle"]);
+                }
             }
             else {
-                queryResult = { "message" : "Nenhum exemplo encontrado"};
+                response = { "message" : "Nenhum exemplo encontrado"};
             }
     
-            return res.json(queryResult);
+            return res.json(response);
         });
     },
 
