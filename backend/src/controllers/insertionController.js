@@ -42,11 +42,31 @@ async function newExemplo(req, res) {
 }
 
 /**
+ * @typedef {Request} express.Request 
+ * @typedef {Request} express.Response
  * @param {Request} req 
  * @param {Response} res 
  */
 function addTimelineInfo(req, res) {
-    //TODO: rebake DB
+    const sqlData = 
+    [
+        req.body.exemploID_FKEY,
+        req.body.eventTitle,
+        req.body.eventDescription
+    ];
+
+    const sqlCommand1 = 'INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription) VALUES(?, ?, ?);';
+    db.query(sqlCommand1, sqlData, (error, result) => {
+        if (error) {
+            console.log("Error on query execution: " + error.code);
+            return res.status(400).json({message:"you've probably given incorrect parameters"})
+        }
+
+        //TODO: return inserted item id
+        return res.json({ok:true, /*itemID: JSON.parse(JSON.stringify(result))[0]["timelineItemId"]*/});
+    })
+
+
 }
 
 module.exports = {
