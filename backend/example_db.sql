@@ -243,7 +243,6 @@ INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription)
 
 INSERT INTO exemploBasicInfo (exemploID, firstName,lastName,placeOfOrigin,tags,briefing,podcastLink,imageLink,insertionDate)
     VALUES ('augustasaraiva', 'Augusta', 'Saraiva', 'Rio Grande - RS', 'Política|Educação', 'Augusta Saraiva tem 21 anos e é nascida na cidade de Rio Grande, no Rio Grande do Sul. Ela estudou a vida inteira em escolas pública. Recebeu premiações em Olimpíadas, participou do Grêmio Estudantil durante o Ensino Médio, fez intercâmbio nos Estados Unidos e na Argentina, e foi aceita para estudar Jornalismo e Relações Internacionais na Northwestern University, nos Estados Unidos.', 'https://castbox.fm/app/castbox/player/id2209666/id197869542?v=8.11.2&autoplay=0&hide_list=1', 'https://exempl.io/images/AugustaSaraiva.jpeg', '2019-10-09');
-
 INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription) 
 	VALUES ('augustasaraiva', 'Origem', 'Augusta nasceu na cidade de Rio Grande – RS, uma cidade pequena de 200 mil habitantes. A mãe dela era contadora e o pai era eletricista. Além disso, o pai também tinha uma locadora de filmes, o que ofereceu a Augusta o acesso tanto a filmes de Hollywood, quanto filmes nacionais, em que podia aprender sobre a cultura do seu e de outros páises. Adorava escrever e amava ler.');
 INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription) 
