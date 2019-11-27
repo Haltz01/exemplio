@@ -23,6 +23,7 @@ CREATE TABLE exemploTimelineItem (
 	exemploID_FKEY varchar(80) NOT NULL,
 	eventTitle varchar(1000) NOT NULL,
 	eventDescription varchar(12000) NOT NULL,
+
 	FOREIGN KEY (exemploID_FKEY) REFERENCES exemploBasicInfo(exemploID)
 );
 	
@@ -51,7 +52,6 @@ INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription)
     VALUES ('robsonsilva', 'Gap year', 'Após terminar o ensino médio, decide tirar um gap year (ano sabático). Em abril de 2018, recebe a notícia de que foi aprovado no LaunchX com uma bolsa de 98%. Como a bolsa não contemplava os custos de alimentação e passagens aéreas, ele decide comprar uma bicicleta e utilizá-la para vender trufas de chocolate e outros doces (apelida-a de foodbike). Com isso, a sua história ganha imensa visibilidade na mídia, aparecendo em portais renomados como o G1. Assim, também recebe o apoio financeiro de diversas pessoas. Em julho de 2018, ele embarca rumo ao MIT para participar do programa por um mês.');
 INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription) 
     VALUES ('robsonsilva', 'Hoje', 'Em 2019, Robson passou a coordenar uma equipe de robótica em uma escola pública de sua região. O seu maior sonho é construir uma forte indústria de tecnologia no Brasil.');
- 
 # Alicia Aguiar
 
 
@@ -77,7 +77,7 @@ INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription)
     VALUES('aliciaaguiar', 'Reconhecimento nacional', 'Em 2018, Alicia ingressa na Banda Escola Cubatão (BEC). Então, passa a ter aulas de música, dança e canto. Também é convidada a fazer parte da “Companhia de Dança de Cubatão”, um grupo de dança famoso na cidade. Em julho, o grupo participa do Festival de Dança de Joinville - o maior festival do mundo em número de participantes. Lá, eles ganham o primeiro lugar na categoria conjunto de jazz e são premiados como o melhor grupo do festival.');
 INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription)  
     VALUES('aliciaaguiar', 'Hoje', 'Em 2019, Alicia começa a fazer aulas de teatro com o objetivo de expandir o seu conhecimento do mundo artístico. Como parte do grupo “Palco & Cia”, Alicia é convidada a participar da competição “Festival de Livorno”, na Itália. Além disso, ela e os outros integrantes da “Companhia de Dança de Cubatão” são convidados a participar do quadro “Dança de grupo do Faustão”, no programa Domingão do Faustão, da Rede Globo. Seu maior sonho é mudar a perspectiva que as pessoas de sua comunidade têm sobre a arte.');
- 
+
 # Miguel Fabrin
 
 
@@ -104,8 +104,6 @@ INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription)
 INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription)
 	VALUES('miguelfabrin', 'Hoje', 'Em 2019, Miguel atua como vice-presidente do IFMSA Brazil - UFSC. Seu maior sonho é mostrar aos jovens brasileiros como a educação pode ser uma ferramenta de transformação da sua realidade.');
 
-
-
 # João Abdalla
 
 
@@ -131,6 +129,7 @@ INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription)
 
 INSERT INTO exemploBasicInfo (exemploID, firstName,lastName,placeOfOrigin,tags,briefing,podcastLink,imageLink,insertionDate)
     VALUES ('joaoquintanilha', 'João', 'Quintanilha', 'Goiânia - GO', 'Sustentabilidade|Tecnologia', 'João Quintanilha, 19 anos. Natural de Goiânia, Goiás, João é criador do Sullivan, um tablet que cria imagens tridimensionais por meio de pinos, permitindo a acessibilidade para deficientes visuais por meio do tato. Este projeto foi um dos vários que João desenvolveu ao longo de seu Ensino Médio. Entre eles, estão o Plastisseiro (um travesseiro sustentável feito de plástico reciclado) e o Bolmoringa (uma bolsa com sementes que impede o fenômeno da eutrofização nos rios e lagos). Este último garantiu a ele um convite para ir à NASA, a agência espacial americana. No início de 2019, foi aprovado na Tufts University, onde irá estudar Ciência da Computação e Biotecnologia.','https://castbox.fm/app/castbox/player/id2209666/id174926576?v=8.11.2&autoplay=0&hide_list=1','https://exempl.io/images/JoaoQuintanilha.jpg', '2019-10-05');
+
 INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription) 
 	VALUES ('joaoquintanilha','Nascimento', 'Em 1999, João nasce em Goiânia - GO em um dos bairros mais perigosos da cidade.');
 INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription) 
@@ -175,12 +174,13 @@ INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription)
 	VALUES ('myllenacristyna', 'Fama internacional', 'Ainda em 2018, Myllena é convidada para retornar a Hollywood, nos Estados Unidos, para o lançamento do filme em que estreou. Ela passa uma semana convivendo com pessoas de alta influência e sendo recebida nos eventos como uma estrela de cinema. Em 2019, ela é convidada para ir pela terceira vez ao Intel ISEF, dessa vez como representante do National Geographic. Devido à fama do documentário nos Estados Unidos, Mylenna recebe uma bolsa completa para estudar inglês em uma escola em Los Angeles.');
 INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription) 
 	VALUES ('myllenacristyna', 'Hoje', 'Myllena continua estudando inglês e recebe uma bolsa na Arizona State University, onde irá estudar Jornalismo. Seu maior sonho é tornar-se uma jornalista investigativa e com isso contribuir para a divulgação do conhecimento científico.');
- 
+
 # Deborah Alves
 
 
 INSERT INTO exemploBasicInfo (exemploID, firstName,lastName,placeOfOrigin,tags,briefing,podcastLink,imageLink,insertionDate)
     VALUES ('deborahalves', 'Deborah', 'Alves', 'São Paulo - SP', 'Tecnologia|Negócios', 'Deborah Alves é uma jovem empreendedora formada pela Universidade de Harvard e co-fundadora da BRASA, a maior associação brasileira de estudantes no exterior. Em seu ensino médio, ela foi medalhista de várias olimpíadas internacionais de matemática, como a International Mathematical Olympiad (IMO) e a Romanian Master of Mathematics (RMM). Atualmente, Deborah é co-fundadora e CTO da Cuidas, uma startup que conecta empresas com médicos de família para atendimentos no próprio local de trabalho.','https://castbox.fm/app/castbox/player/id2209666/id176976930?v=8.11.2&autoplay=0&hide_list=1','https://exempl.io/images/DeborahAlves.jpeg', '2019-10-07');
+
 INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription) 
 	VALUES ('deborahalves', 'Infância', 'Nascida em São Paulo - SP, Deborah demonstra desde cedo o seu interesse pela área de tecnologia e matemática. Com apenas 10 anos, Deborah decide estudar apostilas de um curso de HTML que sua mãe fazia e começar a programar blogs e sites em seu tempo livre. Para ela, esse foi o primeiro momento que começou a se interessar pela área de computação.');
 INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription) 
@@ -209,6 +209,7 @@ INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription)
 
 INSERT INTO exemploBasicInfo (exemploID, firstName,lastName,placeOfOrigin,tags,briefing,podcastLink,imageLink,insertionDate)
     VALUES ('guilhermedavid', 'Guilherme', 'David', 'Cubatão - SP', 'Ciências|Causas Sociais', 'Guilherme David é um jovem cubatense de 20 anos de idade. É co-fundador da exemplio e do OrgulhoFederal. Por meio de uma doação de livros didáticos de um professor de educação Física, ele passou a estudar química por conta própria e a se apaixonar por ciências. Tendo sempre estudado em escolas públicas, Guilherme desenvolveu diversas iniciativas para aprimorar a comunidade à sua volta. O seu maior sonho é ampliar o acesso à educação holística aos estudantes de todo o Brasil.','https://castbox.fm/app/castbox/player/id2209666/id187554028?v=8.11.2&autoplay=0&hide_list=1','https://exempl.io/images/GuilhermeDavid.jpg', '2019-10-08');
+
 INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription) 
 	VALUES ('guilhermedavid', 'Infância no Vale da Morte', 'Em 1999, Guilherme nasce no município de Santos, no litoral paulista. No entanto, passa a viver em uma cidade vizinha chamada Cubatão. Devido à intensa atividade industrial, Cubatão era considerada pela ONU a cidade mais poluída do mundo nos anos 80. Por muito tempo, este município foi conhecido como “Vale da morte”.');
 INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription) 
@@ -236,11 +237,13 @@ INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription)
 INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription) 
 	VALUES ('guilhermedavid', 'Hoje', 'Atualmente, o seu maior sonho é ampliar o acesso a uma educação ativa aos estudantes de todo o Brasil. Para isso, atua como chefe de produto na exemplio e almeja ver o crescimento expressivo do projeto.');
 
+
 # Augusta Saraiva
 
 
 INSERT INTO exemploBasicInfo (exemploID, firstName,lastName,placeOfOrigin,tags,briefing,podcastLink,imageLink,insertionDate)
     VALUES ('augustasaraiva', 'Augusta', 'Saraiva', 'Rio Grande - RS', 'Política|Educação', 'Augusta Saraiva tem 21 anos e é nascida na cidade de Rio Grande, no Rio Grande do Sul. Ela estudou a vida inteira em escolas pública. Recebeu premiações em Olimpíadas, participou do Grêmio Estudantil durante o Ensino Médio, fez intercâmbio nos Estados Unidos e na Argentina, e foi aceita para estudar Jornalismo e Relações Internacionais na Northwestern University, nos Estados Unidos.', 'https://castbox.fm/app/castbox/player/id2209666/id197869542?v=8.11.2&autoplay=0&hide_list=1', 'https://exempl.io/images/AugustaSaraiva.jpeg', '2019-10-09');
+
 INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription) 
 	VALUES ('augustasaraiva', 'Origem', 'Augusta nasceu na cidade de Rio Grande – RS, uma cidade pequena de 200 mil habitantes. A mãe dela era contadora e o pai era eletricista. Além disso, o pai também tinha uma locadora de filmes, o que ofereceu a Augusta o acesso tanto a filmes de Hollywood, quanto filmes nacionais, em que podia aprender sobre a cultura do seu e de outros páises. Adorava escrever e amava ler.');
 INSERT INTO exemploTimelineItem (exemploID_FKEY, eventTitle, eventDescription) 
