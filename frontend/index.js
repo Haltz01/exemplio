@@ -52,4 +52,6 @@ app.get("*", (req, res) => {
     res.status(502).send("Unavailable resource");
 });
 
-app.listen(9000);
+app.listen(9000, ()=> {
+  console.log('Server listening on port 9000');
+});
