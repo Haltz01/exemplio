@@ -28,7 +28,6 @@ params = (
 user = input("Please insert administrator's username: ")
 passw = input("Please insert administrator's password: ")
 
-user = user[0:-1]
 data = {
   'user': user,
   'pass': passw,

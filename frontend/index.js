@@ -3,24 +3,22 @@ const path = require('path');
 const app = express();
 const fs = require('fs');
 
-const child_process = require('child_process');
+//Production Sruff:
 
+const child_process = require('child_process');
 function systemSync(cmd) {
   try {
     return child_process.execSync(cmd).toString();
   } 
   catch (error) {
-    error.status;  // Might be 127 in your example.
-    error.message; // Holds the message you typically want.
-    error.stderr;  // Holds the stderr output. Use `.toString()`.
-    error.stdout;  // Holds the stdout output. Use `.toString()`.
   }
 };
 
-// console.log(systemSync('rm -rf ' + path.join(__dirname, 'build')));
-// console.log(systemSync('git clone https://github.com/marcuscastelo/exemplio-build-frontend build');
-// console.log(systemSync("cd build; (git fetch && git status | grep 'up to date') && (git status -s | grep '.' && (echo 'Atualizando' && git fetch --all && git reset --hard origin/master) || echo 'Já atualizado') || (echo 'Atualizando' && git fetch --all && git reset --hard origin/master)"));
-console.log(systemSync("cd build; git pull"));
+// Production:
+//console.log(systemSync("cd build; (git fetch && git status | grep 'up to date') && (git status -s | grep '.' && (echo 'Atualizando' && git fetch --all && git reset --hard origin/master) || echo 'Já atualizado') || (echo 'Atualizando' && git fetch --all && git reset --hard origin/master)"));
+
+
+//Routes:
 
 
 const prefix = '';
