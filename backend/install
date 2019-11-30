@@ -1,0 +1,6 @@
+#!/bin/bash
+
+npm i
+cp .env_example .env
+echo 'Please configure database access now'
+xdg-open .env 
