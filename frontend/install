@@ -1,0 +1,8 @@
+#!/bin/bash
+
+npm i
+git clone https://github.com/marcuscastelo/exemplio-build-frontend build_rep
+yarn build
+
+echo "Test project: yarn start"
+echo "More commands at create-react-app documentation"
