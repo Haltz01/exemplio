@@ -21,12 +21,17 @@ export default function Homepage() {
     let [ examplesList, setExamplesList ] = useState([...Array(NUM_EXAMPLE_CARDS)].fill({}));
 
     async function fetchExamples() {
-        const response = await api.get(`/exemplos/basicList`, {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-        setExamplesList(response.data);
+        try {
+            const response = await api.get(`/exemplos/basicList`, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            setExamplesList(response.data);
+        } catch {
+            console.log('ERROR: Database not available');
+        }
+        
     } //Quando a lista de exemplos carragar
 
     useEffect(() => {
