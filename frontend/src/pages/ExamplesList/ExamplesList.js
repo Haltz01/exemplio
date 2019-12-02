@@ -9,6 +9,8 @@ import api from '../../services/api'; // -> Comunicar-se como backend!
 import ExamplesListCardInvalid from './components/ExamplesListCardInvalid';
 import ExamplesListCard from './components/ExamplesListCard';
 
+import ArrowUp from '../../assets/ArrowUp.svg';
+
 const categoriesList = ['Todos', 'Artes', 'Causas Sociais', 'Ciências', 'Educação', 'Negócios', 'Política', 'Sustentabilidade', 'Tecnologia', 'Voluntariado' ];
 
 export default function ExamplesList() {
@@ -98,9 +100,7 @@ export default function ExamplesList() {
         let showDiv = (div) => div.style.display = "block";
         let hideDiv = (div) => div.style.display = "none";
 
-        console.log(currentCategory);
         let selectedCategory_a_ = document.getElementById(currentCategory);
-        console.log(selectedCategory_a_);
         if (selectedCategory_a_ === null) return;
 
         let LST_currentActiveCategory_a_ = document.getElementsByClassName("categoryText active");
@@ -160,11 +160,28 @@ export default function ExamplesList() {
         });
     });
 
+    /* Função que exibe e oculta o botão de voltar ao topo da página */
+    $(document).ready(function() {
+        function showBackToTopButton() {
+            if($(window).scrollTop() > 700) {
+                $('.backToTopButton').removeClass("d-none");
+            }
+            else {
+                $('.backToTopButton').addClass("d-none");
+            }
+        }
+        $(document).scroll(showBackToTopButton);
+        showBackToTopButton();
+    });
+
     return (
         <div> 
+            <Link to="/" name="anchorTopOfPage" href="/"></Link> {/* âncora usada pada retornar ao topo da página */}
             <Navbar activePage="Mais exemplos"/>
             <div className="container bg-light">
                 <div className="row">
+                    <a href="#anchorTopOfPage" className="backToTopButton d-none"> <img alt="Arrow up to return to top of page" src={ArrowUp} className="m-auto p-3 d-block img-fluid"></img> </a>
+
                     <div className="col col-sm-5 col-md-5 col-lg-4 col-xl-3">
                         <div className="row">
                             <div className="col">

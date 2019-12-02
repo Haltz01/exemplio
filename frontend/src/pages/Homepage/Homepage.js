@@ -12,7 +12,6 @@ import exemplioLogo from '../../assets/LogoVertical.svg';
 import api from '../../services/api.js';
 import ExampleCard from './components/ExampleHomepageCard';
 
-
 //Options
 
 const NUM_EXAMPLE_CARDS = 4;

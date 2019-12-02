@@ -238,3 +238,24 @@
 .nonUnderlineLink {
     text-decoration: none !important;
 }
+
+/* Botão que retorna ao topo da página */
+.backToTopButton {
+    display: fixed;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99; /* Make sure it does not overlap */
+    background-color: #3DDD3D;
+    opacity: 70%;
+    cursor: pointer;
+    border-radius: 50%;
+    transition-duration: 0.3s;
+}
+
+.backToTopButton:hover {
+    background-color: rgba(3, 45, 230);
+    opacity: 100%;
+    transform: scale(1.1);
+    transition-duration: 0.3s;
+}
