@@ -8,7 +8,7 @@ export default function ValidProfile({exampleInfo}) {
     return (
         <div className="container">
             <div className="row">
-                <div id={ exampleInfo.exemploID } className="customBox d-flex flex-column m-3 align-items-center text-center h-100 col-xs col-sm-11 col-md-11 col-lg-3">
+                <div id={ exampleInfo.exemploID } className="customBox d-flex flex-column m-3 align-items-center text-center h-100 col-xs col-sm-11 col-md-11 col-lg-4">
                     <div className="topDetail justify-content-center mb-2"></div>
                     <div className="row no-gutters">
                         <div className="col">
