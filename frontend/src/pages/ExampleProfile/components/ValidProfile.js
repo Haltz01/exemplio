@@ -2,42 +2,50 @@ import React from 'react'
 
 import locationIcon from '../../../assets/locationIcon.svg'
 
-import { convertDate, normalizePodcastUrl } from '../utils.js'
+import { /*convertDate,*/ normalizePodcastUrl } from '../utils.js'
 
 export default function ValidProfile({exampleInfo}) {
     return (
         <div className="container">
             <div className="row">
-                <div id={ exampleInfo.exemploID } className="customBox d-flex flex-column m-3 align-items-center text-center h-100 col-xs col-sm-11 col-md-11 col-lg-3">
+                <div id={ exampleInfo.exemploID } className="customBox d-flex flex-column m-3 align-items-center text-center h-100 col-xs col-sm-11 col-md-11 col-lg-4">
                     <div className="topDetail justify-content-center mb-2"></div>
-                    <h2 className="titleCustom mb-2"> { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
-                    <h5 className="placeOfOriginInProfile mb-2"> 
-                        <img className="mr-2" alt="location" src={locationIcon}/>
-                        { exampleInfo.placeOfOrigin }
-                    </h5>  
-                    <img className="imageCustom img-fluid mb-3" src={ exampleInfo.imageLink } alt="Profile"/>
-                    <div>
-                        <h4 className="TagsInProfile mb-2" >
-                            {   
-                                (exampleInfo.tags.length > 0) ?
-                                //Builds a string from all 'nexTag' (foreach) by concatenating them with ',' as separator
-                                exampleInfo.tags.reduce((currentString, nextTag) => {
-                                    return currentString + ', ' + nextTag;
-                                })
-                                : 'Erro, exampleTags.length == 0'
-                            }
-                        </h4> 
+                    <div className="row no-gutters">
+                        <div className="col">
+                            <h2 className="titleCustom mb-2"> { exampleInfo.firstName + " " + exampleInfo.lastName } </h2>
+                            <h5 className="placeOfOriginInProfile mb-2"> 
+                                <img className="mr-2" alt="location" src={locationIcon}/>
+                                { exampleInfo.placeOfOrigin }
+                            </h5>  
+                            <img className="imageCustom img-fluid mb-3" src={ exampleInfo.imageLink } alt="Profile"/>
+                            <div>
+                                <h4 className="TagsInProfile mb-2">
+                                    {   
+                                        (exampleInfo.tags.length > 0) ?
+                                        //Builds a string from all 'nexTag' (foreach) by concatenating them with ',' as separator
+                                        exampleInfo.tags.reduce((currentString, nextTag) => {
+                                            return currentString + ', ' + nextTag;
+                                        })
+                                        : 'Erro, exampleTags.length == 0'
+                                    }
+                                </h4> 
+                            </div>
+                        </div>
                     </div>
-                    <div className="d-flex flex-column m-3 align-items-left text-left col">
-                        <h1 className="titleCustom text-center"> Sobre </h1> 
-                        <p className="aboutDescription"> 
-                            { exampleInfo.briefing }
-                        </p>
+
+                    {/* Infringindo grid layout aaaa */}
+                    <div className="row m-3 text-left"> 
+                        <h1 className="titleCustom mx-auto"> Sobre </h1>                             
+                        <div className="col-12">
+                            <p className="aboutDescription"> 
+                                { exampleInfo.briefing }
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div className="col">
                     <div className="podcastBox d-flex flex-column mt-3 p-4 align-items-left text-left col">
-                        <h1 className="m-1 titleCustom"> Entrevista em {convertDate(exampleInfo.insertionDate)} </h1>
+                        {/* <h1 className="m-1 titleCustom"> Entrevista em {convertDate(exampleInfo.insertionDate)} </h1> */}
                         <div className="m-1 p-2">
                             <iframe name="podcastIframe" title="podcastIframe" src={ normalizePodcastUrl(exampleInfo.podcastLink) } frameBorder="0" className="castbox-responsive-player"/> 
                             {

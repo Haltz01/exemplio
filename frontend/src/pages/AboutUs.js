@@ -34,7 +34,7 @@ export default function AboutUs() {
                     <div className="sobre-div m-2 col-xs-12 col-sm-12 col-md-6 col-lg">
                         <p className="sobre-titulo ml-5 mt-4">Nossa proposta</p>
                         <p className="mx-5 mb-5">
-                            Imagina poder conhecer em detalhes a história de alguém que formou-se em Harvard, passou em medicina em uma universidade federal ou foi dançar ballet no Programa do Faustão. A proposta da exemplio é democratizar o acesso a exemplos de jovens que tiveram destaque em sua trajetória pessoal. Por meio de uma entrevista e linha do tempo, você pode estudar com clareza cada etapa, falha e dificuldade de quem foi além da média.
+                            Imagina poder conhecer em detalhes a história de alguém que formou-se em Harvard, passou em medicina em uma universidade federal ou foi dançar ballet no programa do Faustão. A proposta da exemplio é democratizar o acesso a exemplos de jovens que tiveram destaque em sua trajetória pessoal. Por meio de uma entrevista e linha do tempo, você pode estudar com clareza cada etapa, falha e dificuldade de quem foi além da média.
                         </p>
                     </div>
                     <div className="sobre-div m-2 col-xs-12 col-sm-12 col-md col-lg">
@@ -78,7 +78,7 @@ export default function AboutUs() {
                 <div className="row d-flex justify-content-center">
                     <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
                         <div className="topDetail justify-content-center mb-2"></div>
-                        <a href="https://www.facebook.com/profile.php?id=100017794985369" style={{"text-decoration":"none"}}></a>
+                        <a href="https://www.facebook.com/profile.php?id=100017794985369" style={{"text-decoration":"none"}}>
                             <h2 className="titleCustom my-2"> Guilherme Coube </h2> 
                             <img className="imageCustom img-fluid mb-3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src={ GuilhermeCoube } alt="Profile"/>
                             <h5 className="placeOfOriginInProfile mb-2"> 

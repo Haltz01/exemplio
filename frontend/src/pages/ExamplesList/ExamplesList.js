@@ -27,11 +27,13 @@ export default function ExamplesList() {
         async function getExamplesInfoList() {
             try {
 
-                const response = await api.get('/exemplos/basicList', {
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                });
+            	const response = await new Promise((res, rej) => {
+					api.get('/exemplos/basicList', {
+                    	headers: {
+                        	'Content-Type': 'application/json'
+                    	}	
+                	}).then(res).catch(_=>console.log('ERROR: Database unavailable'));
+            	});
                 setSearchingProgress(true);
                 setExamplesInfoList(response.data);
                 setCurrentCategory('Todos');
