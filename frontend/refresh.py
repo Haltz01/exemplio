@@ -25,12 +25,9 @@ params = (
     ('login_only', '1'),
 )
 
-global user, passw
-with open('credentials.txt','r') as f:
-    user = f.readline()
-    passw = f.readline()
+user = input("Please insert administrator's username: ")
+passw = input("Please insert administrator's password: ")
 
-user = user[0:-1]
 data = {
   'user': user,
   'pass': passw,

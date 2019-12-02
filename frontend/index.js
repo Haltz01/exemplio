@@ -3,10 +3,23 @@ const path = require('path');
 const app = express();
 const fs = require('fs');
 
-const exec = require('child_process').exec;
+//Production Sruff:
 
-exec('rm -rf /home/exemvoox/exempliorevamp/build')
-exec('git clone https://github.com/marcuscastelo/exemplio-build-frontend build');
+const child_process = require('child_process');
+function systemSync(cmd) {
+  try {
+    return child_process.execSync(cmd).toString();
+  } 
+  catch (error) {
+  }
+};
+
+// Production:
+//console.log(systemSync("cd build; (git fetch && git status | grep 'up to date') && (git status -s | grep '.' && (echo 'Atualizando' && git fetch --all && git reset --hard origin/master) || echo 'Já atualizado') || (echo 'Atualizando' && git fetch --all && git reset --hard origin/master)"));
+
+
+//Routes:
+
 
 const prefix = '';
 
@@ -17,7 +30,7 @@ app.get('/fallback', (req, res) => {
 })
 
 app.get('*/manifest.json', (req, res) => {
-	res.sendFile(path.join(__dirname, 'build', 'manifest.json'))
+	res.sendFile(path.join(__dirname, 'build', 'manifest.json'));
 });
 
 app.get(`${prefix}/favicon.png`, function(req, res) {
@@ -33,4 +46,10 @@ app.get(prefix, function(req, res) {
   res.status(301).redirect(prefix + '/');
 });
 
-app.listen(9000);
+app.get("*", (req, res) => {
+    res.status(502).send("Unavailable resource");
+});
+
+app.listen(9000, ()=> {
+  console.log('Server listening on port 9000');
+});
