@@ -50,13 +50,15 @@ export default function AboutUs() {
                 <div className="row d-flex justify-content-center">
                     <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
                         <div className="topDetail justify-content-center mb-2"></div>
-                        <h2 className="titleCustom my-2"> Guilherme David </h2> 
-                        <img className="imageCustom img-fluid mb-3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src={ GuilhermeDavid } alt="Profile"/>
-                        <h5 className="placeOfOriginInProfile mb-2"> 
-                            <img className="mr-2" alt="location" src={locationIcon}/>
-                            Cubatão - SP
-                        </h5>
-                        <h4> Chefe de Produto </h4>
+                        <a href="https://www.linkedin.com/in/gdavidss/" style={{"text-decoration":"none"}}>
+                            <h2 className="titleCustom my-2"> Guilherme David </h2> 
+                            <img className="imageCustom img-fluid mb-3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src={ GuilhermeDavid } alt="Profile"/>
+                            <h5 className="placeOfOriginInProfile mb-2"> 
+                                <img className="mr-2" alt="location" src={locationIcon}/>
+                                Cubatão - SP
+                            </h5>
+                            <h4> Chefe de Produto </h4>
+                        </a>
                     </div>
                     <div className="sobre-div d-flex flex-column m-2 p-4 col">
                         <p className="sobre-titulo"> Sobre </p>
@@ -76,13 +78,15 @@ export default function AboutUs() {
                 <div className="row d-flex justify-content-center">
                     <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
                         <div className="topDetail justify-content-center mb-2"></div>
-                        <h2 className="titleCustom my-2"> Guilherme Coube </h2> 
-                        <img className="imageCustom img-fluid mb-3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src={ GuilhermeCoube } alt="Profile"/>
-                        <h5 className="placeOfOriginInProfile mb-2"> 
-                            <img className="mr-2" alt="location" src={locationIcon}/>
-                            São Paulo - SP
-                        </h5>
-                        <h4> Chefe de Crescimento </h4>
+                        <a href="https://www.facebook.com/profile.php?id=100017794985369" style={{"text-decoration":"none"}}></a>
+                            <h2 className="titleCustom my-2"> Guilherme Coube </h2> 
+                            <img className="imageCustom img-fluid mb-3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src={ GuilhermeCoube } alt="Profile"/>
+                            <h5 className="placeOfOriginInProfile mb-2"> 
+                                <img className="mr-2" alt="location" src={locationIcon}/>
+                                São Paulo - SP
+                            </h5>
+                            <h4> Chefe de Crescimento </h4>
+                        </a>
                     </div>
                     <div className="sobre-div d-flex flex-column m-2 p-4 col">
                         <p className="sobre-titulo"> Sobre </p>
