@@ -4,7 +4,7 @@ export default function LoadingProfile() {
     return (
         <div className="container">
             <div className="row">
-                <div className="customBox d-flex flex-column m-3 align-items-center text-center h-100 col-xs col-sm-11 col-md-11 col-lg-3">
+                <div className="customBox d-flex flex-column m-3 align-items-center text-center h-100 col-xs col-sm-11 col-md-11 col-lg-4">
                     <br></br>
                     <h2 className="titleCustom invalidBlock mb-2"> nome pequeno </h2>
                     <h5 className="placeOfOriginInProfile invalidBlock mb-2"> 
