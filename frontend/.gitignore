@@ -11,6 +11,7 @@
 # production
 /build
 /build_rep
+/build_bkp
 credentials.txt
 
 # misc
