@@ -9,7 +9,7 @@ import TermsAndConditions from './pages/TermsAndConditions';
 import AboutUs from './pages/AboutUs';
 import NotFound from './pages/NotFound.js';
 import Feedback from './pages/Feedback.js';
-import NewExample from './pages/NewExample.js';
+import NewExample from './pages/NewExample/NewExample';
 
 export default function Routes() {
     return (
