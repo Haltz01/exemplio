@@ -2,8 +2,8 @@ import React from 'react';
 import $ from 'jquery';
 import './NavbarHomepage.css';
 
-import logoExemplioWhite from '../assets/logoSVGWhite.svg';
-import logoExemplioColored from '../assets/logoSVG.svg';
+import logoExemplioWhite from '../assets/logos/logoSVGWhite.svg';
+import logoExemplioColored from '../assets/logos/logoSVG.svg';
 
 import { Link } from 'react-router-dom';
 import { linkPrefix } from '../options.json'
