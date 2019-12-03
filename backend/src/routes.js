@@ -4,19 +4,19 @@ const router = express.Router();
 const readingController = require('./controllers/readingController');
 const insertionController = require('./controllers/insertionController');
 
-router.post('/exemplos/insert/new', insertionController.newExemplo);
-router.put('/exemplos/insert/:exemploID/timelineItem', insertionController.addTimelineInfo);
+router.post('/backend/exemplos/insert/new', insertionController.newExemplo);
+router.put('/backend/exemplos/insert/:exemploID/timelineItem', insertionController.addTimelineInfo);
 
 // https://nemethgergely.com/async-function-best-practices/ LER ISSO!!
 
 // ---------- PEGANDO LISTA DE EXEMPLOS COM TODAS (BASIC + TIMELINE) AS INFORMAÇÕES DELES ----------
-router.get('/exemplos/fullList', readingController.getFullList);
+router.get('/backend/exemplos/fullList', readingController.getFullList);
 
 // ---------- PEGANDO LISTA DE EXEMPLOS (BASIC apenas) ----------
-router.get('/exemplos/basicList', readingController.getBasicList);
+router.get('/backend/exemplos/basicList', readingController.getBasicList);
 
 // ---------- PEGANDO INFORMAÇÕES DE UM EXEMPLOS ESPECÍFICO ----------
-router.get('/exemplos/:exemploID', readingController.getSpecificExemplo);
+router.get('/backend/exemplos/:exemploID', readingController.getSpecificExemplo);
 
 // If the table has a primary key with auto_increment, the value of that will be returned in the results.insertId value: (error, result, fields) => {}
 

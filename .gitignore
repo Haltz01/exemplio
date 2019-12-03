@@ -2,3 +2,7 @@ package-lock.json
 yarn.lock
 .env
 node_modules
+backend.zip
+node_modules.zip
+frontend.zip
+build.zip
