@@ -4,7 +4,7 @@ const router = express.Router();
 const readingController = require('./controllers/readingController');
 const insertionController = require('./controllers/insertionController');
 
-router.post('/exemplos/insert/new/basicInfo', insertionController.newExemplo);
+router.post('/exemplos/insert/new', insertionController.newExemplo);
 router.put('/exemplos/insert/:exemploID/timelineItem', insertionController.addTimelineInfo);
 
 // https://nemethgergely.com/async-function-best-practices/ LER ISSO!!

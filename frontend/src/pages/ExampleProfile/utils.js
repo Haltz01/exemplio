@@ -4,7 +4,7 @@
  * @param {String} rawURL 
  */
 export function normalizePodcastUrl(rawURL) {
-    const FNF = 'https://exempl.io/230u2985704543795023475982437504rhu34y59u4ho4i1g54075y14504'; //force not found
+    const FNF = 'https://exempl.io/invalidPodcastLink'; //force not found
     if (!rawURL) return FNF;
 
     console.log(rawURL);

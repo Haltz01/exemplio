@@ -8,38 +8,49 @@
     import api from '../../services/api';
 
     export default function NewExample() {
-        const [imageFileName, setImageFileName] = useState('Enviar imagem');
-        const [timelineItems, setTimelineItems] = useState([]);
 
+        //Form states
+        const [imageFileName, setImageFileName] = useState('Selecionar Imagem');
+        const [timelineItems, setTimelineItems] = useState([]);
+        
         const [serverErrCode, setServerErrCode] = useState(''); //Error code
         const [invalidStates, setInvalidStates] = useState({});
 
         const ERRROR_MESSAGES = {
-            ER_DUP_ENTRY: 'Já existe alguém cadastrado com esse nome'
+            ER_DUP_ENTRY: 'Já existe alguém cadastrado com esse nome',
+            ER_UNAUTHORIZED: 'Senha incorreta', 
         }
 
+        
         useEffect(() => {
-            setInvalidStates({
+            const defaultInvalidStates = {
                 firstname: false,
                 lastname: false,
                 placeoforigin: false,
                 briefing: false,
                 podcastlink: false,
-                imagelink: false
-            });
+                imagelink: false,
+                passwd: false,
+            };
 
+            console.log('Errorcode: ', serverErrCode)
+            
             switch(serverErrCode) {
                 case 'ER_DUP_ENTRY':
                         setInvalidStates({
+                            ...defaultInvalidStates,
                             firstname: true,
                             lastname: true,
-                            placeoforigin: false,
-                            briefing: false,
-                            podcastlink: false,
-                            imagelink: false
                         });
                     break;
+                case 'ER_UNAUTHORIZED':
+                        setInvalidStates({
+                            ...defaultInvalidStates,
+                            passwd: true,
+                        });
+                        break;
                 default:
+                    setInvalidStates(defaultInvalidStates)
                     break;
                     
             }
@@ -54,6 +65,16 @@
                 }
                 return 'Sem tags';
             }
+
+            async function encodeImage(imageFile) {
+                return await new Promise((res, rej) => {
+                    const reader = new FileReader();
+                    reader.readAsDataURL(imageFile);
+                    reader.onload = () => res(reader.result);
+                    reader.onerror = (error) => rej(error);
+                });
+            }
+
             const data = 
             {
                 id: (formData[1].value + formData[2].value).toLowerCase(),
@@ -62,13 +83,16 @@
                 placeoforigin: formData[3].value,
                 tags: concatTags(formData[4].value),
                 briefing: formData[5].value,
-                imagelink: 'aaaa',
+                base64image: await encodeImage(formData[7].files[0]),
                 podcastlink: formData[6].value,
-                insertiondate:"2019-06-20"
+                insertiondate:"2019-06-20",
+                timelineinfo: timelineItems,
+                passwd: formData[formData.length-2].value
             }
+            console.log(formData)
             console.log(data)
             try {
-                await api.post('/exemplos/insert/new/basicInfo', data,
+                await api.post('/exemplos/insert/new', data,
                 {
                     headers: { 'Content-Type': 'application/json' }
                 });
@@ -76,8 +100,8 @@
                 alert('Cadastro realizado com sucesso!');
                 //TODO: mudar tela de sucesso   
             } catch (error) {
-                console.log(error);
-                setServerErrCode('ER_DUP_ENTRY');
+                console.dir(error);
+                setServerErrCode(error.response.data.errorCode);
             }
         };
 
@@ -102,7 +126,7 @@
                                         <div className="invalid-feedback">{ERRROR_MESSAGES[serverErrCode]}</div>
                                     </div>
                                     <div className="col-12 col-md">
-                                        <input required className={`form-control mr-1 px-2 mt-1 ${invalidStates.firstname?'is-invalid':''}`} name="lastname" placeholder="Sobrenome"/>
+                                        <input required className={`form-control mr-1 px-2 mt-1 ${invalidStates.lastname?'is-invalid':''}`} name="lastname" placeholder="Sobrenome"/>
                                         <div className="invalid-feedback">{ERRROR_MESSAGES[serverErrCode]}</div>
                                     </div>
                                 </div>
@@ -118,8 +142,8 @@
                                 <input required className="form-control px-2 mt-1" name="podcastlink" placeholder="Link do podcast"/>
                                 <div className="custom-file mt-1">
                                     <input id="custom-file" className="custom-file-input px-2 " type="file" onChange={(e)=>{setImageFileName(e.target.value.split('\\')[2])}}/>
-                                    {/* TODO: required no file */}
-                                    <label className="custom-file-label" htmlFor="custom-file"> {imageFileName} </label>
+                                    {/* TODO: required no campo file */}
+                                    <label className="custom-file-label text-muted" htmlFor="custom-file"> {imageFileName} </label>
                                 </div>
                                 <br/><br/>
                             </fieldset>
@@ -137,7 +161,9 @@
                                 }
                                 <TimelineItemList name="timelineItemList" itemList={timelineItems} setTimelineItems={setTimelineItems}/>
                                 <br/><br/>
-                                <input type="submit" className="form-control" value="Enviar"></input>
+                                <input type="password" className={`form-control px-2 mt-1 ${invalidStates.passwd?'is-invalid':''}`} placeholder="Senha"/>
+                                <div className="invalid-feedback">{ERRROR_MESSAGES[serverErrCode]}</div>
+                                <input type="submit" className="form-control px-2 mt-1" value="Enviar"></input>
                             </fieldset>
                         </form>
                         </div>

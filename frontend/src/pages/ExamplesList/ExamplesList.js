@@ -46,6 +46,8 @@ export default function ExamplesList() {
         }
         getExamplesInfoList();
         window.scrollTo(0,0);
+
+        //TODO: fix unmounted access warning
     }, []); // [] => executa uma vez  
 
     //Handles notFoundDiv appearence
