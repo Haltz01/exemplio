@@ -98,7 +98,7 @@ export default function AboutUs() {
                     { /* MESMO CSS UTILIZADO NA PÁGINA DO EXEMPLO (INDIVIDUAL)*/}
                         <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
                             <div className="topDetail justify-content-center mb-2"></div>
-                            <a href="https://github.com/Haltz01" style={{"text-decoration":"none"}}>
+                            <a href="https://github.com/Haltz01" style={{"textDecoration":"none"}}>
                                 <h2 className="titleCustom my-2"> Pedro Guerra </h2>
                                 <img className="imageCustom img-fluid mb-3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src={ PedroGuerra } alt="Profile"/>
                                 <h5 className="placeOfOriginInProfile mb-2"> 
@@ -130,7 +130,7 @@ export default function AboutUs() {
                 <div className="row d-flex justify-content-center">
                     <div className="customBox d-flex flex-column m-2 pb-3 align-items-center text-center col-xs col-sm-11 col-md-11 col-lg-3">
                         <div className="topDetail justify-content-center mb-2"></div>
-                        <a href="https://github.com/marcuscastelo" style={{"text-decoration":"none"}}>
+                        <a href="https://github.com/marcuscastelo" style={{"textDecoration":"none"}}>
                             <h2 className="titleCustom my-2"> Marcus Vinícius </h2> 
                             <img className="imageCustom img-fluid mb-3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src={ MarcusVinicius } alt="Profile"/>
                             <h5 className="placeOfOriginInProfile mb-2"> 
