@@ -2,6 +2,7 @@ const mysql = require('mysql');
 const db = require('../sqlConnection');
 const express = require('express');
 
+const crypto = require('crypto');
 /**
  * @typedef {Request} express.Request 
  * @typedef {Request} express.Response
@@ -23,17 +24,24 @@ async function newExemplo(req, res) {
         req.body.insertiondate
     ];
 
+    const hash = crypto.createHash('sha256');
+
     //TODO: check if pass is 221a4cf3f48684ce0cd886d04820d25259e6f066fbb087cb323e9a0f60dc9897 sha256
 
+    if (!req.body.passwd) return res.status(403).send({errorCode: "ER_UNAUTHORIZED"});
+
+    if (hash.update(req.body.passwd).digest('hex') != '221a4cf3f48684ce0cd886d04820d25259e6f066fbb087cb323e9a0f60dc9897')
+        return res.status(403).send({errorCode: "ER_UNAUTHORIZED"});
 
     let sqlCommand1 = 'INSERT INTO exemploBasicInfo values (?,?,?,?,?,?,?,?,?);';
     db.query(sqlCommand1, sqlData ,(error, result) => {
         if (error) {
             if (error.code == "ER_DUP_ENTRY") {
-                return res.status(400).json({errorCode: "ER_DUP_ENTRY", errorMessage: "duplicated entry"});
+                return res.status(400).json({errorCode: "ER_DUP_ENTRY"});
             }
-            console.log("Error on query execution: " + error.code);
-            return res.status(400).json({errorMessage:"invalid insertion"});
+            console.log(": " + error.code);
+            //TODO: report this error someway when in production
+            return res.status(400).json({errorCode:"ER_UNKNOWN"});
         }
         
         return res.json({message:"ok"});
