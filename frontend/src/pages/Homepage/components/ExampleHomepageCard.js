@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { linkPrefix } from '../../../options.json'
-import exemplioLogo from '../../../assets/LogoVertical.svg';
-import locationIcon from '../../../assets/locationIcon.svg';
+import exemplioLogo from '../../../assets/logos/LogoVertical.svg';
+import locationIcon from '../../../assets/icons/locationIcon.svg';
 
 import '../Homepage.css';
 

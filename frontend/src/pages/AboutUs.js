@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 
 import './AboutUs.css';
 
-import locationIcon from '../assets/locationIcon.svg'
+import locationIcon from '../assets/icons/locationIcon.svg'
 
 import PedroGuerra from '../assets/exemplio-team-images/PedroGuerra.jpg';
 import GuilhermeDavid from '../assets/exemplio-team-images/GuilhermeDavid.jpg';

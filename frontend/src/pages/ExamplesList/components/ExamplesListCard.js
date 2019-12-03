@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { linkPrefix } from '../../../options.json';
 
-import locationIcon from '../../../assets/locationIcon.svg';
+import locationIcon from '../../../assets/icons/locationIcon.svg';
 
 export default function ExamplesListCard(props) {
     return (

@@ -4,7 +4,7 @@ import './Navbar.css';
 import { Link } from 'react-router-dom'
 import { linkPrefix } from '../options.json';
 
-import logoExemplio from '../assets/logoSVG.svg';
+import logoExemplio from '../assets/logos/logoSVG.svg';
 
 
 

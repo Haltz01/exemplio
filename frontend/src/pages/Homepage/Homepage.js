@@ -7,7 +7,7 @@ import './Homepage.css';
 import NavbarHomepage from '../../components/NavbarHomepage';
 import Footer from '../../components/Footer';
 
-import exemplioLogo from '../../assets/LogoVertical.svg';
+import exemplioLogo from '../../assets/logos/LogoVertical.svg';
 
 import api from '../../services/api.js';
 import ExampleCard from './components/ExampleHomepageCard';

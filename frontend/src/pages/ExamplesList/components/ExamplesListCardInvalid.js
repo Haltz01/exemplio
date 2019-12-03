@@ -2,7 +2,7 @@ import React from 'react';
 
 import '../ExamplesList.css';
 
-// import locationIcon from '../../../assets/locationIcon.svg'
+// import locationIcon from '../../../assets/icons/locationIcon.svg'
 
 export default function ExamplesListCardInvalid() {
     return (

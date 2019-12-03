@@ -2,9 +2,9 @@ import React from 'react';
 
 import "./Footer.css";
 
-import FacebookIcon from '../assets/facebook-app-logo.png';
-import InstagramIcon from '../assets/instagram-logo.png';
-import TwitterIcon from '../assets/twitter-logo.png';
+import FacebookIcon from '../assets/icons/facebook-app-logo.png';
+import InstagramIcon from '../assets/icons/instagram-logo.png';
+import TwitterIcon from '../assets/icons/twitter-logo.png';
 
 import { Link } from 'react-router-dom';
 import { linkPrefix } from '../options.json';

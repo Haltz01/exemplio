@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { linkPrefix } from '../options.json';
-import logoExemplio from '../assets/LogoVertical.svg';
+import logoExemplio from '../assets/logos/LogoVertical.svg';
 import Navbar from '../components/Navbar.js'
 
 import './NotFound.css';

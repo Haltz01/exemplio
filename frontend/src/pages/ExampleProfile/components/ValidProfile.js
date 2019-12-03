@@ -1,6 +1,6 @@
 import React from 'react'
 
-import locationIcon from '../../../assets/locationIcon.svg'
+import locationIcon from '../../../assets/icons/locationIcon.svg'
 
 import { /*convertDate,*/ normalizePodcastUrl } from '../utils.js'
 

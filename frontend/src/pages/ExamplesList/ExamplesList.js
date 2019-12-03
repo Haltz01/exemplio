@@ -9,7 +9,7 @@ import api from '../../services/api'; // -> Comunicar-se como backend!
 import ExamplesListCardInvalid from './components/ExamplesListCardInvalid';
 import ExamplesListCard from './components/ExamplesListCard';
 
-import ArrowUp from '../../assets/ArrowUp.svg';
+import ArrowUp from '../../assets/icons/ArrowUp.svg';
 
 const categoriesList = ['Todos', 'Artes', 'Causas Sociais', 'Ciências', 'Educação', 'Negócios', 'Política', 'Sustentabilidade', 'Tecnologia', 'Voluntariado' ];
 
