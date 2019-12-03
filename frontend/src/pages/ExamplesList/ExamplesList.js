@@ -35,7 +35,11 @@ export default function ExamplesList() {
                 	}).then(res).catch(_=>console.log('ERROR: Database unavailable'));
             	});
                 setSearchingProgress(true);
-                setExamplesInfoList(response.data);
+                if (Symbol.iterator in Object(response.data)) {
+                    setExamplesInfoList(response.data);
+                } else {
+                    console.error('Database error: ', response.data);
+                }
                 setCurrentCategory('Todos');
             }
             catch (e) {
@@ -180,6 +184,7 @@ export default function ExamplesList() {
                                     <nav className="nav d-flex flex-column align-itens-center justify-content-center" id="categoriesNav" role="tablist">
                                         <div> 
                                             {
+
                                                 categoriesList.map((category) => <Link id={category} className="categoryText nav-link" key={category} to="#" onClick={ () => setCurrentCategory(category)}>{category}</Link>)
                                             }
                                         </div>
@@ -226,8 +231,9 @@ export default function ExamplesList() {
                         </div>
                         <div className="customAlignCssRow row">
                             { 
-                                examplesInfoList.map(
-                                    (exampleInfo, numNewExamples = 0) => <ExamplesListCard key = { `exampleCard_${exampleInfo.exemploID}` } exampleInfo = { exampleInfo } isNew = { (numNewExamples++ < 3) ? true : false } /> )
+                                examplesInfoList.map((exampleInfo, numNewExamples = 0) =>
+                                    <ExamplesListCard key = { `exampleCard_${exampleInfo.exemploID}` } exampleInfo = { exampleInfo } isNew = { (numNewExamples++ < 3) ? true : false } /> 
+                                )
                             }
                         </div>
                     </div>

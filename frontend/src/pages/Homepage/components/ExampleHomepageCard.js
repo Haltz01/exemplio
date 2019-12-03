@@ -12,7 +12,7 @@ export default function ExampleCard(props) {
     const [ imageLink, setImageLink ] = useState(exemplioLogo);
     const [ name, setName ] = useState('Carregando nome...');
     const [ tags, setTags ] = useState('Carregando tags...');
-    
+    const [ placeOfOrigin, setPlaceOfOrigin ] = useState('Carregando origem...')
     //Update Image
     useEffect(() =>  {
         if (props.exampleInfo.imageLink)
@@ -36,6 +36,13 @@ export default function ExampleCard(props) {
             setExampleLink(`${EXAMPLE_BASE_LINK}${props.exampleInfo.exemploID}`);
     }, [props.exampleInfo.exemploID]);
 
+
+    useEffect(() => {
+        if (props.exampleInfo.placeOfOrigin)
+            setPlaceOfOrigin(props.exampleInfo.placeOfOrigin);
+    }, [props.exampleInfo.placeOfOrigin]);
+    
+
     return (
         <Link className="nonUnderlineLink" to={ exampleLink } >
             <div className={`exampleHomepageCard flex-column m-2 p-1 align-items-center text-center`}>
@@ -46,7 +53,7 @@ export default function ExampleCard(props) {
                 </h2>
                 <h5 className="placeOfOriginText mb-2"> 
                         <img className="mr-2" alt="location" src={ locationIcon }/>
-                        { props.exampleInfo.placeOfOrigin }
+                        { placeOfOrigin }
                     </h5>
                 <h4 className="exampleTagsText m-2 mb-4" >
                     { tags }
