@@ -11,7 +11,7 @@ const {saveImage} = require('../services/imageHandler.js');
  */
 async function newExemplo(req, res) {
 
-    const imageLink = await saveImage(req.body.id, req.body.base64image.replace(/^data:image\/png;base64,/,""),);
+    const imageLink = await saveImage(req.body.id, req.body.base64image.replace(/^data:image\/(?:[^;]*);base64,/,""));
 
     //TODO: tratar envio de imagens
     const sqlData1 = 
