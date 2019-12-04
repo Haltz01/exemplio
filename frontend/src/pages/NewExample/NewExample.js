@@ -85,7 +85,7 @@
                 briefing: formData[5].value,
                 base64image: await encodeImage(formData[7].files[0]),
                 podcastlink: formData[6].value,
-                insertiondate:"2019-06-20",
+                insertiondate:formData[8].value,
                 timelineinfo: timelineItems,
                 passwd: formData[formData.length-2].value
             }
@@ -141,10 +141,20 @@
                                 <textarea id="briefing" className="form-control px-2 mt-1 w-100" placeholder="Briefing"/>
                                 <input required className="form-control px-2 mt-1" name="podcastlink" placeholder="Link do podcast"/>
                                 <div className="custom-file mt-1">
-                                    <input id="custom-file" className="custom-file-input px-2 " type="file" onChange={(e)=>{setImageFileName(e.target.value.split('\\')[2])}}/>
-                                    {/* TODO: required no campo file */}
+                                    <input required id="custom-file" className="custom-file-input px-2 " type="file" onChange={(e)=>{setImageFileName(e.target.value.split('\\')[2])}}/>
                                     <label className="custom-file-label text-muted" htmlFor="custom-file"> {imageFileName} </label>
                                 </div>
+                                <label htmlFor="example-date-input" className="mt-4 text-muted">Data de inserção</label>
+                                <input required id="example-date-input" className="form-control text-muted" type="date" defaultValue={
+                                    (() => {
+                                        const localDateTime = new Date(Date.now());
+                                        const UTCDateTimenew = new Date(localDateTime.toISOString().replace('Z',''));
+                                        const offset = UTCDateTimenew - localDateTime;
+                                        const exibitionString = new Date(localDateTime - offset).toISOString().slice(0,10);
+                                        console.log(exibitionString)
+                                        return exibitionString;
+                                    })()
+                                }/>
                                 <br/><br/>
                             </fieldset>
                             <fieldset>
