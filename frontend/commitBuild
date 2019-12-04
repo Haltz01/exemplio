@@ -30,6 +30,6 @@ echo 'Do you want to publish to production? (y/N)'
 
 read publish
 
-if [ $publish == 'y' ]; then
+if [ "$publish" == 'y' ]; then
 	python refresh.py
 fi
