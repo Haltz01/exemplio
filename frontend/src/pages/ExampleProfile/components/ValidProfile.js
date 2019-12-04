@@ -21,7 +21,7 @@ export default function ValidProfile({exampleInfo}) {
                             <div>
                                 <h4 className="TagsInProfile mb-2">
                                     {   
-                                        (exampleInfo.tags.length > 0) ?
+                                        (exampleInfo.tags && exampleInfo.tags.length > 0) ?
                                         //Builds a string from all 'nexTag' (foreach) by concatenating them with ',' as separator
                                         exampleInfo.tags.reduce((currentString, nextTag) => {
                                             return currentString + ', ' + nextTag;

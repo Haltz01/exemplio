@@ -67,10 +67,10 @@ export default function Homepage() {
                                             <div className="col-12 d-none d-flex justify-content-center">
                                                 <div className="row no-gutters">
                                                     <div className="col ml-n1">
-                                                        <ExampleCard exampleInfo={examplesList[0]}/>
+                                                        <ExampleCard exampleInfo={examplesList[0] || {}}/>
                                                     </div>
                                                     <div className="col">
-                                                        <ExampleCard exampleInfo={examplesList[1]}/>
+                                                        <ExampleCard exampleInfo={examplesList[1] || {}}/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -79,11 +79,11 @@ export default function Homepage() {
                                             <div className="col-12 d-none d-flex justify-content-center">
                                                 <div className="row no-gutters px-0">
                                                     <div className="col ml-n1">
-                                                        <ExampleCard exampleInfo={examplesList[2]}/>
+                                                        <ExampleCard exampleInfo={examplesList[2] || {}}/>
                                                     </div>
 
                                                     <div className="col">
-                                                        <ExampleCard exampleInfo={examplesList[3]}/>
+                                                        <ExampleCard exampleInfo={examplesList[3] || {}}/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -102,12 +102,12 @@ export default function Homepage() {
                             {/* Cards quando a tela está grande, cards na direita */}
                             <div className="col-12 d-none d-lg-flex flex-column col-lg-8 col-xl-7 align-itens-center justify-content-center">
                                 <div className="row d-none d-flex justify-content-center">
-                                    <ExampleCard exampleInfo={examplesList[0]}/>
-                                    <ExampleCard exampleInfo={examplesList[1]}/>
+                                    <ExampleCard exampleInfo={examplesList[0] || {}}/>
+                                    <ExampleCard exampleInfo={examplesList[1] || {}}/>
                                 </div>
                                 <div className="row d-none d-lg-flex justify-content-center">
-                                    <ExampleCard exampleInfo={examplesList[2]}/>
-                                    <ExampleCard exampleInfo={examplesList[3]}/>                                
+                                    <ExampleCard exampleInfo={examplesList[2] || {}}/>
+                                    <ExampleCard exampleInfo={examplesList[3] || {}}/>                                
                                 </div>
                             </div>
                         </div>

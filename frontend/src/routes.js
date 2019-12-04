@@ -8,6 +8,8 @@ import ExamplesList from './pages/ExamplesList/ExamplesList';
 import TermsAndConditions from './pages/TermsAndConditions';
 import AboutUs from './pages/AboutUs';
 import NotFound from './pages/NotFound.js';
+import Feedback from './pages/Feedback.js';
+import NewExample from './pages/NewExample/NewExample';
 
 export default function Routes() {
     return (
@@ -18,6 +20,8 @@ export default function Routes() {
                 <Route path={`${linkPrefix}/exemplos/`} exact component={ ExamplesList }/>
                 <Route path={`${linkPrefix}/termos-e-condicoes/`} exact component={ TermsAndConditions }/>
                 <Route path={`${linkPrefix}/sobre/`} exact component={ AboutUs }/>
+                <Route path={`${linkPrefix}/faleconosco`} exact component={ Feedback } />
+                <Route path={`${linkPrefix}/inserir`} exact component={ NewExample } />
                 <Route path={`${linkPrefix}/`} component={ NotFound }/>
                 <Route path={`/`}>
                     <h1>You are not suposed to reach this page</h1>

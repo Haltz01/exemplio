@@ -1,0 +1,35 @@
+#!/bin/bash
+
+echo "$1"
+if [ -z $1 ]; then
+	echo "Please specify the branch you want to commit your project (master|alpha)"
+	exit
+fi
+
+if [ ! -d build_rep ]; then
+	git clone https://github.com/marcuscastelo/exemplio-build-frontend/ build_rep
+fi
+
+cd build_rep
+git checkout $1
+cd ..
+
+rm -rf build_rep/*
+cp -rf build/* build_rep/
+
+cd build_rep
+git add .
+git commit -am "Default commit message at $1" | grep 'up to date' || git push --force
+
+if [ $? -gt 0 ]; then
+	exit
+fi
+
+cd ..
+echo 'Do you want to publish to production? (y/N)'
+
+read publish
+
+if [ $publish == 'y' ]; then
+	python refresh.py
+fi

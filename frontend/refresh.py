@@ -1,6 +1,7 @@
 import requests
 import re
 import json
+from getpass import getpass
 
 ## Getting login cookies
 
@@ -26,7 +27,7 @@ params = (
 )
 
 user = input("Please insert administrator's username: ")
-passw = input("Please insert administrator's password: ")
+passw = getpass(prompt="Please insert administrator's password: ")
 
 data = {
   'user': user,

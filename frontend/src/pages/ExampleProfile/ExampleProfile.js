@@ -40,21 +40,34 @@ const LOAD_TIMEOUT = 5000; //5 seconds
 export default function ExampleProfile({ match }) { // match contém os parâmetros passados na rota (id)
     const [exampleInfo, setExampleInfo] = useState({});
     const [loadingHasTimeout, setLoadingHasTimeout] = useState(false);
+    const [invalidProfileErCode, setInvalidProfileErCode] = useState(404);
 
     // Conexão com backend para buscar informações de um exemplo específico
     useEffect(() => {
         async function getExampleInfo(timeoutProcess) {
-            const response = await api.get(`/exemplos/${match.params.exampleID}`, {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-            if (!response.data.message) {
+            try {
+                const response = await api.get(`/exemplos/${match.params.exampleID}`, {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                console.log(response);
                 clearTimeout(timeoutProcess);
                 setLoadingHasTimeout(false);
                 setExampleInfo(response.data);
                 loadDisqus();
             }
+            catch (error) {
+                console.dir(error);
+                if (error.message === 'Network Error' || !error.response) {
+                    setInvalidProfileErCode(404);
+                    console.error('ERROR: Database unavailable')
+                    return;
+                }
+
+                setInvalidProfileErCode(error.response.status);
+            }
+            
         }
         let timeoutProcess = setTimeout(()=>setLoadingHasTimeout(true), LOAD_TIMEOUT);        
         getExampleInfo(timeoutProcess);
@@ -75,7 +88,10 @@ export default function ExampleProfile({ match }) { // match contém os parâmet
                         <ValidProfile exampleInfo={exampleInfo}/>
                     : 
                     (loadingHasTimeout) ?
-                        <NotFoundProfile/>
+                        (invalidProfileErCode === 404) ?
+                            <NotFoundProfile/>
+                        :
+                            <h1>Algo deu muito errado, erro sério com o DB</h1>
                     :
                         <LoadingProfile/>
                 }
