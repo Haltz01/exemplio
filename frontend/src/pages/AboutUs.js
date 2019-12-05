@@ -1,6 +1,8 @@
 import $ from 'jquery';
 
 import React, {useEffect} from 'react';
+import { Helmet } from 'react-helmet';
+
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -28,6 +30,10 @@ export default function AboutUs() {
 
     return (
         <div>
+            <Helmet>
+                <title> Exemplio - Sobre nós </title>
+                <meta name="description" content="Conheça um pouco sobre as pessoas por trás do projeto da Exemplio. Saiba mais sobre a proposta do projeto e sobre as histórias dos integrantes da Exemplio." />
+            </Helmet>
             <Navbar activePage="Sobre nós"/>
             <div className="container mt-4">
                 <div className="row d-flex justify-content-center">

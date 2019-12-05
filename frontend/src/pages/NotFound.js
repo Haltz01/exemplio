@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
 import { linkPrefix } from '../options.json';
@@ -10,6 +11,10 @@ import './NotFound.css';
 export default function NotFound() {
     return (
         <div>
+            <Helmet>
+                <title> Exemplio - Página não encontrada </title>
+                <meta name="description" content="A página que você buscava na Exemplio não foi encontrada ou não existe." />
+            </Helmet>
             <Navbar />
             <div className="container d-flex flex-column align-items-center">
                 <div className="warningBox d-flex flex-column my-4 p-3">

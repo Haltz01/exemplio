@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import { Helmet } from 'react-helmet';
 import './TermsAndConditions.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -11,6 +12,10 @@ export default function TermsAndConditions() {
 
     return (
         <div>
+            <Helmet>
+                <title> Exemplio - Termos e Condições </title>
+                <meta name="description" content="Termos de uso e política de privacidade da Exemplio, plataforma que evidencia jovens de destaque" />
+            </Helmet>
             <Navbar />
             <div className="container containerBox p-4 mt-4 mb-5 mx-auto">
                 <div className="row">

@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { Helmet } from 'react-helmet'
 
 import { Link } from 'react-router-dom';
 import { linkPrefix } from '../../options.json';
@@ -40,6 +41,10 @@ export default function Homepage() {
 
     return (
         <div>
+            <Helmet>
+                <title> Exemplio - Homepage </title>
+                <meta name="description" content="Exemplio é uma plataforma virtual que evidencia a história de jovens de destaque por meio de entrevistas em forma de podcast e de uma linha do tempo. Conheça aqui jovens exemplos de todo o Brasil." />
+            </Helmet>
             <NavbarHomepage />
             <div className="container-fluid">
                 <div id="firstBlock" className="firstBlockBackground row py-3">

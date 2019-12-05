@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import $ from 'jquery';
 import './ExamplesList.css';
 import Footer from '../../components/Footer.js';
@@ -182,6 +183,10 @@ export default function ExamplesList() {
 
     return (
         <div> 
+            <Helmet>
+                <title> Exemplio - Jovens exemplos </title>
+                <meta name="description" content="Aqui disponibilizamos uma lista com os jovens entrevistados pela Exemplio que se destacaram nas mais diversas áreas: artes, ciências, política, educação, tencologia, negócios e mais!" />
+            </Helmet>
             <Link to="/" name="anchorTopOfPage" href="/"></Link> {/* âncora usada pada retornar ao topo da página */}
             <Navbar activePage="Mais exemplos"/>
             <div className="container bg-light">
