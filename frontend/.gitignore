@@ -14,6 +14,9 @@
 /build_bkp
 credentials.txt
 
+# configuration files
+auth_config.json
+
 # misc
 .DS_Store
 .env.local

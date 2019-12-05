@@ -1,6 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Router, Switch, Route } from 'react-router-dom';
 import { linkPrefix } from './options.json';
+import history from "./utils/history";
 
 import Homepage from './pages/Homepage/Homepage';
 import ExampleProfile from './pages/ExampleProfile/ExampleProfile.js';
@@ -13,7 +14,7 @@ import NewExample from './pages/NewExample/NewExample';
 
 export default function Routes() {
     return (
-        <BrowserRouter>
+        <Router history={history}>
             <Switch>
                 <Route path={`${linkPrefix}/`} exact component={ Homepage }/> {/* sem o exact, o router não irá diferenciar essa das outras Routes, pois o Router compara o começo da rota somente (startsWith)*/ }
                 <Route path={`${linkPrefix}/exemplo/:exampleID`} component={ ExampleProfile }/>
@@ -27,6 +28,6 @@ export default function Routes() {
                     <h1>You are not suposed to reach this page</h1>
                 </Route>
             </Switch>
-        </BrowserRouter>
+        </Router>
     );
 }

@@ -6,8 +6,23 @@
     import TimelineItemList from './components/TimelineItemList';
 
     import api from '../../services/api';
+    import { useAuth0 } from '../../services/react-auth0-spa';
+
+    import Auth0Logo from '../../assets/icons/auth0-logo.png';
+
+    import history from '../../utils/history';
 
     export default function NewExample() {
+        const { isAuthenticated, loginWithRedirect, logout, loading, user } = useAuth0();
+
+        function auth0Stuff() {
+            if (isAuthenticated)
+                logout();
+            else 
+                loginWithRedirect({
+                    appState: { targetUrl: '/inserir' }
+                });
+        }
 
         //Form states
         const [imageFileName, setImageFileName] = useState('Selecionar Imagem');
@@ -171,9 +186,29 @@
                                 }
                                 <TimelineItemList name="timelineItemList" itemList={timelineItems} setTimelineItems={setTimelineItems}/>
                                 <br/><br/>
-                                <input type="password" className={`form-control px-2 mt-1 ${invalidStates.passwd?'is-invalid':''}`} placeholder="Senha"/>
-                                <div className="invalid-feedback">{ERRROR_MESSAGES[serverErrCode]}</div>
-                                <input type="submit" className="form-control px-2 mt-1" value="Enviar"></input>
+                                <div className="row no-gutters " onClick={auth0Stuff}>
+                                    <div className="col-7 col-sm-8 col-md-7">
+                                        <div className="row no-gutters align-items-center">
+                                            <div className="col">
+                                                <img alt="Auth0 logo" width="90" className="border" src={
+                                                    (loading || !user) ?
+                                                    Auth0Logo
+                                                    :
+                                                    user.picture
+                                                }/>
+                                            </div>
+                                            <div className="col-7 col-sm-8 col-md-8">
+                                                {
+                                                    isAuthenticated?
+                                                    <h5>Logado</h5>
+                                                    :
+                                                    <h5>Deslogado</h5>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="submit" className="form-control px-2 mt-1 disabled" value="Enviar"></input>
                             </fieldset>
                         </form>
                         </div>
