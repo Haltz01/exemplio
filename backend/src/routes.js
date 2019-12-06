@@ -4,8 +4,11 @@ const router = express.Router();
 const readingController = require('./controllers/readingController');
 const insertionController = require('./controllers/insertionController');
 
-router.post('/backend/exemplos/insert/new', insertionController.newExemplo);
-router.put('/backend/exemplos/insert/:exemploID/timelineItem', insertionController.addTimelineInfo);
+//Check if auth0 token is valid
+const { checkJwt } = require('./utils/jwt');
+
+router.post('/backend/exemplos/insert/new', checkJwt, insertionController.newExemplo);
+router.put('/backend/exemplos/insert/:exemploID/timelineItem', checkJwt, insertionController.addTimelineInfo);
 
 // https://nemethgergely.com/async-function-best-practices/ LER ISSO!!
 

@@ -23,6 +23,14 @@ app.use(cors());
 app.use(express.json());
 app.use(routes);
 
+app.use(function (err, req, res, next) {
+    if (err.name === 'UnauthorizedError') {
+        return res.status(401).json({errorCode: "ER_UNAUTHORIZED"});
+    }
+    console.error(err.stack)
+    return res.status(500).send('Something broke!')
+})
+
 const httpServer = app.listen(process.env.PORT, () => {
     console.log(`Server listening on port ${process.env.PORT}`);
     

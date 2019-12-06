@@ -1,5 +1,5 @@
 const db = require('../sqlConnection');
-const crypto = require('crypto');
+// const crypto = require('crypto');
 const {awaitableDbQuery} = require('../services/awaitWrappers.js');
 const {saveImage} = require('../services/imageHandler.js');
 
@@ -30,10 +30,10 @@ async function newExemplo(req, res) {
     //TODO: Use Auth0 for credentials
 
     // CREDENTIALS HANDLING
-    const hash = crypto.createHash('sha256');
-    if (!req.body.passwd) return res.status(403).send({errorCode: "ER_UNAUTHORIZED"});
-    if (hash.update(req.body.passwd).digest('hex') != '221a4cf3f48684ce0cd886d04820d25259e6f066fbb087cb323e9a0f60dc9897')
-        return res.status(403).send({errorCode: "ER_UNAUTHORIZED"});
+    // const hash = crypto.createHash('sha256');
+    // if (!req.body.passwd) return res.status(403).send({errorCode: "ER_UNAUTHORIZED"});
+    // if (hash.update(req.body.passwd).digest('hex') != '221a4cf3f48684ce0cd886d04820d25259e6f066fbb087cb323e9a0f60dc9897')
+    //     return res.status(403).send({errorCode: "ER_UNAUTHORIZED"});
 
     // EXEMPLO BASIC INFO INSERTION
 

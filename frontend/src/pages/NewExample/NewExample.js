@@ -8,21 +8,12 @@
     import api from '../../services/api';
     import { useAuth0 } from '../../services/react-auth0-spa';
 
-    import Auth0Logo from '../../assets/icons/auth0-logo.png';
-
-    import history from '../../utils/history';
-
     export default function NewExample() {
-        const { isAuthenticated, loginWithRedirect, logout, loading, user } = useAuth0();
 
-        function auth0Stuff() {
-            if (isAuthenticated)
-                logout();
-            else 
-                loginWithRedirect({
-                    appState: { targetUrl: '/inserir' }
-                });
-        }
+        //TODO 1: check permissions for inserting (in backend)
+        //TODO: make page blank if not admin account
+
+        const { getTokenSilently } = useAuth0();
 
         //Form states
         const [imageFileName, setImageFileName] = useState('Selecionar Imagem');
@@ -33,7 +24,7 @@
 
         const ERRROR_MESSAGES = {
             ER_DUP_ENTRY: 'Já existe alguém cadastrado com esse nome',
-            ER_UNAUTHORIZED: 'Senha incorreta', 
+            ER_UNAUTHORIZED: 'Atualize a página, o seu token expirou!', 
         }
 
         
@@ -61,8 +52,8 @@
                 case 'ER_UNAUTHORIZED':
                         setInvalidStates({
                             ...defaultInvalidStates,
-                            passwd: true,
                         });
+                        alert(ERRROR_MESSAGES[serverErrCode]);
                         break;
                 default:
                     setInvalidStates(defaultInvalidStates)
@@ -72,6 +63,8 @@
         }, [serverErrCode]);
 
         async function enviarExemplo(formData) {
+            const token = await getTokenSilently();
+            console.log('Token: ',token);
             function concatTags(tags) { //Here, tags are separated by commas
                 const match = tags.match(/((?:\b\s?[\wáéíóúãẽĩõũâêîôûàèìòù]+)+)/gi)
                 // console.log(tags)    
@@ -109,14 +102,19 @@
             try {
                 await api.post('/exemplos/insert/new', data,
                 {
-                    headers: { 'Content-Type': 'application/json' }
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    }
                 });
                 setServerErrCode('OK');
                 alert('Cadastro realizado com sucesso!');
                 //TODO: mudar tela de sucesso   
             } catch (error) {
                 console.dir(error);
-                setServerErrCode(error.response.data.errorCode);
+                if (error.response)
+                    setServerErrCode(error.response.data.errorCode);
+                else console.error('NO RESPONSES! WTF');
             }
         };
 
@@ -186,28 +184,8 @@
                                 }
                                 <TimelineItemList name="timelineItemList" itemList={timelineItems} setTimelineItems={setTimelineItems}/>
                                 <br/><br/>
-                                <div className="row no-gutters " onClick={auth0Stuff}>
-                                    <div className="col-7 col-sm-8 col-md-7">
-                                        <div className="row no-gutters align-items-center">
-                                            <div className="col">
-                                                <img alt="Auth0 logo" width="90" className="border" src={
-                                                    (loading || !user) ?
-                                                    Auth0Logo
-                                                    :
-                                                    user.picture
-                                                }/>
-                                            </div>
-                                            <div className="col-7 col-sm-8 col-md-8">
-                                                {
-                                                    isAuthenticated?
-                                                    <h5>Logado</h5>
-                                                    :
-                                                    <h5>Deslogado</h5>
-                                                }
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
+                                {/* <h5> Autenticado como {user} </h5> */}
                                 <input type="submit" className="form-control px-2 mt-1 disabled" value="Enviar"></input>
                             </fieldset>
                         </form>

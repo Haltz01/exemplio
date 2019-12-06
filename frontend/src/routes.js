@@ -11,6 +11,7 @@ import AboutUs from './pages/AboutUs';
 import NotFound from './pages/NotFound.js';
 import Feedback from './pages/Feedback.js';
 import NewExample from './pages/NewExample/NewExample';
+import PrivateRoute from './components/PrivateRoute.js';
 
 export default function Routes() {
     return (
@@ -22,7 +23,7 @@ export default function Routes() {
                 <Route path={`${linkPrefix}/termos-e-condicoes/`} exact component={ TermsAndConditions }/>
                 <Route path={`${linkPrefix}/sobre/`} exact component={ AboutUs }/>
                 <Route path={`${linkPrefix}/faleconosco`} exact component={ Feedback } />
-                <Route path={`${linkPrefix}/inserir`} exact component={ NewExample } />
+                <PrivateRoute path={`${linkPrefix}/inserir`} exact component={ NewExample } />
                 <Route path={`${linkPrefix}/`} component={ NotFound }/>
                 <Route path={`/`}>
                     <h1>You are not suposed to reach this page</h1>
